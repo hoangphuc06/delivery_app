@@ -1,4 +1,7 @@
-import 'package:delivery_app/src/features/presentation/widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/alert_dialog.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/done_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
@@ -20,10 +23,7 @@ class ForgotPasswordPage extends StatelessWidget {
           padding: EdgeInsets.all(30.0),
           child: Column(
             children: [
-              Text(
-                'Forgot password',
-                style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),
-              ),
+              headerText('Forgot password', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
@@ -81,57 +81,16 @@ Widget _buttonSend(BuildContext context) {
 }
 
 void _showAlerta(BuildContext context) {
-  showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0))
-          ),
-          content: SingleChildScrollView(
-            child: Wrap(
-              alignment: WrapAlignment.center,
-              children: <Widget> [
-                Image(image: AssetImage('assets/ic_change_password.png'), width: 130, height: 130, alignment: Alignment.center,),
-                Container(
-                  margin: EdgeInsets.all(15.0),
-                  child: Text(
-                    "Your password has been reset",
-                    style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 20.0),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(15.0),
-                  child: Text(
-                    "You'll shortly receive an email with a code to set up a new password.",
-                    style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w400, fontSize: 15.0),
-                  ),
-                ),
-                _buttonDone(context)
-              ],
-            ),
-          ),
-        );
-      }
+  showAlertDialog(
+      context,
+      'assets/ic_change_password.png',
+      "Your password has been reset",
+      "You'll shortly receive an email with a code to set up a new password.",
+      "Done",
+      buttonDone(context, "Done")
   );
 }
 
-Widget _buttonDone(BuildContext context) {
-  return Container(
-    width: 370.0,
-    height: 50.0,
-    margin: EdgeInsets.only(top: 40.0),
-    child: RaisedButton(
-      child: Text('Done', style: TextStyle(color: Colors.white, fontSize: 17.0),),
-      onPressed: () {
-        Navigator.pop(context);
-        Navigator.pop(context);
-      },
-      color: Theme.of(context).accentColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0)
-      ),
-    ),
-  );
-}
+
+
+

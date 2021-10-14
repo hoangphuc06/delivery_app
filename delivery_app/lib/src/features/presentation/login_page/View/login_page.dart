@@ -1,5 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,12 +9,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: Colors.black
-      )
-    );
 
     return Scaffold(
       body: Center(
@@ -43,14 +38,7 @@ class LoginPage extends StatelessWidget {
                    child: Center(
                      child: Column(
                        children: [
-                         Text(
-                           "Welcome Back",
-                           style: TextStyle(
-                             color: Theme.of(context).primaryColor,
-                             fontWeight: FontWeight.bold,
-                             fontSize: 30.0
-                           ),
-                         ),
+                         headerText("Welcome Back", Theme.of(context).primaryColor, FontWeight.bold, 30.0),
                          Text(
                            "Login to your account",
                            style: TextStyle(

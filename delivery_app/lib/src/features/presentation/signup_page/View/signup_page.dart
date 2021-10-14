@@ -1,7 +1,9 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SignUpPage extends StatelessWidget {
 
@@ -17,15 +19,12 @@ class SignUpPage extends StatelessWidget {
           },
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              Text(
-                'Create an account',
-                style: TextStyle(color: Theme.of(context).primaryColor, fontWeight: FontWeight.bold, fontSize: 30.0),
-              ),
+              headerText('Create an account', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),
