@@ -9,32 +9,32 @@ class ExploreTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: CustomScrollView(
-      slivers: [
-        SliverList(
-            delegate: SliverChildListDelegate([
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              children: [
-                _topBar(context),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 20),
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Discover new places",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30),
-                  ),
-                ),
-                _sliderCards(),
-              ],
-            ),
-          )
-        ]))
-      ],
-    ));
+          slivers: [
+            SliverList(
+                delegate: SliverChildListDelegate([
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    child: Column(
+                      children: [
+                        _topBar(context),
+                        Container(
+                          margin: EdgeInsets.symmetric(vertical: 20),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Discover new places",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30),
+                          ),
+                        ),
+                        _sliderCards(),
+                      ],
+                    ),
+                  )
+                ]))
+          ],
+        ));
   }
 }
 
@@ -93,10 +93,10 @@ Widget _sliderCards() {
       layout: SwiperLayout.DEFAULT,
       itemBuilder: (BuildContext context, int index) {
         return ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context, int index) {
-            return _tarjecta(context);
-          }
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return _tarjecta(context);
+            }
         );
       },
     ),
@@ -115,6 +115,6 @@ Widget _tarjecta(BuildContext context) {
             image: AssetImage("assets/img_hamberger.jpg"),
           ),
         )
-    ],),
+      ],),
   );
 }
