@@ -1,9 +1,11 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -38,7 +40,7 @@ class LoginPage extends StatelessWidget {
                    child: Center(
                      child: Column(
                        children: [
-                         headerText("Welcome Back", Theme.of(context).primaryColor, FontWeight.bold, 30.0),
+                         headerText("Welcome Back",primaryColor, FontWeight.bold, 30.0),
                          Text(
                            "Login to your account",
                            style: TextStyle(
@@ -49,7 +51,17 @@ class LoginPage extends StatelessWidget {
                          ),
                          _emailInput(),
                          _passwordlInput(),
-                         _buttonLogin(context),
+                         
+                          roundedButton(
+                          context: context,
+                          func: (){
+                            Navigator.pushNamed(context, 'tabs');
+                          }, 
+                          icon: AssetImage('assets/ic_change_password.png'), 
+                          lableButton: 'Log in', 
+                          color: orange),
+                           
+                        
                          Container(
                            margin: EdgeInsets.only(top: 30.0),
                            child: GestureDetector(
@@ -79,7 +91,7 @@ class LoginPage extends StatelessWidget {
                                    margin: EdgeInsets.symmetric(horizontal: 10.0),
                                    child: Text(
                                      'Sign up',
-                                     style: TextStyle(color: Theme.of(context).accentColor, fontWeight: FontWeight.w500, fontSize: 15.0),
+                                     style: TextStyle(color: orange, fontWeight: FontWeight.w500, fontSize: 15.0),
                                    ),
                                  ),
                                ),
@@ -140,20 +152,3 @@ Widget _passwordlInput() {
   );
 }
 
-Widget _buttonLogin(BuildContext context) {
-  return Container(
-    width: double.infinity,
-    height: 50.0,
-    margin: EdgeInsets.only(top: 20.0),
-    child: RaisedButton(
-      child: Text('Log in', style: TextStyle(color: Colors.white, fontSize: 17.0),),
-      onPressed: () {
-        Navigator.pushNamed(context, "tabs");
-      },
-      color: Theme.of(context).accentColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0)
-      ),
-    ),
-  );
-}

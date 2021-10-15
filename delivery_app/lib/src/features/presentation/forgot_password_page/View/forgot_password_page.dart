@@ -1,6 +1,7 @@
+import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/alert_dialog.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/done_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class ForgotPasswordPage extends StatelessWidget {
           padding: EdgeInsets.all(30.0),
           child: Column(
             children: [
-              headerText('Forgot password', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
+              headerText('Forgot password', primaryColor, FontWeight.bold, 30.0),
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
@@ -33,7 +34,15 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
               ),
               _emailInput(),
-              _buttonSend(context),
+              
+              roundedButton(
+                 context: context,
+                  func: ()=>_showAlerta(context),
+                 icon: AssetImage('assets/ic_change_password.png'), 
+                 lableButton: 'Send', 
+                 color: orange),
+
+              
             ],
           ),
         ),
@@ -62,23 +71,6 @@ Widget _emailInput() {
   );
 }
 
-Widget _buttonSend(BuildContext context) {
-  return Container(
-    width: double.infinity,
-    height: 50.0,
-    margin: EdgeInsets.only(top: 20.0),
-    child: RaisedButton(
-      child: Text('Send', style: TextStyle(color: Colors.white, fontSize: 17.0),),
-      onPressed: () {
-        _showAlerta(context);
-      },
-      color: Theme.of(context).accentColor,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0)
-      ),
-    ),
-  );
-}
 
 void _showAlerta(BuildContext context) {
   showAlertDialog(
@@ -86,8 +78,17 @@ void _showAlerta(BuildContext context) {
       'assets/ic_change_password.png',
       "Your password has been reset",
       "You'll shortly receive an email with a code to set up a new password.",
-      "Done",
-      buttonDone(context, "Done")
+    
+      roundedButton(
+        context: context,
+        func: (){
+          Navigator.pushNamed(context, 'login');
+        },
+        icon:  AssetImage('assets/ic_change_password.png'), 
+        lableButton: 'Done', 
+        color: orange),
+    
+       
   );
 }
 

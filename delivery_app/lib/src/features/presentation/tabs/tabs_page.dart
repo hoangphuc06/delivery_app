@@ -1,3 +1,6 @@
+import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/alert_dialog.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab.dart';
@@ -13,6 +16,14 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
+
+  @override
+  void initState(){
+    super.initState();
+    Future.delayed(Duration.zero,(){
+      _pedirLocation(context);
+    });
+  }
 
   List<Widget> _widgetOptions = [
     ExploreTab(),
@@ -41,7 +52,7 @@ class _TabsPageState extends State<TabsPage> {
     return BottomNavigationBar(
         iconSize: 30.0,
         selectedItemColor: Theme.of(context).accentColor,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: orange,
         currentIndex: _selectedItemIndex,
         onTap: _cambiarWidget,
         showUnselectedLabels: true,
@@ -65,6 +76,25 @@ class _TabsPageState extends State<TabsPage> {
         ]
     );
   }
-}
+  Future _pedirLocation(BuildContext context) async{
+    await showAlertDialog(
+      context,
+      'assets/ic_welcome.png', 
+      "Enable Your Location",
+      "Please allow to use your location to show nearby restaurant on the map.",
+      //_doneButton(context,'Enable Location')
+      roundedButton(
+       context: context,
+       icon: AssetImage('assets/ic_welcome.png'), 
+       lableButton: 'Enable Location',
+       color: orange,
+        func: (){
 
+        }
+    ));
+  }
+
+ 
+
+}
 

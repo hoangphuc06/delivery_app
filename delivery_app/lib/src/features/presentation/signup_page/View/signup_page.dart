@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -24,13 +25,18 @@ class SignUpPage extends StatelessWidget {
           padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              headerText('Create an account', Theme.of(context).primaryColor, FontWeight.bold, 30.0),
+              headerText('Create an account', primaryColor, FontWeight.bold, 30.0),
               _usernameInput(context),
               _emailInput(context),
               _phoneInput(context),
               _dateOfBirthInput(context),
               _passwordInput(context),
-              _buttonSignUp(context),
+             roundedButton(
+               context: context, 
+               icon: AssetImage('assets/ic_change_password.png'), 
+               lableButton: 'Sign up', 
+               color: orange, 
+               func: (){},),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
                 child: Text(
@@ -167,7 +173,7 @@ Widget _buttonSignUp(BuildContext context) {
       onPressed: () {
 
       },
-      color: Theme.of(context).accentColor,
+      color: orange,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0)
       ),

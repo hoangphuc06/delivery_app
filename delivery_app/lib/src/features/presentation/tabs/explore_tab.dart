@@ -159,7 +159,7 @@ Widget _tarjecta(BuildContext context) {
                   child: RaisedButton(
                     elevation: 0.5,
                     shape: StadiumBorder(),
-                    color: Theme.of(context).accentColor,
+                    color: orange,
                     textColor: Colors.white,
                     onPressed: () {},
                     child: Text(
@@ -255,7 +255,7 @@ Widget _populares(BuildContext context, String image) {
                         onPressed: () {},
                         elevation: 0.5,
                         shape: StadiumBorder(),
-                        color: Theme.of(context).accentColor,
+                        color:orange,
                         child: Text(
                           "Delivery",
                           style: TextStyle(fontSize: 11.0, color: Colors.white),
