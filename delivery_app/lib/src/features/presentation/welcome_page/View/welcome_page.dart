@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
                     context: context,       
                     func: (){
                       Navigator.pushNamed(context, 'login');
-                    },        
+                    },
                     lableButton:'Log in',
                     color: orange,
                     icon: AssetImage('assets/ic_fb.png')),
