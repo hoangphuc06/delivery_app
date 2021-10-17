@@ -18,7 +18,7 @@ class ExploreTab extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Column(
                       children: [
-                        //_topBar(context),
+                        _topBar(context),
                         Container(
                           margin: EdgeInsets.symmetric(vertical: 10),
                           alignment: Alignment.centerLeft,
@@ -44,48 +44,52 @@ class ExploreTab extends StatelessWidget {
 Widget _topBar(BuildContext context) {
   return Row(
     children: [
-      Container(
-        width: 310,
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(left: 16),
-        decoration: BoxDecoration(
-            border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
-            borderRadius: BorderRadius.circular(20.0)),
-        child: Row(
-          children: [
-            Icon(
-              Icons.search,
-              size: 20,
-              color: gris,
+      GestureDetector(
+        onTap: ()=>{Navigator.pushNamed(context, 'search')},
+        child: 
+          Container(
+            width: 310,
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(left: 16),
+            decoration: BoxDecoration(
+                border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
+                borderRadius: BorderRadius.circular(20.0)),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.search,
+                  size: 20,
+                  color: gris,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 5),
+                  child: Text(
+                    "Search",
+                    style: TextStyle(color: gris, fontSize: 17),
+                  ),
+                )
+              ],
             ),
-            Container(
-              margin: EdgeInsets.only(left: 5),
-              child: Text(
-                "Search",
-                style: TextStyle(color: gris, fontSize: 17),
-              ),
-            )
-          ],
-        ),
-      ),
-      Container(
-        width: 40,
-        height: 40,
-        margin: EdgeInsets.only(left: 15),
-        decoration: BoxDecoration(
-            color: Color.fromRGBO(209, 209, 214, 1.0),
-            borderRadius: BorderRadius.circular(30.0)),
-        child: IconButton(
-          icon: Icon(
-            Icons.filter_list,
-            size: 25,
-            color: Colors.white,
           ),
-          onPressed: () {},
-        ),
-      )
-    ],
-  );
+      ),
+          Container(
+            width: 40,
+            height: 40,
+            margin: EdgeInsets.only(left: 15),
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(209, 209, 214, 1.0),
+                borderRadius: BorderRadius.circular(30.0)),
+            child: IconButton(
+              icon: Icon(
+                Icons.filter_list,
+                size: 25,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+          )
+        ],
+      ); 
 }
 
 Widget _sliderCards() {

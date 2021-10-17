@@ -51,8 +51,8 @@ class _TabsPageState extends State<TabsPage> {
   Widget _bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
         iconSize: 30.0,
-        selectedItemColor: Theme.of(context).accentColor,
-        unselectedItemColor: orange,
+        selectedItemColor: orange,
+        unselectedItemColor: Colors.grey,
         currentIndex: _selectedItemIndex,
         onTap: _cambiarWidget,
         showUnselectedLabels: true,

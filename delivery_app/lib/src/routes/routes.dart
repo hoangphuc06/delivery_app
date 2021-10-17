@@ -3,6 +3,7 @@ import 'package:delivery_app/src/features/presentation/login_page/View/login_pag
 import 'package:delivery_app/src/features/presentation/signup_page/View/signup_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/tabs_page.dart';
 import 'package:delivery_app/src/features/presentation/welcome_page/View/welcome_page.dart';
+import 'package:delivery_app/src/features/search_page/View/searchView.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,4 +13,5 @@ final routes = <String,WidgetBuilder> {
   "forgot_password" : (BuildContext context) => ForgotPasswordPage(),
   "sign_up" : (BuildContext context) => SignUpPage(),
   "tabs" : (BuildContext context) => TabsPage(),
+  "search" : (BuildContext context) => SearchPage(),
 };
