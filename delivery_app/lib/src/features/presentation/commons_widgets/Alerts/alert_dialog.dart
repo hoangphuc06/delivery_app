@@ -1,7 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:flutter/material.dart';
 
-import 'header_text.dart';
+import '../Headers/header_text.dart';
 
 Future showAlertDialog(BuildContext context, String imagePath, String headerTitle, String headerSubTitle, Widget doneButton) async {
  await showDialog(

@@ -1,8 +1,8 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/alert_dialog.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/back_button.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/alert_dialog.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/rounded_button.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab.dart';
