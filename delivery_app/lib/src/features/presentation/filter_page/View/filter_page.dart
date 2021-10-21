@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/cuisines_filters.dart';
+import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
 import 'package:flutter/material.dart';
 
 class FilterPage extends StatefulWidget {
@@ -49,7 +50,16 @@ class _FilterPageState extends State<FilterPage> {
                 ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 15.0),
-                  child: CuisinesFilters() ,)
+                  child: CuisinesFilters() ,),
+                Container(
+                  alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.only(top: 15.0,bottom: 15.0,left: 15.0),
+                  child:
+                    headerText('SORT BY', gris, FontWeight.w600, 15.0),
+                ),
+                Container(
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                child: ListTileChecked() ,),
               ]
             ) 
           )
