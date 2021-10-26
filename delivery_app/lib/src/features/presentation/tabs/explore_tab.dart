@@ -11,33 +11,38 @@ class ExploreTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: CustomScrollView(
-          slivers: [
-            SliverList(
-                delegate: SliverChildListDelegate([
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10),
-                    child: Column(
-                      children: [
-                        _topBar(context),
-                        Container(
-                          margin: EdgeInsets.symmetric(vertical: 10),
-                          alignment: Alignment.centerLeft,
-                          child: headerText("Discover new places", Colors.black, FontWeight.bold, 20),
-                        ),
-                        _sliderCards(),
-                        _headers(context, "Popular this week", "Show all"),
-                        _populares(context, "assets/img_hamburger.jpg"),
-                        _populares(context, "assets/img_hamburger.jpg"),
-                        _populares(context, "assets/img_hamburger.jpg"),
-                        SizedBox(height: 20,),
-                        _headers(context, "Collections", "Show all"),
-                        _sliderCollections(),
-                      ],
-                    ),
-                  )
-                ]))
-          ],
-        ));
+      slivers: [
+        SliverList(
+            delegate: SliverChildListDelegate([
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                _topBar(context),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  alignment: Alignment.centerLeft,
+                  child: headerText(
+                      text: "Discover new places",
+                      color: Colors.black,
+                      fontSize: 20),
+                ),
+                _sliderCards(),
+                _headers(context, "Popular this week", "Show all"),
+                _populares(context, "assets/img_hamburger.jpg"),
+                _populares(context, "assets/img_hamburger.jpg"),
+                _populares(context, "assets/img_hamburger.jpg"),
+                SizedBox(
+                  height: 20,
+                ),
+                _headers(context, "Collections", "Show all"),
+                _sliderCollections(),
+              ],
+            ),
+          )
+        ]))
+      ],
+    ));
   }
 }
 
@@ -45,51 +50,50 @@ Widget _topBar(BuildContext context) {
   return Row(
     children: [
       GestureDetector(
-        onTap: ()=>{Navigator.pushNamed(context, 'search')},
-        child: 
-          Container(
-            width: 310,
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(left: 16),
-            decoration: BoxDecoration(
-                border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
-                borderRadius: BorderRadius.circular(20.0)),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.search,
-                  size: 20,
-                  color: gris,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 5),
-                  child: Text(
-                    "Search",
-                    style: TextStyle(color: gris, fontSize: 17),
-                  ),
-                )
-              ],
-            ),
-          ),
-      ),
-          Container(
-            width: 40,
-            height: 40,
-            margin: EdgeInsets.only(left: 15),
-            decoration: BoxDecoration(
-                color: Color.fromRGBO(209, 209, 214, 1.0),
-                borderRadius: BorderRadius.circular(30.0)),
-            child: IconButton(
-              icon: Icon(
-                Icons.filter_list,
-                size: 25,
-                color: Colors.white,
+        onTap: () => {Navigator.pushNamed(context, 'search')},
+        child: Container(
+          width: 310,
+          padding: EdgeInsets.all(10),
+          margin: EdgeInsets.only(left: 16),
+          decoration: BoxDecoration(
+              border: Border.all(color: Color.fromRGBO(234, 236, 239, 1.0)),
+              borderRadius: BorderRadius.circular(20.0)),
+          child: Row(
+            children: [
+              Icon(
+                Icons.search,
+                size: 20,
+                color: gris,
               ),
-              onPressed: () {},
-            ),
-          )
-        ],
-      ); 
+              Container(
+                margin: EdgeInsets.only(left: 5),
+                child: Text(
+                  "Search",
+                  style: TextStyle(color: gris, fontSize: 17),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+      Container(
+        width: 40,
+        height: 40,
+        margin: EdgeInsets.only(left: 15),
+        decoration: BoxDecoration(
+            color: Color.fromRGBO(209, 209, 214, 1.0),
+            borderRadius: BorderRadius.circular(30.0)),
+        child: IconButton(
+          icon: Icon(
+            Icons.filter_list,
+            size: 25,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
+      )
+    ],
+  );
 }
 
 Widget _sliderCards() {
@@ -104,8 +108,7 @@ Widget _sliderCards() {
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return _tarjecta(context);
-            }
-        );
+            });
       },
     ),
   );
@@ -132,7 +135,10 @@ Widget _tarjecta(BuildContext context) {
               margin: EdgeInsets.only(top: 10.0),
               child: Text(
                 "Hamburger King Shop",
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 17),
               ),
             ),
             Container(
@@ -140,21 +146,27 @@ Widget _tarjecta(BuildContext context) {
               child: Text(
                 "District 1, HCM city",
                 style: TextStyle(
-                    color: gris,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 13),
+                    color: gris, fontWeight: FontWeight.w600, fontSize: 13),
               ),
             ),
             Row(
               children: [
-                Icon(Icons.star, color: amarillo, size: 16,),
+                Icon(
+                  Icons.star,
+                  color: amarillo,
+                  size: 16,
+                ),
                 Text(
                   "4.8",
-                  style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500),
                 ),
                 Text(
                   " (272 ratings)",
-                  style: TextStyle(color: gris, fontSize: 13, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      color: gris, fontSize: 13, fontWeight: FontWeight.w600),
                 ),
                 Container(
                   width: 80,
@@ -168,7 +180,9 @@ Widget _tarjecta(BuildContext context) {
                     onPressed: () {},
                     child: Text(
                       "Delivery",
-                      style: TextStyle(fontSize: 11, ),
+                      style: TextStyle(
+                        fontSize: 11,
+                      ),
                     ),
                   ),
                 ),
@@ -176,7 +190,8 @@ Widget _tarjecta(BuildContext context) {
             )
           ],
         ),
-      ],),
+      ],
+    ),
   );
 }
 
@@ -185,7 +200,7 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
     children: [
       Container(
         alignment: Alignment.centerLeft,
-        child: headerText(textHeader, Colors.black, FontWeight.bold, 20),
+        child: headerText(text: textHeader, color: Colors.black, fontSize: 20),
       ),
       Spacer(),
       GestureDetector(
@@ -193,7 +208,10 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
           children: [
             Text(
               textAction,
-              style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500),
             ),
             Icon(Icons.play_arrow)
           ],
@@ -227,46 +245,60 @@ Widget _populares(BuildContext context, String image) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 7),
-                    child: headerText("Andy and Cindy's Dinner", Colors.black, FontWeight.bold, 17)
-                  ),
+                      margin: EdgeInsets.symmetric(vertical: 7),
+                      child: headerText(
+                          text: "Andy and Cindy's Dinner",
+                          color: Colors.black,
+                          fontSize: 17)),
                   Container(
                     //alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5.0),
                     child: Text(
                       "87 Botsford Cicrle Apt",
-                      style: TextStyle(color: gris, fontWeight: FontWeight.w500, fontSize: 13),
+                      style: TextStyle(
+                          color: gris,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13),
                     ),
                   ),
-                  Row(children: [
-                    Icon(Icons.star, color: amarillo, size: 16.0,),
-                    Text(
-                      "4.5",
-                      style: TextStyle(color: gris, fontWeight: FontWeight.w500, fontSize: 13)
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 5),
-                      child: Text(
-                          "(300 ratings)",
-                          style: TextStyle(color: gris, fontWeight: FontWeight.w500, fontSize: 13)
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: amarillo,
+                        size: 16.0,
                       ),
-                    ),
-                    Container(
-                      width: 110,
-                      height: 18,
-                      margin: EdgeInsets.only(left: 35),
-                      child: RaisedButton(
-                        onPressed: () {},
-                        elevation: 0.5,
-                        shape: StadiumBorder(),
-                        color:orange,
-                        child: Text(
-                          "Delivery",
-                          style: TextStyle(fontSize: 11.0, color: Colors.white),
+                      Text("4.5",
+                          style: TextStyle(
+                              color: gris,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 13)),
+                      Container(
+                        margin: EdgeInsets.only(left: 5),
+                        child: Text("(300 ratings)",
+                            style: TextStyle(
+                                color: gris,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 13)),
+                      ),
+                      Container(
+                        width: 110,
+                        height: 18,
+                        margin: EdgeInsets.only(left: 35),
+                        child: RaisedButton(
+                          onPressed: () {},
+                          elevation: 0.5,
+                          shape: StadiumBorder(),
+                          color: orange,
+                          child: Text(
+                            "Delivery",
+                            style:
+                                TextStyle(fontSize: 11.0, color: Colors.white),
+                          ),
                         ),
                       ),
-                    ),
-                  ],)
+                    ],
+                  )
                 ],
               ),
             ),
@@ -288,8 +320,7 @@ Widget _sliderCollections() {
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
               return _tarjectaCollection(context);
-            }
-        );
+            });
       },
     ),
   );
