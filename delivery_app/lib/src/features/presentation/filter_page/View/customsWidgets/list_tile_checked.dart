@@ -1,5 +1,5 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
 class ListTileChecked extends StatefulWidget {
@@ -41,7 +41,7 @@ Widget listTile({BuildContext? context, text: String, isActive: bool, func}) {
     ))),
     child: ListTile(
       onTap: func,
-      title: headerText(text, isActive ? orange : Colors.black, FontWeight.w300, 17),
+      title: headerText(text: text, color: isActive ? orange : Colors.black, fontWeight: FontWeight.w300, fontSize: 17),
       trailing: isActive
           ? Icon(
               Icons.check,

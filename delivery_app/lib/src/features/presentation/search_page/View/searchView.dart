@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_double.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';

@@ -1,5 +1,5 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/header_text.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/cuisines_filters.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/price_filters.dart';
@@ -31,10 +31,10 @@ class _FilterPageState extends State<FilterPage> {
         centerTitle: true,
         elevation: 1.5,
         backgroundColor: Colors.white,
-        title: headerText('Filters', Colors.black, FontWeight.w600, 20),
+        title: headerText(text: "Filters", color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
         leading: Container(
           padding: EdgeInsets.only(top: 20, left: 7.0),
-          child: headerText('Reset', Colors.black, FontWeight.w600, 17.0),
+          child: headerText(text: 'Reset', color: Colors.black, fontWeight: FontWeight.w600, fontSize: 17.0),
         ),
         actions: [
           GestureDetector(
@@ -43,7 +43,7 @@ class _FilterPageState extends State<FilterPage> {
             },
             child: Container(
               padding: EdgeInsets.only(top: 20, right: 10.0),
-              child: headerText('Done', orange, FontWeight.w500, 17.0),
+              child: headerText(text: 'Done', color: orange, fontWeight: FontWeight.w500, fontSize: 17.0),
             ),
           ),
         ],
@@ -55,7 +55,7 @@ class _FilterPageState extends State<FilterPage> {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 15.0, left: 15.0),
-              child: headerText('CUISINES', gris, FontWeight.w600, 15.0),
+              child: headerText(text: 'CUISINES', color: gris, fontWeight: FontWeight.w600, fontSize: 15.0),
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
@@ -64,19 +64,19 @@ class _FilterPageState extends State<FilterPage> {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText('SORT BY', gris, FontWeight.w600, 17.0),
+              child: headerText(text: 'SORT BY', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
             ),
             _SortByContainer(),
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText('FILTER', gris, FontWeight.w600, 17.0),
+              child: headerText(text: 'FILTER', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
             ),
             _filterContainer(),
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText('PRICE', gris, FontWeight.w600, 17.0),
+              child: headerText(text: 'PRICE', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
             ),
             PriceFilter(),
           ]))
