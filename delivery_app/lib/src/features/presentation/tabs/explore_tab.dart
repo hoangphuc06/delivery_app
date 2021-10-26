@@ -76,24 +76,26 @@ Widget _topBar(BuildContext context) {
           ),
         ),
       ),
-      Container(
-        width: 40,
-        height: 40,
-        margin: EdgeInsets.only(left: 15),
-        decoration: BoxDecoration(
-            color: Color.fromRGBO(209, 209, 214, 1.0),
-            borderRadius: BorderRadius.circular(30.0)),
-        child: IconButton(
-          icon: Icon(
-            Icons.filter_list,
-            size: 25,
-            color: Colors.white,
-          ),
-          onPressed: () {},
-        ),
-      )
-    ],
-  );
+          Container(
+            width: 40,
+            height: 40,
+            margin: EdgeInsets.only(left: 15),
+            decoration: BoxDecoration(
+                color: Color.fromRGBO(209, 209, 214, 1.0),
+                borderRadius: BorderRadius.circular(30.0)),
+            child: IconButton(
+              icon: Icon(
+                Icons.filter_list,
+                size: 25,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, 'filter');
+              },
+            ),
+          )
+        ],
+      ); 
 }
 
 Widget _sliderCards() {
