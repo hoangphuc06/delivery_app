@@ -44,7 +44,10 @@ Widget favouritesCard(
                   Container(
                       margin: EdgeInsets.symmetric(vertical: 7.0),
                       child: headerText(
-                          title, Colors.black, FontWeight.bold, 17.0)),
+                          text: title,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17.0)),
                   SizedBox(
                     width: 25.0,
                   ),
@@ -60,7 +63,11 @@ Widget favouritesCard(
               Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(bottom: 5.0),
-                  child: headerText(subtitle, gris, FontWeight.w500, 13.0)),
+                  child: headerText(
+                      text: subtitle,
+                      color: gris,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0)),
               Row(
                 children: [
                   Icon(
@@ -68,8 +75,16 @@ Widget favouritesCard(
                     color: amarillo,
                     size: 16,
                   ),
-                  headerText(review, Colors.black, FontWeight.w500, 13.0),
-                  headerText(ratings, gris, FontWeight.w500, 13),
+                  headerText(
+                      text: review,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0),
+                  headerText(
+                      text: ratings,
+                      color: gris,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 15.0),
                     width: 90,
@@ -81,7 +96,10 @@ Widget favouritesCard(
                       color: orange,
                       textColor: Colors.white,
                       child: headerText(
-                          buttonText, Colors.white, FontWeight.bold, 13.0),
+                          text: buttonText,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13.0),
                     ),
                   )
                 ],

@@ -10,7 +10,11 @@ class CollectionsPage extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             backgroundColor: Colors.white,
-            title: headerText('Collections', Colors.black, FontWeight.bold, 17),
+            title: headerText(
+                text: 'Collections',
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 17),
             leading: Builder(builder: (BuildContext context) {
               return backButton(context, Colors.black);
             }),
@@ -72,8 +76,16 @@ Widget _card(BuildContext context) {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                headerText('Asia', Colors.white, FontWeight.bold, 18),
-                headerText('200 places', Colors.white, FontWeight.w300, 15),
+                headerText(
+                    text: 'Asia',
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
+                headerText(
+                    text: '200 places',
+                    color: Colors.white,
+                    fontWeight: FontWeight.w300,
+                    fontSize: 15),
               ],
             ),
           )

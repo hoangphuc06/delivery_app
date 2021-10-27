@@ -32,10 +32,10 @@ class CollectionDetailPage extends StatelessWidget {
                   ),
                   Center(
                       child: headerText(
-                    'Asia \n Restaurant',
-                    Colors.white,
-                    FontWeight.bold,
-                    30.0,
+                    text: 'Asia \n Restaurant',
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.0,
                     textAlign: TextAlign.center,
                   ))
                 ],
@@ -55,7 +55,10 @@ class CollectionDetailPage extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       margin: EdgeInsets.symmetric(vertical: 20.0),
                       child: headerText(
-                          '200 places', Colors.black, FontWeight.w600, 17)),
+                          text: '200 places',
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 17)),
                   Column(
                     children: [
                       favouritesCard(
