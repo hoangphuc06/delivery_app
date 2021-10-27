@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46b4fa0f-4df2-45ca-a95f-4a4b6c4e173b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/ic_avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/colors/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/colors/colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Card/favourites_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Card/favourites_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,22 +115,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1634200875034" />
-    <state width="1491" height="195" key="GridCell.Tab.0.bottom" timestamp="1635308872162">
+    <state width="1491" height="195" key="GridCell.Tab.0.bottom" timestamp="1635317234024">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="195" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1635308872162" />
-    <state width="1491" height="195" key="GridCell.Tab.0.center" timestamp="1635308872162">
+    <state width="1491" height="195" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1635317234024" />
+    <state width="1491" height="195" key="GridCell.Tab.0.center" timestamp="1635317234024">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="195" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1635308872162" />
-    <state width="1491" height="195" key="GridCell.Tab.0.left" timestamp="1635308872162">
+    <state width="1491" height="195" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1635317234024" />
+    <state width="1491" height="195" key="GridCell.Tab.0.left" timestamp="1635317234023">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="195" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1635308872162" />
-    <state width="1491" height="195" key="GridCell.Tab.0.right" timestamp="1635308872162">
+    <state width="1491" height="195" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1635317234023" />
+    <state width="1491" height="195" key="GridCell.Tab.0.right" timestamp="1635317234024">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="195" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1635308872162" />
+    <state width="1491" height="195" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1635317234024" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1634200949325">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
