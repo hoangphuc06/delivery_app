@@ -21,18 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="46b4fa0f-4df2-45ca-a95f-4a4b6c4e173b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/alert_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/back_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/BackButtons/back_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/header_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/rounded_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Buttons/rounded_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/forgot_password_page/View/forgot_password_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/forgot_password_page/View/forgot_password_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/login_page/View/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/login_page/View/login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/signup_page/View/signup_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/signup_page/View/signup_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/tabs_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/tabs_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/search_page/View/searchView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/search_page/View/searchView.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/filter_page/View/filter_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/filter_page/View/filter_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/search_page/View/searchView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/search_page/View/searchView.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,22 +114,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1634200875034" />
-    <state width="1491" height="205" key="GridCell.Tab.0.bottom" timestamp="1634736826702">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom" timestamp="1635259038466">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="205" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1634736826702" />
-    <state width="1491" height="205" key="GridCell.Tab.0.center" timestamp="1634736826702">
+    <state width="1491" height="196" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1635259038466" />
+    <state width="1491" height="196" key="GridCell.Tab.0.center" timestamp="1635259038466">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="205" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1634736826702" />
-    <state width="1491" height="205" key="GridCell.Tab.0.left" timestamp="1634736826702">
+    <state width="1491" height="196" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1635259038466" />
+    <state width="1491" height="196" key="GridCell.Tab.0.left" timestamp="1635259038466">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="205" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1634736826702" />
-    <state width="1491" height="205" key="GridCell.Tab.0.right" timestamp="1634736826702">
+    <state width="1491" height="196" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1635259038466" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right" timestamp="1635259038466">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="205" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1634736826702" />
+    <state width="1491" height="196" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1635259038466" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1634200949325">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

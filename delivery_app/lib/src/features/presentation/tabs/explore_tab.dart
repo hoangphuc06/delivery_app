@@ -23,7 +23,9 @@ class ExploreTab extends StatelessWidget {
                   margin: EdgeInsets.symmetric(vertical: 10),
                   alignment: Alignment.centerLeft,
                   child: headerText(
-                      "Discover new places", Colors.black, FontWeight.bold, 20),
+                      text: "Discover new places",
+                      color: Colors.black,
+                      fontSize: 20),
                 ),
                 _sliderCards(),
                 _headers(context, "Popular this week", "Show all"),
@@ -91,7 +93,9 @@ Widget _topBar(BuildContext context) {
             size: 25,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, 'filter');
+          },
         ),
       )
     ],
@@ -202,7 +206,7 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
     children: [
       Container(
         alignment: Alignment.centerLeft,
-        child: headerText(textHeader, Colors.black, FontWeight.bold, 20),
+        child: headerText(text: textHeader, color: Colors.black, fontSize: 20),
       ),
       Spacer(),
       GestureDetector(
@@ -248,8 +252,10 @@ Widget _populares(BuildContext context, String image) {
                 children: [
                   Container(
                       margin: EdgeInsets.symmetric(vertical: 7),
-                      child: headerText("Andy and Cindy's Dinner", Colors.black,
-                          FontWeight.bold, 17)),
+                      child: headerText(
+                          text: "Andy and Cindy's Dinner",
+                          color: Colors.black,
+                          fontSize: 17)),
                   Container(
                     //alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5.0),
