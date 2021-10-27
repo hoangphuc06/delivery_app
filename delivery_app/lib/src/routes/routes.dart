@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/features/presentation/filter_page/View/filter_page.dart';
 import 'package:delivery_app/src/features/presentation/forgot_password_page/View/forgot_password_page.dart';
 import 'package:delivery_app/src/features/presentation/login_page/View/login_page.dart';
+import 'package:delivery_app/src/features/presentation/place_detail_page/View/place_detail_page.dart';
 import 'package:delivery_app/src/features/presentation/search_page/View/searchView.dart';
 import 'package:delivery_app/src/features/presentation/signup_page/View/signup_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/tabs_page.dart';
@@ -20,4 +21,5 @@ final routes = <String, WidgetBuilder>{
   "filter": (BuildContext context) => FilterPage(),
   'collections': (BuildContext context) => CollectionsPage(),
   'collection_detail': (BuildContext context) => CollectionDetailPage(),
+  "place-detail" : (BuildContext context) => PlaceDetailPage(),
 };

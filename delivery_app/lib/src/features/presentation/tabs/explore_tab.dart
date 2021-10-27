@@ -121,82 +121,87 @@ Widget _sliderCards() {
 }
 
 Widget _tarjecta(BuildContext context) {
-  return Container(
-    //margin: EdgeInsets.all(5),
-    child: Column(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
-          child: Image(
-            width: 200,
-            height: 250,
-            fit: BoxFit.cover,
-            image: AssetImage("assets/img_hamburger.jpg"),
+  return GestureDetector(
+    onTap: () {
+      Navigator.pushNamed(context, "place-detail");
+    },
+    child: Container(
+      //margin: EdgeInsets.all(5),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Image(
+              width: 200,
+              height: 250,
+              fit: BoxFit.cover,
+              image: AssetImage("assets/img_hamburger.jpg"),
+            ),
           ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              child: Text(
-                "Hamburger King Shop",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17),
-              ),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "District 1, HCM city",
-                style: TextStyle(
-                    color: gris, fontWeight: FontWeight.w600, fontSize: 13),
-              ),
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.star,
-                  color: amarillo,
-                  size: 16,
-                ),
-                Text(
-                  "4.8",
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                child: Text(
+                  "Hamburger King Shop",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17),
                 ),
-                Text(
-                  " (272 ratings)",
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "District 1, HCM city",
                   style: TextStyle(
-                      color: gris, fontSize: 13, fontWeight: FontWeight.w600),
+                      color: gris, fontWeight: FontWeight.w600, fontSize: 13),
                 ),
-                Container(
-                  width: 80,
-                  height: 18,
-                  margin: EdgeInsets.symmetric(horizontal: 5),
-                  child: RaisedButton(
-                    elevation: 0.5,
-                    shape: StadiumBorder(),
-                    color: orange,
-                    textColor: Colors.white,
-                    onPressed: () {},
-                    child: Text(
-                      "Delivery",
-                      style: TextStyle(
-                        fontSize: 11,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: amarillo,
+                    size: 16,
+                  ),
+                  Text(
+                    "4.8",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    " (272 ratings)",
+                    style: TextStyle(
+                        color: gris, fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
+                  Container(
+                    width: 80,
+                    height: 18,
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      shape: StadiumBorder(),
+                      color: orange,
+                      textColor: Colors.white,
+                      onPressed: () {},
+                      child: Text(
+                        "Delivery",
+                        style: TextStyle(
+                          fontSize: 11,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            )
-          ],
-        ),
-      ],
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }
