@@ -22,7 +22,7 @@ class ProfileTab extends StatelessWidget {
 Widget _header() {
   return Container(
     height: 250,
-    color: bgGrey,
+    color: bgGreyPage,
     padding: EdgeInsets.all(50),
     child: Row(
       children: [

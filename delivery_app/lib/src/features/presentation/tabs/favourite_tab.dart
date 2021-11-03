@@ -9,7 +9,7 @@ class FavouriteTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgGrey,
+      backgroundColor: bgGreyPage,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(

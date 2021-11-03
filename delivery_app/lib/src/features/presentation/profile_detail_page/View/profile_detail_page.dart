@@ -36,7 +36,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage>
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: bgGrey,
+      backgroundColor: bgGreyPage,
       appBar: AppBar(
         title: headerText(text: 'Edit Profile', fontSize: 17),
         backgroundColor: Colors.white,
