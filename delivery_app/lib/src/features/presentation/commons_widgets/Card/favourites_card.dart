@@ -1,4 +1,5 @@
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/utils/styles/box_decoration.dart';
 import 'package:flutter/material.dart';
 //colors
 import 'package:delivery_app/src/colors/colors.dart';
@@ -33,8 +34,8 @@ Widget favouritesCard(
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child:
-                  Image(width: 80, height: 80, fit: BoxFit.cover, image: image)),
+              child: Image(
+                  width: 80, height: 80, fit: BoxFit.cover, image: image)),
           Container(
             padding: EdgeInsets.only(left: 15.0),
             child: Column(
