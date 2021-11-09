@@ -33,11 +33,11 @@ class SignUpPage extends StatelessWidget {
               _phoneInput(context),
               _dateOfBirthInput(context),
               _passwordInput(context),
-              roundedButton(
+              createButton(
                 context: context,
                 icon: AssetImage('assets/ic_change_password.png'),
-                lableButton: 'Sign up',
-                color: orange,
+                labelButton: 'Sign up',
+                buttonColor: orange,
                 func: () {},
               ),
               Container(
@@ -137,17 +137,13 @@ Widget _passwordInput(BuildContext context) {
 
 Widget _buttonSignUp(BuildContext context) {
   return Container(
-    width: double.infinity,
-    height: 50.0,
-    margin: EdgeInsets.only(top: 40.0),
-    child: RaisedButton(
-      child: Text(
-        'Sign up',
-        style: TextStyle(color: Colors.white, fontSize: 17.0),
-      ),
-      onPressed: () {},
-      color: orange,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-    ),
-  );
+      width: double.infinity,
+      height: 50.0,
+      margin: EdgeInsets.only(top: 40.0),
+      child: createButton(
+          func: () {},
+          labelButton: "Sign up",
+          labelFontSize: 17.0,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0))));
 }

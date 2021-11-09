@@ -1,4 +1,5 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -179,23 +180,16 @@ Widget _tarjecta(BuildContext context) {
                         color: gris, fontSize: 13, fontWeight: FontWeight.w600),
                   ),
                   Container(
-                    width: 80,
-                    height: 18,
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    child: RaisedButton(
-                      elevation: 0.5,
-                      shape: StadiumBorder(),
-                      color: orange,
-                      textColor: Colors.white,
-                      onPressed: () {},
-                      child: Text(
-                        "Delivery",
-                        style: TextStyle(
-                          fontSize: 11,
-                        ),
-                      ),
-                    ),
-                  ),
+                      width: 80,
+                      height: 18,
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      child: createButton(
+                        func: () {},
+                        buttonColor: orange,
+                        labelButtonColor: Colors.white,
+                        labelButton: "Delivery",
+                        labelFontSize: 11,
+                      )),
                 ],
               )
             ],
@@ -293,21 +287,14 @@ Widget _populares(BuildContext context, String image) {
                                 fontSize: 13)),
                       ),
                       Container(
-                        width: 110,
-                        height: 18,
-                        margin: EdgeInsets.only(left: 35),
-                        child: RaisedButton(
-                          onPressed: () {},
-                          elevation: 0.5,
-                          shape: StadiumBorder(),
-                          color: orange,
-                          child: Text(
-                            "Delivery",
-                            style:
-                                TextStyle(fontSize: 11.0, color: Colors.white),
-                          ),
-                        ),
-                      ),
+                          width: 110,
+                          height: 18,
+                          margin: EdgeInsets.only(left: 35),
+                          child: createButton(
+                              func: () {},
+                              labelButton: "Delivery",
+                              labelFontSize: 11.0,
+                              labelButtonColor: Colors.white)),
                     ],
                   )
                 ],

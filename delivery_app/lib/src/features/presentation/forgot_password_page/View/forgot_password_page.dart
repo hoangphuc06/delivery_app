@@ -37,12 +37,13 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
               ),
               _emailInput(),
-              roundedButton(
+              createButton(
                   context: context,
                   func: () => _showAlerta(context),
+                  shape: StadiumBorder(),
                   icon: AssetImage('assets/ic_change_password.png'),
-                  lableButton: 'Send',
-                  color: orange),
+                  labelButton: 'Send',
+                  buttonColor: orange),
             ],
           ),
         ),
@@ -75,13 +76,13 @@ void _showAlerta(BuildContext context) {
     'assets/ic_change_password.png',
     "Your password has been reset",
     "You'll shortly receive an email with a code to set up a new password.",
-    roundedButton(
+    createButton(
         context: context,
         func: () {
           Navigator.pushNamed(context, 'login');
         },
         icon: AssetImage('assets/ic_change_password.png'),
-        lableButton: 'Done',
-        color: orange),
+        labelButton: 'Done',
+        buttonColor: orange),
   );
 }
