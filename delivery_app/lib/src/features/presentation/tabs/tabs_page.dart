@@ -7,7 +7,6 @@ import 'package:delivery_app/src/features/presentation/tabs/my_order_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
 
-
 class TabsPage extends StatefulWidget {
   const TabsPage({Key? key}) : super(key: key);
 
@@ -16,11 +15,10 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPageState extends State<TabsPage> {
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    Future.delayed(Duration.zero,(){
+    Future.delayed(Duration.zero, () {
       _pedirLocation(context);
     });
   }
@@ -56,45 +54,27 @@ class _TabsPageState extends State<TabsPage> {
         currentIndex: _selectedItemIndex,
         onTap: _cambiarWidget,
         showUnselectedLabels: true,
-        items: <BottomNavigationBarItem> [
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.explore),
-              label:"Explore"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              label:"My Order"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label:"Favourite"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label:"Profile"
-          )
-        ]
-    );
+              icon: Icon(Icons.assignment), label: "My Order"),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Favourite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
+        ]);
   }
-  Future _pedirLocation(BuildContext context) async{
+
+  Future _pedirLocation(BuildContext context) async {
     await showAlertDialog(
-      context,
-      'assets/ic_welcome.png', 
-      "Enable Your Location",
-      "Please allow to use your location to show nearby restaurant on the map.",
-      //_doneButton(context,'Enable Location')
-      roundedButton(
-       context: context,
-       icon: AssetImage('assets/ic_welcome.png'), 
-       lableButton: 'Enable Location',
-       color: orange,
-        func: (){
-
-        }
-    ));
+        context,
+        'assets/ic_welcome.png',
+        "Enable Your Location",
+        "Please allow to use your location to show nearby restaurant on the map.",
+        //_doneButton(context,'Enable Location')
+        createButton(
+            context: context,
+            icon: AssetImage('assets/ic_welcome.png'),
+            labelButton: 'Enable Location',
+            buttonColor: orange,
+            func: () {}));
   }
-
- 
-
 }
-

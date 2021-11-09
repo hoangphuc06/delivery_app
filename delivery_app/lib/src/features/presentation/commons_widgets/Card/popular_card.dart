@@ -1,4 +1,5 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
@@ -68,16 +69,10 @@ Widget popularesCard(
                         height: 18,
                         margin: EdgeInsets.only(left: 35),
                         child: hasActButton!
-                            ? RaisedButton(
-                                onPressed: () {},
-                                elevation: 0.5,
-                                shape: StadiumBorder(),
-                                color: orange,
-                                child: Text(
-                                  "Delivery",
-                                  style: TextStyle(
-                                      fontSize: 11.0, color: Colors.white),
-                                ),
+                            ? createButton(
+                                func: () {},
+                                labelButton: "Delivery",
+                                labelFontSize: 11.0,
                               )
                             : Text(""),
                       ),

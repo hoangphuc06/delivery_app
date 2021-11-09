@@ -55,14 +55,14 @@ class LoginPage extends StatelessWidget {
                           ),
                           _emailInput(),
                           _passwordlInput(),
-                          roundedButton(
+                          createButton(
                               context: context,
                               func: () {
                                 Navigator.pushNamed(context, 'tabs');
                               },
                               icon: AssetImage('assets/ic_change_password.png'),
-                              lableButton: 'Log in',
-                              color: orange),
+                              labelButton: 'Log in',
+                              buttonColor: orange),
                           Container(
                             margin: EdgeInsets.only(top: 30.0),
                             child: GestureDetector(

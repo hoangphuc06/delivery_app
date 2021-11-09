@@ -3,9 +3,7 @@ import 'dart:ui';
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
-import 'package:delivery_app/src/features/presentation/login_page/View/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -45,20 +43,20 @@ class WelcomePage extends StatelessWidget {
                     fontSize: 17.0),
               ),
             ),
-            roundedButton(
+            createButton(
                 context: context,
                 func: () {
                   Navigator.pushNamed(context, 'login');
                 },
-                lableButton: 'Log in',
-                color: orange,
+                labelButton: 'Log in',
+                buttonColor: orange,
                 icon: AssetImage('assets/ic_fb.png')),
-            roundedButton(
+            createButton(
                 context: context,
                 func: () => print('goToFacebook'),
                 isWithIcon: true,
-                lableButton: 'Connect with facebook',
-                color: fbButtonColor,
+                labelButton: 'Connect with facebook',
+                buttonColor: fbButtonColor,
                 icon: AssetImage('assets/ic_fb.png')),
           ],
         )

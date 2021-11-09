@@ -1,3 +1,4 @@
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 //colors
@@ -33,8 +34,8 @@ Widget favouritesCard(
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child:
-                  Image(width: 80, height: 80, fit: BoxFit.cover, image: image)),
+              child: Image(
+                  width: 80, height: 80, fit: BoxFit.cover, image: image)),
           Container(
             padding: EdgeInsets.only(left: 15.0),
             child: Column(
@@ -88,22 +89,27 @@ Widget favouritesCard(
                         fontWeight: FontWeight.w500,
                         fontSize: 13),
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 15.0),
-                      width: 90,
-                      height: 25.0,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        elevation: 0.5,
-                        shape: StadiumBorder(),
-                        color: orange,
-                        textColor: Colors.white,
-                        child: headerText(
-                            text: buttonText,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13.0),
-                      ),
-                    )
+                        margin: EdgeInsets.symmetric(horizontal: 15.0),
+                        width: 90,
+                        height: 25.0,
+                        child: createButton(
+                            buttonColor: orange,
+                            labelButton: buttonText,
+                            labelFontSize: 11.0,
+                            func: () {})
+                        // RaisedButton(
+                        //   onPressed: () {},
+                        //   elevation: 0.5,
+                        //   shape: StadiumBorder(),
+                        //   color: orange,
+                        //   textColor: Colors.white,
+                        //   child: headerText(
+                        //       text: buttonText,
+                        //       color: Colors.white,
+                        //       fontWeight: FontWeight.bold,
+                        //       fontSize: 13.0),
+                        // ),
+                        )
                   ],
                 )
               ],
