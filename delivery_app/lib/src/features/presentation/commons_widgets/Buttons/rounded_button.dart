@@ -24,9 +24,9 @@ Widget createButton({
     margin: EdgeInsets.only(top: 20.0),
     child: isWithIcon
         ? _raiseButtonWithIcon(radius, icon!, labelButton!, buttonColor,
-            labelFontSize, labelButtonColor!, func, shape!)
+            labelFontSize, labelButtonColor, func, shape!)
         : _raiseButtonNotIcon(radius, labelButton!, buttonColor, labelFontSize,
-            labelButtonColor!, func, shape!),
+            labelButtonColor, func, shape!),
   );
 }
 
