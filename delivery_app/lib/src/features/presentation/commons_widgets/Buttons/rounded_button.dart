@@ -1,3 +1,4 @@
+import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
@@ -12,20 +13,20 @@ Widget createButton({
   ImageProvider<Object>? icon,
   String? labelButton,
   Color labelButtonColor = Colors.white,
-  Color? buttonColor,
+  Color buttonColor = Colors.orange,
   double labelFontSize = 15.0,
   OutlinedBorder? shape = shape,
-  required Function func,
+  Function? func,
 }) {
   return Container(
     width: width,
     height: height,
     margin: EdgeInsets.only(top: 20.0),
     child: isWithIcon
-        ? _raiseButtonWithIcon(radius, icon!, labelButton!, labelButtonColor,
-            labelFontSize, buttonColor!, func, shape!)
-        : _raiseButtonNotIcon(radius, labelButton!, labelButtonColor,
-            labelFontSize, buttonColor!, func, shape!),
+        ? _raiseButtonWithIcon(radius, icon!, labelButton!, buttonColor,
+            labelFontSize, labelButtonColor!, func, shape!)
+        : _raiseButtonNotIcon(radius, labelButton!, buttonColor, labelFontSize,
+            labelButtonColor!, func, shape!),
   );
 }
 
