@@ -49,10 +49,10 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                   ),
                   Wrap(
                     children: [
-                      _promoButton(),
+                      //_promoButton(),
                       _infoPlace(),
                       _infoPlaceState(),
-                      _offerBanner(),
+                      //_offerBanner(),
                     ],
                   ),
                 ],
@@ -117,16 +117,16 @@ Widget _promoButton() {
     margin: EdgeInsets.only(top: 121, left: 30, right: 15),
     width: double.infinity,
     height: 25,
-    child: Row(
-      children: [
-        createButton(
-          func: () {},
-          labelButton: 'Free Delivery',
-          labelFontSize: 12.0,
-          buttonColor: orange,
-        )
-      ],
-    ),
+    // child: Row(
+    //   children: [
+    //     createButton(
+    //       func: () {},
+    //       labelButton: 'Free Delivery',
+    //       labelFontSize: 12.0,
+    //       buttonColor: orange,
+    //     )
+    //   ],
+    // ),
   );
 }
 

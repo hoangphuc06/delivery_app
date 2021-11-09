@@ -50,11 +50,12 @@ Widget _header() {
             Container(
               height: 25,
               margin: EdgeInsets.only(left: 20, top: 10),
-              child: RaisedButton(
+              child: ElevatedButton(
                   onPressed: () {},
-                  color: rosa,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
+                  style: ElevatedButton.styleFrom(
+                      primary: rosa,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5))),
                   child: Row(
                     children: [
                       Image(

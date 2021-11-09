@@ -89,28 +89,16 @@ Widget favouritesCard(
                         color: gris,
                         fontWeight: FontWeight.w500,
                         fontSize: 13),
-                    Container(
-                        margin: EdgeInsets.symmetric(horizontal: 15.0),
-                        width: 90,
-                        height: 25.0,
-                        child: createButton(
-                            buttonColor: orange,
-                            labelButton: buttonText,
-                            labelFontSize: 11.0,
-                            func: () {})
-                        // RaisedButton(
-                        //   onPressed: () {},
-                        //   elevation: 0.5,
-                        //   shape: StadiumBorder(),
-                        //   color: orange,
-                        //   textColor: Colors.white,
-                        //   child: headerText(
-                        //       text: buttonText,
-                        //       color: Colors.white,
-                        //       fontWeight: FontWeight.bold,
-                        //       fontSize: 13.0),
-                        // ),
-                        )
+
+                    // Container(
+                    //     margin: EdgeInsets.symmetric(horizontal: 15.0),
+                    //     width: 90,
+                    //     height: 25.0,
+                    //     child: createButton(
+                    //         buttonColor: orange,
+                    //         labelButton: buttonText,
+                    //         labelFontSize: 11.0,
+                    //         func: () {}))
                   ],
                 )
               ],

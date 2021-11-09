@@ -28,7 +28,7 @@ Future showAlertDialog(BuildContext context, String imagePath,
                       text: headerTitle, color: primaryColor, fontSize: 20.0),
                 ),
                 Container(
-                  margin: EdgeInsets.all(15.0),
+                  margin: EdgeInsets.only(top: 15.0),
                   child: Text(
                     headerSubTitle,
                     style: TextStyle(

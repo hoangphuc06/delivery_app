@@ -21,9 +21,11 @@ class _CuisinesFiltersState extends State<CuisinesFilters> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        Wrap(
+          direction: Axis.horizontal,
+          alignment: WrapAlignment.start,
           children: [
             _roundedButtonFilter(() {
               setState(() {
@@ -45,16 +47,11 @@ class _CuisinesFiltersState extends State<CuisinesFilters> {
                 btnSushi = !btnSushi;
               });
             }, btnSushi, 'Sushi'),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
             _roundedButtonFilter(() {
               setState(() {
                 btnVietNamese = !btnVietNamese;
               });
-            }, btnVietNamese, 'VietNamese'),
+            }, btnVietNamese, 'VietNam'),
             _roundedButtonFilter(() {
               setState(() {
                 btnFastFood = !btnFastFood;
@@ -66,19 +63,25 @@ class _CuisinesFiltersState extends State<CuisinesFilters> {
               });
             }, btnDesserts, 'Desserts'),
           ],
-        )
+        ),
       ],
     );
   }
 }
 
 Widget _roundedButtonFilter(func, bool isActive, String labelText) {
-  return createButton(
-    func: func,
-    labelButton: labelText,
-    labelButtonColor: isActive ? orange : gris,
-    shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-        side: BorderSide(color: isActive ? orange : gris)),
+  return Container(
+    width: 120,
+    height: 50,
+    margin: EdgeInsets.only(left: 5),
+    child: createButton(
+        labelButton: labelText,
+        labelButtonColor: isActive ? orange : gris,
+        func: func,
+        buttonColor: white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          side: BorderSide(color: isActive ? orange : gris),
+        )),
   );
 }
