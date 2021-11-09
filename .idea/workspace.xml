@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="46b4fa0f-4df2-45ca-a95f-4a4b6c4e173b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Card/favourites_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Card/favourites_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Headers/header_text.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/profile_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/profile_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +57,15 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Buttons" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Headers" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\BackButtons" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Alerts" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets" />
     </key>
   </component>
   <component name="RunManager">

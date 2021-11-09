@@ -5,7 +5,8 @@ Widget headerText(
     Color color = Colors.black,
     FontWeight fontWeight = FontWeight.bold,
     double fontSize = 20,
-    textAlign = TextAlign.justify}) {
+    textAlign = TextAlign.justify
+    }) {
   return Text(
     text,
     textAlign: textAlign,
