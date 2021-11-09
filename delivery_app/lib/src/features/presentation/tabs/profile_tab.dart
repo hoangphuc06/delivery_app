@@ -58,7 +58,7 @@ Widget _header() {
                   child: Row(
                     children: [
                       Image(
-                        image: AssetImage("crown.png"),
+                        image: AssetImage("assets/crown.png"),
                         width: 16,
                         height: 16,
                       ),
@@ -86,7 +86,7 @@ Widget _firstBlock() {
       children: [
         ListTile(
           leading: Image(
-            image: AssetImage('noti.png'),
+            image: AssetImage('assets/noti.png'),
             width: 29,
             height: 29,
           ),
@@ -95,7 +95,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('payment.png'),
+            image: AssetImage('assets/payment.png'),
             width: 29,
             height: 29,
           ),
@@ -105,7 +105,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('crown1.png'),
+            image: AssetImage('assets/crown1.png'),
             width: 29,
             height: 29,
           ),
@@ -115,7 +115,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('promo.png'),
+            image: AssetImage('assets/promo.png'),
             width: 29,
             height: 29,
           ),
@@ -125,7 +125,7 @@ Widget _firstBlock() {
         SizedBox(height: 20),
         ListTile(
           leading: Image(
-            image: AssetImage('setting.png'),
+            image: AssetImage('assets/setting.png'),
             width: 29,
             height: 29,
           ),
@@ -134,7 +134,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('friend.png'),
+            image: AssetImage('assets/friend.png'),
             width: 29,
             height: 29,
           ),
@@ -144,7 +144,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('support.png'),
+            image: AssetImage('assets/support.png'),
             width: 29,
             height: 29,
           ),
@@ -153,7 +153,7 @@ Widget _firstBlock() {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('aboutus.png'),
+            image: AssetImage('assets/aboutus.png'),
             width: 29,
             height: 29,
           ),
