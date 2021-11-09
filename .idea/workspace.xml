@@ -64,15 +64,15 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Buttons" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Headers" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\BackButtons" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation\commons_widgets\Alerts" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\presentation" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets" />
     </key>
   </component>
   <component name="RunManager">

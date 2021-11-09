@@ -29,6 +29,7 @@ class WelcomePage extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 50.0),
               child: headerText(
+                textAlign: TextAlign.start,
                   text: 'DELIVERED FAST FOOD TO YOUR DOOR',
                   color: Colors.white,
                   fontSize: 45.0),
