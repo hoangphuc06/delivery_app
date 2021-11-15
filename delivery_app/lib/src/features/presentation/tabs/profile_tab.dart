@@ -13,7 +13,7 @@ class ProfileTab extends StatelessWidget {
         GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'profile-detail'),
             child: _header()),
-        _firstBlock()
+        _firstBlock(context)
       ],
     ));
   }
@@ -80,12 +80,13 @@ Widget _header() {
   );
 }
 
-Widget _firstBlock() {
+Widget _firstBlock(BuildContext context) {
   return Container(
     padding: EdgeInsets.all(10),
     child: Column(
       children: [
         ListTile(
+          onTap: (){Navigator.pushNamed(context, 'notification');},
           leading: Image(
             image: AssetImage('assets/noti.png'),
             width: 29,
@@ -95,6 +96,7 @@ Widget _firstBlock() {
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         ListTile(
+          onTap: (){Navigator.pushNamed(context, 'payment-method');},
           leading: Image(
             image: AssetImage('assets/payment.png'),
             width: 29,
