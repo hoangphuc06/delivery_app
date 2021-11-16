@@ -13,7 +13,7 @@ class ProfileTab extends StatelessWidget {
         GestureDetector(
             onTap: () => Navigator.pushNamed(context, 'profile-detail'),
             child: _header()),
-        _firstBlock()
+        _firstBlock(context)
       ],
     ));
   }
@@ -80,7 +80,7 @@ Widget _header() {
   );
 }
 
-Widget _firstBlock() {
+Widget _firstBlock(BuildContext context) {
   return Container(
     padding: EdgeInsets.all(10),
     child: Column(
@@ -110,6 +110,7 @@ Widget _firstBlock() {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'order-history'),
           title:
               headerText(text: 'Reward credits', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
@@ -120,6 +121,7 @@ Widget _firstBlock() {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'promo-code'),
           title: headerText(text: 'Promo code', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),

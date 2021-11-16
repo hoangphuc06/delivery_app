@@ -9,7 +9,7 @@ Widget popularesCard(
     children: [
       Container(
         margin: EdgeInsets.only(left: 10),
-        padding: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(vertical: 8),
         child: Row(
           children: [
             ClipRRect(
@@ -22,7 +22,7 @@ Widget popularesCard(
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,16 +46,16 @@ Widget popularesCard(
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.star,
-                        color: amarillo,
-                        size: 16.0,
-                      ),
                       Text("4.5",
                           style: TextStyle(
                               color: gris,
                               fontWeight: FontWeight.w500,
                               fontSize: 13)),
+                      Icon(
+                        Icons.star,
+                        color: amarillo,
+                        size: 16.0,
+                      ),
                       Container(
                         margin: EdgeInsets.only(left: 5),
                         child: Text("(300 ratings)",
@@ -65,9 +65,9 @@ Widget popularesCard(
                                 fontSize: 13)),
                       ),
                       Container(
-                        width: 110,
+                        width: 100,
                         height: 18,
-                        margin: EdgeInsets.only(left: 35),
+                        margin: EdgeInsets.only(left: 20),
                         child: hasActButton!
                             ? createButton(
                                 func: () {},
