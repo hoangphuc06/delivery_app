@@ -128,24 +128,34 @@ Widget _firstBlock(BuildContext context) {
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         SizedBox(height: 20),
-        ListTile(
-          leading: Image(
-            image: AssetImage('assets/setting.png'),
-            width: 29,
-            height: 29,
+        GestureDetector(
+          child: ListTile(
+            leading: Image(
+              image: AssetImage('assets/setting.png'),
+              width: 29,
+              height: 29,
+            ),
+            title: headerText(text: 'Settings', fontWeight: FontWeight.w400),
+            trailing: Icon(Icons.chevron_right_outlined, color: gris),
+            onTap: () {
+              Navigator.pushNamed(context, 'settings');
+            },
           ),
-          title: headerText(text: 'Settings', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
-        ListTile(
-          leading: Image(
-            image: AssetImage('assets/friend.png'),
-            width: 29,
-            height: 29,
+        GestureDetector(
+          child: ListTile(
+            leading: Image(
+              image: AssetImage('assets/friend.png'),
+              width: 29,
+              height: 29,
+            ),
+            title:
+                headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
+            trailing: Icon(Icons.chevron_right_outlined, color: gris),
+            onTap: () {
+              Navigator.pushNamed(context, 'invite-friends');
+            },
           ),
-          title:
-              headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         ListTile(
           leading: Image(
