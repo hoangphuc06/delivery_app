@@ -112,6 +112,7 @@ Widget _firstBlock(BuildContext context) {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'order-history'),
           title:
               headerText(text: 'Reward credits', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
@@ -122,6 +123,7 @@ Widget _firstBlock(BuildContext context) {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'promo-code'),
           title: headerText(text: 'Promo code', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),

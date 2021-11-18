@@ -108,6 +108,7 @@ Widget _sliderRecentSearch() {
 Widget _cart(BuildContext content) {
   return Container(
       margin: EdgeInsets.all(5),
+      padding: EdgeInsets.only(right: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -125,8 +126,8 @@ Widget _cart(BuildContext content) {
                 margin: EdgeInsets.only(top: 5),
                 child: headerText(
                     text: "Andy & Cindy's Dinner",
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500)),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400)),
             Container(
                 margin: EdgeInsets.only(top: 5),
                 child: headerText(

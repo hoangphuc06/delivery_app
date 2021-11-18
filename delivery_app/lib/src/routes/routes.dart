@@ -4,7 +4,9 @@ import 'package:delivery_app/src/features/presentation/login_page/View/login_pag
 import 'package:delivery_app/src/features/presentation/notification_page/View/notification_page.dart';
 import 'package:delivery_app/src/features/presentation/payment_method_page/View/payment_method_page.dart';
 import 'package:delivery_app/src/features/presentation/place_detail_page/View/place_detail_page.dart';
+import 'package:delivery_app/src/features/presentation/profile_detail_page/View/order_history.dart';
 import 'package:delivery_app/src/features/presentation/profile_detail_page/View/profile_detail_page.dart';
+import 'package:delivery_app/src/features/presentation/profile_detail_page/View/promo_code.dart';
 import 'package:delivery_app/src/features/presentation/search_page/View/searchView.dart';
 import 'package:delivery_app/src/features/presentation/signup_page/View/signup_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/tabs_page.dart';
@@ -28,4 +30,6 @@ final routes = <String, WidgetBuilder>{
   "profile-detail": (BuildContext context) => ProfileDetailPage(),
   "payment-method": (BuildContext context) => PaymentMethodPage(),
   "notification": (BuildContext context) => NotificationPage(),
+  "order-history": (BuildContext context) => OrderHistoryPage(),
+  "promo-code": (BuildContext context) => PromoCodePage(),
 };
