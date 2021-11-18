@@ -86,6 +86,7 @@ Widget _firstBlock(BuildContext context) {
     child: Column(
       children: [
         ListTile(
+          onTap: (){Navigator.pushNamed(context, 'notification');},
           leading: Image(
             image: AssetImage('assets/noti.png'),
             width: 29,
@@ -95,6 +96,7 @@ Widget _firstBlock(BuildContext context) {
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         ListTile(
+          onTap: (){Navigator.pushNamed(context, 'payment-method');},
           leading: Image(
             image: AssetImage('assets/payment.png'),
             width: 29,
@@ -110,6 +112,7 @@ Widget _firstBlock(BuildContext context) {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'order-history'),
           title:
               headerText(text: 'Reward credits', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
@@ -120,6 +123,7 @@ Widget _firstBlock(BuildContext context) {
             width: 29,
             height: 29,
           ),
+          onTap: () => Navigator.pushNamed(context, 'promo-code'),
           title: headerText(text: 'Promo code', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
