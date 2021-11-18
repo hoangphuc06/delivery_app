@@ -1,5 +1,6 @@
 import 'package:delivery_app/src/features/presentation/filter_page/View/filter_page.dart';
 import 'package:delivery_app/src/features/presentation/forgot_password_page/View/forgot_password_page.dart';
+import 'package:delivery_app/src/features/presentation/invite_friends_page/View/invite_friends_page.dart';
 import 'package:delivery_app/src/features/presentation/login_page/View/login_page.dart';
 import 'package:delivery_app/src/features/presentation/place_detail_page/View/place_detail_page.dart';
 import 'package:delivery_app/src/features/presentation/profile_detail_page/View/profile_detail_page.dart';
@@ -26,4 +27,5 @@ final routes = <String, WidgetBuilder>{
   "place-detail": (BuildContext context) => PlaceDetailPage(),
   "profile-detail": (BuildContext context) => ProfileDetailPage(),
   "settings": (BuildContext context) => SettingsPage(),
+  "invite-friends": (BuildContext context) => InviteFriendsPage(),
 };

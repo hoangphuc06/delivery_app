@@ -138,15 +138,20 @@ Widget _firstBlock(BuildContext context) {
             },
           ),
         ),
-        ListTile(
-          leading: Image(
-            image: AssetImage('assets/friend.png'),
-            width: 29,
-            height: 29,
+        GestureDetector(
+          child: ListTile(
+            leading: Image(
+              image: AssetImage('assets/friend.png'),
+              width: 29,
+              height: 29,
+            ),
+            title:
+                headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
+            trailing: Icon(Icons.chevron_right_outlined, color: gris),
+            onTap: () {
+              Navigator.pushNamed(context, 'invite-friends');
+            },
           ),
-          title:
-              headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         ListTile(
           leading: Image(
