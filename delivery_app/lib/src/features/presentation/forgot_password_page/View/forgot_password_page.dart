@@ -12,11 +12,6 @@ class ForgotPasswordPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return backButton(context, Colors.black);
-          },
-        ),
       ),
       body: Center(
         child: Container(
@@ -28,7 +23,7 @@ class ForgotPasswordPage extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(10.0),
                 child: Text(
-                  'Please enter your email address. You will receive the link to create the new password via email.',
+                  'Please enter your phone number. You will receive the OTP to create the new password via phone number.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.black,
@@ -36,7 +31,7 @@ class ForgotPasswordPage extends StatelessWidget {
                       fontSize: 15.0),
                 ),
               ),
-              _emailInput(),
+              _phoneInput(),
               createButton(
                   context: context,
                   func: () => _showAlerta(context),
@@ -52,7 +47,7 @@ class ForgotPasswordPage extends StatelessWidget {
   }
 }
 
-Widget _emailInput() {
+Widget _phoneInput() {
   return Container(
     margin: EdgeInsets.only(top: 40.0),
     padding: EdgeInsets.only(left: 20.0),
@@ -62,7 +57,7 @@ Widget _emailInput() {
     child: TextField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          hintText: 'Your email',
+          hintText: 'Your phone',
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
           )),

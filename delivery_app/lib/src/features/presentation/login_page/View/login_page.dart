@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
@@ -11,110 +13,87 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Image(
-                    image: AssetImage('assets/ic_login.jpg'),
-                    width: double.infinity,
-                    height: 350.0,
-                    fit: BoxFit.cover,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+      ),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.all(30.0),
+            child: Column(
+              children: [
+                headerText(
+                    text: 'Welcome back', color: primaryColor, fontSize: 30.0),
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  child: Text(
+                    'Login to your account for continue.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15.0),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 50.0),
-                    child: backButton(context, Colors.white),
-                  )
-                ],
-              ),
-              Transform.translate(
-                offset: Offset(0.0, -20.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 500,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.0)),
-                  child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Center(
-                      child: Column(
-                        children: [
-                          headerText(
-                              text: "Welcome Back",
-                              color: primaryColor,
-                              fontSize: 30.0),
-                          Text(
-                            "Login to your account",
-                            style: TextStyle(
-                                color: gris,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 17.0),
-                          ),
-                          _emailInput(),
-                          _passwordlInput(),
-                          createButton(
-                              context: context,
-                              func: () {
-                                Navigator.pushNamed(context, 'tabs');
-                              },
-                              icon: AssetImage('assets/ic_change_password.png'),
-                              labelButton: 'Log in',
-                              buttonColor: orange),
-                          Container(
-                            margin: EdgeInsets.only(top: 30.0),
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.pushNamed(context, "forgot_password");
-                              },
-                              child: Text(
-                                'Forgot your password?',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 15.0),
-                              ),
-                            ),
-                          ),
-                          Container(
-                              margin: EdgeInsets.only(top: 30.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Don't have an account? ",
-                                    style: TextStyle(
-                                        color: gris,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 15.0),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushNamed(context, "sign_up");
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.symmetric(
-                                          horizontal: 10.0),
-                                      child: Text(
-                                        'Sign up',
-                                        style: TextStyle(
-                                            color: orange,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 15.0),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ))
-                        ],
-                      ),
+                ),
+                _phoneInput(),
+                _passwordlInput(),
+                createButton(
+                  context: context,
+                  func: () {
+                    Navigator.pushNamed(context, 'tabs');
+                  },
+                  icon: AssetImage('assets/ic_change_password.png'),
+                  labelButton: 'Log in',
+                  buttonColor: orange
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 30.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "forgot_password");
+                    },
+                    child: Text(
+                      'Forgot your password?',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 15.0),
                     ),
                   ),
                 ),
-              )
-            ],
+                Container(
+                    margin: EdgeInsets.only(top: 30.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account? ",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15.0),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "sign_up");
+                          },
+                          child: Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 5.0),
+                            child: Text(
+                              'Sign up',
+                              style: TextStyle(
+                                  color: orange,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 15.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ))
+              ],
+            ),
           ),
         ),
       ),
@@ -122,7 +101,7 @@ class LoginPage extends StatelessWidget {
   }
 }
 
-Widget _emailInput() {
+Widget _phoneInput() {
   return Container(
     margin: EdgeInsets.only(top: 40.0),
     padding: EdgeInsets.only(left: 20.0),
@@ -132,7 +111,7 @@ Widget _emailInput() {
     child: TextField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          hintText: 'Email',
+          hintText: 'Phone',
           border: OutlineInputBorder(
             borderSide: BorderSide.none,
           )),

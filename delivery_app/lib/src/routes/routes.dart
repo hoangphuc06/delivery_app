@@ -3,6 +3,7 @@ import 'package:delivery_app/src/features/presentation/forgot_password_page/View
 import 'package:delivery_app/src/features/presentation/invite_friends_page/View/invite_friends_page.dart';
 import 'package:delivery_app/src/features/presentation/login_page/View/login_page.dart';
 import 'package:delivery_app/src/features/presentation/notification_page/View/notification_page.dart';
+import 'package:delivery_app/src/features/presentation/otp_page/view/otp_page.dart';
 import 'package:delivery_app/src/features/presentation/payment_method_page/View/payment_method_page.dart';
 import 'package:delivery_app/src/features/presentation/place_detail_page/View/place_detail_page.dart';
 import 'package:delivery_app/src/features/presentation/profile_detail_page/View/order_history.dart';
@@ -36,4 +37,5 @@ final routes = <String, WidgetBuilder>{
   "notification": (BuildContext context) => NotificationPage(),
   "order-history": (BuildContext context) => OrderHistoryPage(),
   "promo-code": (BuildContext context) => PromoCodePage(),
+  "otp": (BuildContext context) => OTPPage(),
 };

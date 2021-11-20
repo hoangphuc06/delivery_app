@@ -13,32 +13,26 @@ class SignUpPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return backButton(context, Colors.black);
-          },
-        ),
       ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              headerText(
-                  text: 'Create an account',
-                  color: primaryColor,
-                  fontSize: 30.0),
+              headerText(text: 'Create an account', color: primaryColor, fontSize: 30.0),
               _usernameInput(context),
-              _emailInput(context),
               _phoneInput(context),
               _dateOfBirthInput(context),
               _passwordInput(context),
+              _confirmPasswordInput(context),
               createButton(
                 context: context,
                 icon: AssetImage('assets/ic_change_password.png'),
                 labelButton: 'Sign up',
                 buttonColor: orange,
-                func: () {},
+                func: () {
+                  Navigator.pushReplacementNamed(context, 'otp');
+                },
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
@@ -69,21 +63,6 @@ Widget _usernameInput(BuildContext context) {
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
           hintText: "Username",
-          border: OutlineInputBorder(borderSide: BorderSide.none)),
-    ),
-  );
-}
-
-Widget _emailInput(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.only(top: 10.0),
-    padding: EdgeInsets.only(left: 20.0),
-    decoration: BoxDecoration(
-        color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
-    child: TextField(
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-          hintText: "Email",
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -135,15 +114,19 @@ Widget _passwordInput(BuildContext context) {
   );
 }
 
-Widget _buttonSignUp(BuildContext context) {
+Widget _confirmPasswordInput(BuildContext context) {
   return Container(
-      width: double.infinity,
-      height: 50.0,
-      margin: EdgeInsets.only(top: 40.0),
-      child: createButton(
-          func: () {},
-          labelButton: "Sign up",
-          labelFontSize: 17.0,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0))));
+    margin: EdgeInsets.only(top: 10.0),
+    padding: EdgeInsets.only(left: 20.0),
+    decoration: BoxDecoration(
+        color: bgInputs, borderRadius: BorderRadius.circular(40.0)),
+    child: TextField(
+      keyboardType: TextInputType.visiblePassword,
+      obscureText: true,
+      decoration: InputDecoration(
+          hintText: "Confirm password",
+          border: OutlineInputBorder(borderSide: BorderSide.none)),
+    ),
+  );
 }
+
