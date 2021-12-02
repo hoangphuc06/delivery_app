@@ -30,6 +30,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_swiper: ^1.1.6
   font_awesome_flutter: ^9.2.0
+  google_maps_flutter: ^2.1.1
+  carousel_slider: ^4.0.0
+  flutter_verification_code: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^1.0.4
@@ -55,6 +58,14 @@ flutter:
     - assets/
     - assets/images/
     - assets/bg/
+    - assets/shops/
+    - assets/banner/
+    - assets/logo/
+    - assets/populars/
+    - assets/dessert/
+    - assets/chicken/
+    - assets/rice/
+    - assets/spaghetti/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -12,33 +12,34 @@ import 'package:flutter/widgets.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Container(
-            padding: EdgeInsets.all(30.0),
-            child: Column(
-              children: [
-                headerText(
-                    text: 'Welcome back', color: primaryColor, fontSize: 30.0),
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text(
-                    'Login to your account for continue.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15.0),
-                  ),
+        child: Container(
+          padding: EdgeInsets.all(30.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              headerText(
+                  text: 'Welcome back', color: primaryColor, fontSize: 30.0),
+              Container(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  'Login to your account for continue.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 15.0),
                 ),
-                _phoneInput(),
-                _passwordlInput(),
-                createButton(
+              ),
+              _phoneInput(),
+              _passwordlInput(),
+              createButton(
                   context: context,
                   func: () {
                     Navigator.pushNamed(context, 'tabs');
@@ -46,54 +47,53 @@ class LoginPage extends StatelessWidget {
                   icon: AssetImage('assets/ic_change_password.png'),
                   labelButton: 'Log in',
                   buttonColor: orange
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 30.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "forgot_password");
-                    },
-                    child: Text(
-                      'Forgot your password?',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15.0),
-                    ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 30.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, "forgot_password");
+                  },
+                  child: Text(
+                    'Forgot your password?',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15.0),
                   ),
                 ),
-                Container(
-                    margin: EdgeInsets.only(top: 30.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Don't have an account? ",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 15.0),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, "sign_up");
-                          },
-                          child: Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 5.0),
-                            child: Text(
-                              'Sign up',
-                              style: TextStyle(
-                                  color: orange,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15.0),
-                            ),
+              ),
+              Container(
+                  margin: EdgeInsets.only(top: 30.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an account? ",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15.0),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, "sign_up");
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 5.0),
+                          child: Text(
+                            'Sign up',
+                            style: TextStyle(
+                                color: orange,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15.0),
                           ),
                         ),
-                      ],
-                    ))
-              ],
-            ),
+                      ),
+                    ],
+                  ))
+            ],
           ),
         ),
       ),

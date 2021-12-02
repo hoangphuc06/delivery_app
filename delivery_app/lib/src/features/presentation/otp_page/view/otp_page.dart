@@ -2,6 +2,7 @@ import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_verification_code/flutter_verification_code.dart';
 
 class OTPPage extends StatefulWidget {
   const OTPPage({Key? key}) : super(key: key);
@@ -35,35 +36,20 @@ class _OTPPageState extends State<OTPPage> {
                       fontSize: 15.0),
                 ),
               ),
-              Row(
-                children: [
-                  TweenAnimationBuilder(
-                    tween: Tween(begin: 30, end: 0),
-                    duration: Duration(seconds: 30),
-                    builder: (context, value, child) =>Text(
-                      "00${value.}
-                    );
-                  )
-                ],
-              ),
               SizedBox(height: 50,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _textFieldOTP(first: true, last: false),
-                  _textFieldOTP(first: false, last: false),
-                  _textFieldOTP(first: false, last: false),
-                  _textFieldOTP(first: false, last: true),
-                ],
+              VerificationCode(
+                length: 4,
+                underlineColor: orange,
+                onCompleted: (String value) {  },
+                onEditing: (bool value) {  },
               ),
               SizedBox(height: 50,),
               createButton(
                   context: context,
                   func: () {
-                    Navigator.pushNamed(context, 'tabs');
+                    Navigator.pop(context);
                   },
-                  icon: AssetImage('assets/ic_change_password.png'),
-                  labelButton: 'Log in',
+                  labelButton: 'Verification',
                   buttonColor: orange
               ),
             ],

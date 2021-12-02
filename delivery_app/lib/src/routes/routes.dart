@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/features/presentation/filter_page/View/filter_page.dart';
 import 'package:delivery_app/src/features/presentation/forgot_password_page/View/forgot_password_page.dart';
 import 'package:delivery_app/src/features/presentation/invite_friends_page/View/invite_friends_page.dart';
+import 'package:delivery_app/src/features/presentation/location_page/view/location_page.dart';
 import 'package:delivery_app/src/features/presentation/login_page/View/login_page.dart';
 import 'package:delivery_app/src/features/presentation/notification_page/View/notification_page.dart';
 import 'package:delivery_app/src/features/presentation/otp_page/view/otp_page.dart';
@@ -38,4 +39,5 @@ final routes = <String, WidgetBuilder>{
   "order-history": (BuildContext context) => OrderHistoryPage(),
   "promo-code": (BuildContext context) => PromoCodePage(),
   "otp": (BuildContext context) => OTPPage(),
+  "location": (BuildContext context) => LocationPage(),
 };

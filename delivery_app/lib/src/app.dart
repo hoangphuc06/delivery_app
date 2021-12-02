@@ -15,15 +15,16 @@ class MyApp extends StatelessWidget {
       routes: routes,
       initialRoute: 'welcome',
       theme: ThemeData(
+          primarySwatch: Colors.orange,
           accentColor: Color.fromRGBO(255, 140, 0, 1.0),
           primaryColor: Color.fromRGBO(10, 31, 68, 1.0),
           buttonColor: Color.fromRGBO(0, 122, 255, 1.0),
           disabledColor: Color.fromRGBO(142, 142, 147, 1.2),
           scaffoldBackgroundColor: Colors.white,
           appBarTheme: AppBarTheme(
-              iconTheme: IconThemeData(
-                  color: Colors.black
-              )
+            iconTheme: IconThemeData(
+                color: Colors.black
+            )
           )
       ),
     );

@@ -16,12 +16,12 @@ class WelcomePage extends StatelessWidget {
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage('assets/bg/1.jpg'))),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
-                  child: Container(
-                    color: Colors.black.withOpacity(0.5),
-                  ),
-                ),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 1.0, sigmaY: 1.0),
+              child: Container(
+                color: Colors.black.withOpacity(0.5),
+              ),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -58,10 +58,12 @@ class WelcomePage extends StatelessWidget {
                   isWithIcon: true,
                   labelButton: 'Connect with facebook',
                   buttonColor: fbButtonColor,
-                  icon: AssetImage('assets/ic_fb.png')),
+                  icon: AssetImage('assets/ic_fb.png')
+              ),
             ],
           )
         ],
-    ));
+    )
+    );
   }
 }
