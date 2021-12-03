@@ -8,35 +8,25 @@ class EmptyOrderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgGreyPage,
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0.5,
-        leading: Text(''),
-        backgroundColor: white,
-        title: headerText(
-            text: 'My Order',
-            color: primaryColor,
-            fontSize: 17,
-            fontWeight: FontWeight.w600),
-      ),
+      backgroundColor: white,
+      
       body: Container(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image(
-                width: 216,
-                height: 216,
-                image: AssetImage('assets/ic_change_password.png'),
+                width: 250,
+                height: 250,
+                image: AssetImage('assets/empty_cart.png'),
               ),
               Container(
-                margin: EdgeInsets.only(top: 30.0),
+                // margin: EdgeInsets.only(top: 10.0),
                 child: headerText(
                     text: 'Cart Empty',
-                    color: gris,
+                    color: primary,
                     fontSize: 25,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.w500),
               ),
               Container(
                   margin: EdgeInsets.only(top: 20.0),
@@ -48,10 +38,39 @@ class EmptyOrderView extends StatelessWidget {
                       color: gris,
                       fontSize: 17,
                       fontWeight: FontWeight.w500)),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                  padding: EdgeInsets.symmetric(horizontal: 120.0),
+                  child: _buttonApplyFilter(context)),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Widget _buttonApplyFilter(context) {
+    return Container(
+        width: double.infinity,
+        height: 50,
+        child: RaisedButton(
+          elevation: 0.5,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          color: primary,
+          onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+              Icon(Icons.add,color: white,),
+              headerText(
+                text: "Add Items",
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: white),
+            ]
+          ),
+        ));
   }
 }

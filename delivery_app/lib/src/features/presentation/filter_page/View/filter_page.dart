@@ -135,10 +135,10 @@ class _FilterPageState extends State<FilterPage> {
                 child: PriceFilter()),
             SizedBox(
               height: 20,
-            ),
-            Container(
+            ), Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: _buttonApplyFilter(context)),
+           
             SizedBox(
               height: 20,
             ),

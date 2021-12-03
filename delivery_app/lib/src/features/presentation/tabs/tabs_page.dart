@@ -3,9 +3,11 @@ import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/al
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
+import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/order_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/view/my_order_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TabsPage extends StatefulWidget {
   const TabsPage({Key? key}) : super(key: key);
@@ -25,7 +27,7 @@ class _TabsPageState extends State<TabsPage> {
 
   List<Widget> _widgetOptions = [
     ExploreTab(),
-    MyOrderTab(),
+    OrderTab(),
     FavouriteTab(),
     ProfileTab()
   ];
@@ -48,18 +50,18 @@ class _TabsPageState extends State<TabsPage> {
 
   Widget _bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
-        iconSize: 30.0,
+        iconSize: 25,
         selectedItemColor: orange,
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedItemIndex,
         onTap: _cambiarWidget,
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.explore), label: "Explore"),
+          BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.compass), label: "Explore"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.assignment), label: "My Order"),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: "Favourite"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
+              icon:  FaIcon(FontAwesomeIcons.shoppingCart), label: "My Order"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.bookmark), label: "Favourite"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.user), label: "Profile")
         ]);
   }
 

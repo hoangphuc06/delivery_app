@@ -11,7 +11,7 @@ class MyOrderTab extends StatefulWidget {
 }
 
 class _MyOrderTabState extends State<MyOrderTab> {
-  final emptyOrderState = false;
+  final emptyOrderState = true;
 
   @override
   Widget build(BuildContext context) {
