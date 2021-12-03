@@ -1,8 +1,10 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/cuisines_filters.dart';
+import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/foodGroups_filter.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/price_filters.dart';
+import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/rating_filter.dart';
 import 'package:flutter/material.dart';
 
 class FilterPage extends StatefulWidget {
@@ -29,21 +31,28 @@ class _FilterPageState extends State<FilterPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        elevation: 1.5,
+        elevation: 0,
         backgroundColor: Colors.white,
-        title: headerText(text: "Filters", color: Colors.black, fontWeight: FontWeight.w600, fontSize: 20),
-        leading: Container(
-          padding: EdgeInsets.only(top: 20, left: 7.0),
-          child: headerText(text: 'Reset', color: Colors.black, fontWeight: FontWeight.w600, fontSize: 17.0),
-        ),
-        actions: [
-          GestureDetector(
+        title: headerText(
+            text: "Filters",
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+            fontSize: 20),
+        leading: GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
+            child: Icon(Icons.arrow_back_ios)),
+        actions: [
+          GestureDetector(
+            onTap: () {},
             child: Container(
               padding: EdgeInsets.only(top: 20, right: 10.0),
-              child: headerText(text: 'Done', color: orange, fontWeight: FontWeight.w500, fontSize: 17.0),
+              child: headerText(
+                  text: 'Reset',
+                  color: primary1,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 17.0),
             ),
           ),
         ],
@@ -55,125 +64,106 @@ class _FilterPageState extends State<FilterPage> {
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 15.0, left: 15.0),
-              child: headerText(text: 'CUISINES', color: gris, fontWeight: FontWeight.w600, fontSize: 15.0),
+              child: headerText(
+                  text: 'Category',
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17.0),
+            ),
+            SizedBox(
+              height: 20,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: CuisinesFilters(),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText(text: 'SORT BY', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
+              child: headerText(
+                  text: 'Food Groups',
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17.0),
             ),
-            _SortByContainer(),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: FoodGroupFilter(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText(text: 'FILTER', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
+              child: headerText(
+                  text: 'Rating',
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17.0),
             ),
-            _filterContainer(),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              child: RatingFilter(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
-              child: headerText(text: 'PRICE', color: gris, fontWeight: FontWeight.w600, fontSize: 17.0),
+              child: headerText(
+                  text: 'Price range',
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17.0),
             ),
-            PriceFilter(),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                child: PriceFilter()),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                child: _buttonApplyFilter(context)),
+            SizedBox(
+              height: 20,
+            ),
           ]))
         ],
       ),
     );
   }
 
-  Widget _SortByContainer() {
+  Widget _buttonApplyFilter(context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
-      child: Column(
-        children: [
-          ListTileChecked(
-            isActive: topRated,
-            texto: 'Top Rated',
-            func: () {
-              setState(() {
-                topRated = !topRated;
-              });
-            },
+        width: double.infinity,
+        height: 50,
+        child: RaisedButton(
+          elevation: 0.5,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          color: primary,
+          onPressed: () {},
+          child: Container(
+            child: headerText(
+                text: "Apply Filters",
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+                color: white),
           ),
-          ListTileChecked(
-            isActive: nearMe,
-            texto: 'Nearest Me',
-            func: () {
-              setState(() {
-                nearMe = !nearMe;
-              });
-            },
-          ),
-          ListTileChecked(
-            isActive: costHighToLow,
-            texto: 'Cost High to Low',
-            func: () {
-              setState(() {
-                costHighToLow = !costHighToLow;
-              });
-            },
-          ),
-          ListTileChecked(
-            isActive: costLowToHigh,
-            texto: 'Cost Low to High',
-            func: () {
-              setState(() {
-                costLowToHigh = !costLowToHigh;
-              });
-            },
-          ),
-          ListTileChecked(
-            isActive: mostPopular,
-            texto: 'Most Popular',
-            func: () {
-              setState(() {
-                mostPopular = !mostPopular;
-              });
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-   Widget _filterContainer() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
-      child: Column(
-        children: [
-          ListTileChecked(
-            isActive: openNow,
-            texto: 'Open Now',
-            func: () {
-              setState(() {
-                openNow = !openNow  ;
-              });
-            },
-          ),
-          ListTileChecked(
-            isActive: creditCard,
-            texto: 'Credit Cards',
-            func: () {
-              setState(() {
-                creditCard = !creditCard;
-              });
-            },
-          ),
-          ListTileChecked(
-            isActive: alcoholServed,
-            texto: 'Alcohol Served',
-            func: () {
-              setState(() {
-                alcoholServed = !alcoholServed;
-              });
-            },
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

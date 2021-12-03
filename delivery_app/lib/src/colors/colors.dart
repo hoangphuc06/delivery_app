@@ -15,3 +15,7 @@ final placeholder = Color(0xFFB6B7B7);
 final placeholderBg = Color(0xFFF2F2F2);
 final greyone = Color(0xFF4A4B4D);
 final greytwo = Color(0xFF7C7D7E);
+final primary = Color.fromRGBO(10, 135, 145, 1.0);
+final primary1 =Color.fromRGBO(251, 168, 60, 1.0);
+final primary2 = Color.fromRGBO(194, 194, 203, 1.0);
+final primary3 = Color.fromRGBO(14, 18, 43, 1.0);

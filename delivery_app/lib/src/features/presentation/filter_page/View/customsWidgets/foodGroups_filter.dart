@@ -3,14 +3,14 @@ import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/r
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
-class PriceFilter extends StatefulWidget {
-  const PriceFilter({Key? key}) : super(key: key);
+class FoodGroupFilter extends StatefulWidget {
+  const FoodGroupFilter({Key? key}) : super(key: key);
 
   @override
-  _PriceFilterState createState() => _PriceFilterState();
+  _FoodGroupFilterState createState() => _FoodGroupFilterState();
 }
 
-class _PriceFilterState extends State<PriceFilter> {
+class _FoodGroupFilterState extends State<FoodGroupFilter> {
   bool btnAmerican = false;
   bool btnSushi = false;
   bool btnAsia = false;
@@ -23,45 +23,55 @@ class _PriceFilterState extends State<PriceFilter> {
   Widget build(BuildContext context) {
     return Wrap(
       direction: Axis.horizontal,
-    
+      spacing: 10.0,
+      runSpacing: 10.0,
       alignment: WrapAlignment.spaceBetween,
       children: [
         _roundedButtonFilter(() {
           setState(() {
             btnAmerican = !btnAmerican;
           });
-        }, btnAmerican, '\$'),
+        }, btnAmerican, 'Dairy'),
         _roundedButtonFilter(() {
           setState(() {
             btnAsia = !btnAsia;
           });
-        }, btnAsia, '\$\$'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnPizza = !btnPizza;
-        //   });
-        // }, btnPizza, 'Pizza'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnSushi = !btnSushi;
-        //   });
-        // }, btnSushi, 'DE'),
-      
+        }, btnAsia, 'Pizza'),
+        _roundedButtonFilter(() {
+          setState(() {
+            btnPizza = !btnPizza;
+          });
+        }, btnPizza, 'Pizza'),
+        _roundedButtonFilter(() {
+          setState(() {
+            btnSushi = !btnSushi;
+          });
+        }, btnSushi, 'Breakfast'),
+        _roundedButtonFilter(() {
+          setState(() {
+            btnVietNamese = !btnVietNamese;
+          });
+        }, btnVietNamese, 'Soups'),
         _roundedButtonFilter(() {
           setState(() {
             btnFastFood = !btnFastFood;
           });
-        }, btnFastFood, '\$\$\$'),
+        }, btnFastFood, 'Salads'),
         _roundedButtonFilter(() {
           setState(() {
             btnDesserts = !btnDesserts;
           });
-        }, btnDesserts, '\$\$\$\$'),
-          _roundedButtonFilter(() {
+        }, btnDesserts, 'Burger'),
+        _roundedButtonFilter(() {
           setState(() {
-            btnVietNamese = !btnVietNamese;
+            btnDesserts = !btnDesserts;
           });
-        }, btnVietNamese, '\$\$\$\$\$'),
+        }, btnDesserts, 'Chicken'),
+        _roundedButtonFilter(() {
+          setState(() {
+            btnDesserts = !btnDesserts;
+          });
+        }, btnDesserts, 'Meat'),
       ],
     );
   }
@@ -86,17 +96,20 @@ class _PriceFilterState extends State<PriceFilter> {
 
 Widget _roundedButtonFilter(func, bool isActive, String labelText) {
   return ButtonTheme(
-    minWidth: 5,
+    minWidth: 30,
+    height: 30,
     child: RaisedButton(
       onPressed: func,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
-      color: isActive ? primary : placeholderBg,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(color: primary)),
+      color: isActive ? primary : white,
       elevation: 0.5,
       child: headerText(
           text: labelText,
           color: isActive ? white : Colors.black,
           fontWeight: FontWeight.w400,
-          fontSize: 17),
+          fontSize: 15),
     ),
   );
 }
