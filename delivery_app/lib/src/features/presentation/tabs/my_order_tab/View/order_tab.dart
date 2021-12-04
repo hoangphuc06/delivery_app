@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/empty_order_view.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/historyOrder.dart';
+import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/onComing_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/preOrders_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -20,7 +21,6 @@ class _OrderTabState extends State<OrderTab> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-         
           actions: [
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -66,7 +66,11 @@ class _OrderTabState extends State<OrderTab> {
           ),
         ),
         body: TabBarView(
-          children: [PreOrdersPage(), EmptyOrderView(), HistoryOrdersPage()],
+          children: [
+            PreOrdersPage(),
+            OnComingPage(),
+            EmptyOrderView(),
+          ],
         ),
       ),
     );

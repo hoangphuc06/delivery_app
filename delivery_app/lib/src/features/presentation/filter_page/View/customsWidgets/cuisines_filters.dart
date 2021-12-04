@@ -85,15 +85,21 @@ class _CuisinesFiltersState extends State<CuisinesFilters> {
 // }
 
 Widget _roundedButtonFilter(func, bool isActive, String labelText) {
-  return RaisedButton(
-    onPressed: func,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-    color: isActive ? primary : placeholderBg,
-    elevation: 0.5,
-    child: headerText(
-        text: labelText,
-        color: isActive ? white : Colors.black,
-        fontWeight: FontWeight.w400,
-        fontSize: 17),
+  return ButtonTheme(
+    minWidth: 110,
+    child: RaisedButton(
+      onPressed: func,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      color: isActive ? primary : placeholderBg,
+      elevation: 0.5,
+      child: Container(
+        // padding: EdgeInsets.only(left: 12,right: 12),
+        child: headerText(
+            text: labelText,
+            color: isActive ? white : Colors.black,
+            fontWeight: FontWeight.w400,
+            fontSize: 17),
+      ),
+    ),
   );
 }

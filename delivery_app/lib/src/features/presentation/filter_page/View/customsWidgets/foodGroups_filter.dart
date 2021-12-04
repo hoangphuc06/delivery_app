@@ -96,7 +96,7 @@ class _FoodGroupFilterState extends State<FoodGroupFilter> {
 
 Widget _roundedButtonFilter(func, bool isActive, String labelText) {
   return ButtonTheme(
-    minWidth: 30,
+    minWidth: 80,
     height: 30,
     child: RaisedButton(
       onPressed: func,

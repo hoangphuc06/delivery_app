@@ -19,3 +19,4 @@ final primary = Color.fromRGBO(10, 135, 145, 1.0);
 final primary1 =Color.fromRGBO(251, 168, 60, 1.0);
 final primary2 = Color.fromRGBO(194, 194, 203, 1.0);
 final primary3 = Color.fromRGBO(14, 18, 43, 1.0);
+final smoke = Color.fromRGBO(248, 248, 255, 1.0);

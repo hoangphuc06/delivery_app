@@ -71,14 +71,14 @@ class _FilterPageState extends State<FilterPage> {
                   fontSize: 17.0),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: CuisinesFilters(),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               alignment: Alignment.centerLeft,
@@ -90,14 +90,14 @@ class _FilterPageState extends State<FilterPage> {
                   fontSize: 17.0),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: FoodGroupFilter(),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               alignment: Alignment.centerLeft,
@@ -109,14 +109,14 @@ class _FilterPageState extends State<FilterPage> {
                   fontSize: 17.0),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.0),
               child: RatingFilter(),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
               alignment: Alignment.centerLeft,
@@ -128,13 +128,13 @@ class _FilterPageState extends State<FilterPage> {
                   fontSize: 17.0),
             ),
             SizedBox(
-              height: 20,
+              height: 15,
             ),
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: PriceFilter()),
             SizedBox(
-              height: 20,
+              height: 50,
             ), Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 child: _buttonApplyFilter(context)),
