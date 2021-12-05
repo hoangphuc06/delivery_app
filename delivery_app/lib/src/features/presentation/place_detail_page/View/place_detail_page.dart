@@ -115,6 +115,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
     builder: (context) => Container(
       padding: EdgeInsets.all(16),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
@@ -166,7 +167,126 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               ),
             ],
           ),
-
+          SizedBox(height: 20,),
+          Row(
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: amarillo,
+                    size: 18,
+                  ),
+                  SizedBox(width: 2,),
+                  Text(
+                    "4",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "(1k ratings)",
+                    style: TextStyle(
+                        color: Colors.black, fontSize: 15, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+              SizedBox(width: 50,),
+              Row(
+                children: [
+                  Icon(
+                    Icons.access_time,
+                    color: fbButtonColor,
+                    size: 18,
+                  ),
+                  SizedBox(width: 2,),
+                  Text(
+                    "30 min",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(height: 20,),
+          // Row(
+          //   children: [
+          //     Text(
+          //       "Material: ",
+          //       style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 17,
+          //           fontWeight: FontWeight.w500
+          //       ),
+          //     ),
+          //     Text(
+          //       "rice, chicken, salah..",
+          //       style: TextStyle(
+          //           color: Colors.black,
+          //           fontSize: 17,
+          //           fontWeight: FontWeight.w300
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // SizedBox(height: 20,),
+          Row(
+            children: [
+              Text(
+                "Quantity",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500
+                ),
+              ),
+              Spacer(),
+              Container(
+                padding: EdgeInsets.all(12),
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  color: orange,
+                  shape: BoxShape.circle
+                ),
+                child: Text("-", style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              ),
+              SizedBox(width: 15,),
+              Text(
+                "1",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500
+                ),
+              ),
+              SizedBox(width: 15,),
+              Container(
+                padding: EdgeInsets.all(12),
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                    color: orange,
+                    shape: BoxShape.circle
+                ),
+                child: Text("+", style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+              ),
+            ],
+          ),
+          Spacer(),
+          Container(
+            alignment: Alignment.center,
+            child: createButton(
+                context: context,
+                func: () {
+                  Navigator.pop(context);
+                },
+                labelButton: 'Add to cart',
+                buttonColor: orange
+            ),
+          ),
         ],
       ),
     )
