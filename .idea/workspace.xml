@@ -20,69 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc6df31a-f299-4646-a5e5-ade13da3b411" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/banner/banner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/banner/banner2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/banner/banner3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/bg/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/bg/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/bg/lotte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/bg/lotteria.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/burger/beef-teriyaki-burger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/burger/bulgogi-burger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/burger/ddouble-burger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/burger/mozzarella-burger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/burger/shrimp-burger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/chicken/ganuonggoc4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/chicken/grilled-chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/chicken/hs-chicken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/chicken/soybean-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/dessert/cheese-stick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/dessert/chicken-skewer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/dessert/frenchfries.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/dessert/sweet-potato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/logo_app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/populars/a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/populars/b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/populars/c.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/populars/d.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/populars/sabichuong.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/rice/com-gahoanggia.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/rice/com-ganuong-goctu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/rice/com-ganuong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/rice/com-thitbo-phomai.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/kfc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/pho.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/phobo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/spaghetti/miy-thitbam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/spaghetti/miy-thitbo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/spaghetti/miy-thitxongkhoi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/burger_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/chicken_data_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/dessert_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/kfc_popular_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/popular_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/rice_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/shop_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/spaghetti_data.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/location_page/view/location_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/colors/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/colors/colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/login_page/View/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/login_page/View/login_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/otp_page/view/otp_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/otp_page/view/otp_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/welcome_page/View/welcome_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/routes/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,22 +115,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1638171098722" />
-    <state width="1491" height="177" key="GridCell.Tab.0.bottom" timestamp="1638448804766">
+    <state width="1491" height="68" key="GridCell.Tab.0.bottom" timestamp="1638456729827">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="177" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1638448804766" />
-    <state width="1491" height="177" key="GridCell.Tab.0.center" timestamp="1638448804766">
+    <state width="1491" height="68" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1638456729827" />
+    <state width="1491" height="68" key="GridCell.Tab.0.center" timestamp="1638456729827">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="177" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1638448804766" />
-    <state width="1491" height="177" key="GridCell.Tab.0.left" timestamp="1638448804766">
+    <state width="1491" height="68" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1638456729827" />
+    <state width="1491" height="68" key="GridCell.Tab.0.left" timestamp="1638456729827">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="177" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1638448804766" />
-    <state width="1491" height="177" key="GridCell.Tab.0.right" timestamp="1638448804766">
+    <state width="1491" height="68" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1638456729827" />
+    <state width="1491" height="68" key="GridCell.Tab.0.right" timestamp="1638456729827">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="177" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1638448804766" />
+    <state width="1491" height="68" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1638456729827" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1637322994645">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
