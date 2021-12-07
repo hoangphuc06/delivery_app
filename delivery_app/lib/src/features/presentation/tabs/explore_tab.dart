@@ -1,107 +1,154 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
+import 'package:delivery_app/src/features/data/recent_data.dart';
 import 'package:delivery_app/src/features/data/shop_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-
-final List<String> imgList = [
-  'assets/banner/banner1.png',
-  'assets/banner/banner2.png',
-  'assets/banner/banner3.png',
-];
-
-final List<Widget> imageSliders = imgList.map((item) => Container(
-  child: Container(
-    child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-        child: Stack(
-          children: <Widget>[
-            Image.asset(item, fit: BoxFit.cover, width: 1000),
-            Positioned(
-              bottom: 0.0,
-              left: 0.0,
-              right: 0.0,
-              child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color.fromARGB(200, 0, 0, 0),
-                        Color.fromARGB(0, 0, 0, 0)
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                  ),
-                  child: Container()),
-            ),
-          ],
-        )),
-  ),
-)).toList();
 
 class ExploreTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: CustomScrollView(
-          slivers: [
-          SliverList(
-              delegate: SliverChildListDelegate([
-              Container(
-                child: Column(
-                  children: [
-                    _buildHeader(),
-                    _topBar(context),
-                    //_banner(context),
-                    Container(
-                      padding: EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 16),
-                      alignment: Alignment.centerLeft,
-                      child: headerText(
-                          text: "Discover new places",
-                          color: Colors.black,
-                          fontSize: 20),
+      child: DefaultTabController(
+          length: 6,
+          child: NestedScrollView(
+            physics: NeverScrollableScrollPhysics(),
+            headerSliverBuilder: (context, isScolled){
+              return [
+                SliverAppBar(
+                  automaticallyImplyLeading: false,
+                  backgroundColor: Colors.white,
+                  collapsedHeight: 440,
+                  expandedHeight: 440,
+                  flexibleSpace: Container(
+                    child: Column(
+                      children: [
+                        _buildHeader(),
+                        _topBar(context),
+                        //_categoryBar(context),
+                        Container(
+                          padding: EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 16),
+                          alignment: Alignment.centerLeft,
+                          child: headerText(
+                              text: "Discover new places",
+                              color: Colors.black,
+                              fontSize: 20),
+                        ),
+                        _shopsSlider(context),
+                        // Container(
+                        //   alignment: Alignment.centerLeft,
+                        //   padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
+                        //   child: headerText(
+                        //       text: "Popular this week",
+                        //       color: Colors.black,
+                        //       fontSize: 20),
+                        // ),
+                        // _populares(context, populars_data[0]),
+                        // _populares(context, populars_data[1]),
+                        // _populares(context, populars_data[2]),
+                        // _populares(context, populars_data[3]),
+                        // Container(
+                        //   alignment: Alignment.centerLeft,
+                        //   padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+                        //   child: headerText(
+                        //       text: "Recommend for you",
+                        //       color: Colors.black,
+                        //       fontSize: 20),
+                        // ),
+                        // //_shopsSlider(context),
+                        // SizedBox(
+                        //   height: 50,
+                        // ),
+                        // GestureDetector(
+                        //     onTap: () {
+                        //       Navigator.pushNamed(context, 'collections');
+                        //     },
+                        //     child: _headers(context, "Collections", "Show all")),
+                        // _sliderCollections(),
+                      ],
                     ),
-                    _shopsSlider(context),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-                      child: headerText(
-                          text: "Popular this week",
-                          color: Colors.black,
-                          fontSize: 20),
-                    ),
-                    _populares(context, populars_data[0]),
-                    _populares(context, populars_data[1]),
-                    _populares(context, populars_data[2]),
-                    _populares(context, populars_data[3]),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
-                      child: headerText(
-                          text: "Recommend for you",
-                          color: Colors.black,
-                          fontSize: 20),
-                    ),
-                    //_shopsSlider(context),
-                    SizedBox(
-                      height: 50,
-                    ),
-                    // GestureDetector(
-                    //     onTap: () {
-                    //       Navigator.pushNamed(context, 'collections');
-                    //     },
-                    //     child: _headers(context, "Collections", "Show all")),
-                    // _sliderCollections(),
-                  ],
+                  ),
                 ),
-              )
-          ]))
-        ],
-    ));
+                SliverPersistentHeader(
+                    delegate: MyDelegate(
+                      TabBar(
+                        tabs: [
+                          Tab(text: 'Recent'),
+                          Tab(text: 'Favorite'),
+                          Tab(text: 'Rating'),
+                          Tab(text: 'Popular'),
+                          Tab(text: 'Trending'),
+                          Tab(text: 'Discount'),
+                        ],
+                        indicatorColor: orange,
+                        unselectedLabelColor: primaryColor,
+                        labelColor: orange,
+                        isScrollable: true,
+                      ),
+                    ),
+                    floating: true,
+                    pinned: true)
+              ];
+            },
+            body: TabBarView(
+              children: [
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[1]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  color: Colors.pink,
+                ),
+                Container(
+                  color: Colors.blue,
+                ),
+                Container(
+                  color: Colors.pink,
+                ),
+                Container(
+                  color: Colors.blue,
+                ),
+                Container(
+                  color: Colors.blue,
+                ),
+              ],
+            ),
+      )),
+    );
+  }
+}
+
+class MyDelegate extends SliverPersistentHeaderDelegate {
+  MyDelegate(this.tabBar);
+  final TabBar tabBar;
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Container(
+      color: Colors.white,
+      child: tabBar,
+    );
+  }
+  @override
+  double get maxExtent => tabBar.preferredSize.height;
+
+  @override
+  double get minExtent => tabBar.preferredSize.height;
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return false;
   }
 }
 
@@ -112,10 +159,10 @@ Widget _buildHeader() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 16),
+        SizedBox(height: 8),
         Text("Hello", style: TextStyle(fontSize: 16)),
         Text(
-          "David Beckham,",
+          "Cameron Cook,",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -179,23 +226,9 @@ Widget _topBar(BuildContext context) {
   );
 }
 
-Widget _banner(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.only(left: 16, right: 16, top: 16),
-      child: CarouselSlider(
-        options: CarouselOptions(
-          aspectRatio: 2.8,
-          enlargeCenterPage: true,
-          scrollDirection: Axis.horizontal,
-          autoPlay: true,
-        ),
-        items: imageSliders,
-      ));
-}
-
 Widget _shopsSlider(BuildContext context) {
   return Container(
-    height: 235,
+    height: 260,
     padding: EdgeInsets.only(left: 16, right: 16),
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
@@ -213,15 +246,26 @@ Widget _shopItem(BuildContext context, shops_data, ) {
       Navigator.pushNamed(context, "place-detail");
     },
     child: Container(
-      padding: EdgeInsets.all(0),
-      margin: EdgeInsets.only(right: 12),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(210, 211, 215, 1.0),
+            //offset: Offset(0, 0),
+            blurRadius: 5.0,
+          )
+        ]
+      ),
+      margin: EdgeInsets.only(right: 14, top: 4, bottom: 4, left: 2),
+      padding: EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10.0),
             child: Image(
-              width: 200,
+              width: 300,
               height: 150,
               fit: BoxFit.cover,
               image: AssetImage(shops_data["image"]),
@@ -247,26 +291,67 @@ Widget _shopItem(BuildContext context, shops_data, ) {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 5.0),
+            margin: EdgeInsets.only(top: 7.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  Icons.star,
-                  color: amarillo,
-                  size: 16,
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: amarillo,
+                      size: 16,
+                    ),
+                    SizedBox(width: 2,),
+                    Text(
+                      shops_data["star"],
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "(" + shops_data["rating"] + ")",
+                      style: TextStyle(
+                          color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
-                SizedBox(width: 2,),
-                Text(
-                  shops_data["star"],
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500),
+                SizedBox(width: 20,),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: orange,
+                      size: 15,
+                    ),
+                    SizedBox(width: 2,),
+                    Text(
+                      "500m",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
-                Text(
-                  " (" + shops_data["rating"] + " ratings)",
-                  style: TextStyle(
-                      color: gris, fontSize: 13, fontWeight: FontWeight.w600),
+                SizedBox(width: 20,),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.access_time,
+                      color: fbButtonColor,
+                      size: 15,
+                    ),
+                    SizedBox(width: 2,),
+                    Text(
+                      "30 min",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -277,35 +362,21 @@ Widget _shopItem(BuildContext context, shops_data, ) {
   );
 }
 
-Widget _headers(BuildContext context, String textHeader, String textAction) {
-  return Row(
-    children: [
-      Container(
-        alignment: Alignment.centerLeft,
-        child: headerText(text: textHeader, color: Colors.black, fontSize: 20),
-      ),
-      Spacer(),
-      GestureDetector(
-        child: Row(
-          children: [
-            Text(
-              textAction,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500),
-            ),
-            Icon(Icons.play_arrow)
-          ],
-        ),
-      ),
-    ],
-  );
-}
-
-Widget _populares(BuildContext context, populars_data) {
+Widget _shopItem_t2(BuildContext context, data) {
   return Container(
-    padding: EdgeInsets.only(top: 8, bottom: 8, left: 16, right: 16),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(210, 211, 215, 1.0),
+            //offset: Offset(0, 0),
+            blurRadius: 5.0,
+          )
+        ]
+    ),
+    padding: EdgeInsets.all(8),
+    margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
     child: Row(
       children: [
         ClipRRect(
@@ -314,7 +385,7 @@ Widget _populares(BuildContext context, populars_data) {
             width: 80,
             height: 80,
             fit: BoxFit.cover,
-            image: AssetImage(populars_data["image"]),
+            image: AssetImage(data["image"]),
           ),
         ),
         Container(
@@ -324,43 +395,92 @@ Widget _populares(BuildContext context, populars_data) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  margin: EdgeInsets.symmetric(vertical: 7),
-                  child: headerText(
-                      text: populars_data["name"],
-                      color: Colors.black,
-                      fontSize: 17)),
+                  margin: EdgeInsets.only(bottom: 5.0),
+                  child: Row(
+                    children: [
+                      headerText(
+                          text: data["name"],
+                          color: Colors.black,
+                          fontSize: 17),
+                      
+                      Icon(Icons.bookmark, size: 20,)
+                    ],
+                  )),
               Container(
                 //alignment: Alignment.centerLeft,
-                margin: EdgeInsets.only(bottom: 5.0),
+                margin: EdgeInsets.only(bottom: 7.0),
                 child: Text(
-                  populars_data["address"],
+                  data["address"],
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 13),
                 ),
               ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.star,
-                    color: amarillo,
-                    size: 16,
-                  ),
-                  SizedBox(width: 2,),
-                  Text(
-                    populars_data["star"],
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    " (" + populars_data["rating"] + " ratings)",
-                    style: TextStyle(
-                        color: gris, fontSize: 13, fontWeight: FontWeight.w600),
-                  ),
-                ],
+              Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: amarillo,
+                          size: 16,
+                        ),
+                        SizedBox(width: 2,),
+                        Text(
+                          data["star"],
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          "(" + data["rating"] + ")",
+                          style: TextStyle(
+                              color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 20,),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: orange,
+                          size: 15,
+                        ),
+                        SizedBox(width: 2,),
+                        Text(
+                          "500m",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 20,),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.access_time,
+                          color: fbButtonColor,
+                          size: 15,
+                        ),
+                        SizedBox(width: 2,),
+                        Text(
+                          "30 min",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               )
             ],
           ),
@@ -370,39 +490,4 @@ Widget _populares(BuildContext context, populars_data) {
   );
 }
 
-Widget _sliderCollections() {
-  return Container(
-    height: 180,
-    child: Swiper(
-      itemCount: 4,
-      layout: SwiperLayout.DEFAULT,
-      itemBuilder: (BuildContext context, int index) {
-        return ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) {
-              return _tarjectaCollection(context);
-            });
-      },
-    ),
-  );
-}
 
-Widget _tarjectaCollection(BuildContext context) {
-  return Container(
-    margin: EdgeInsets.all(10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
-          child: Image(
-            fit: BoxFit.cover,
-            width: 300,
-            height: 150,
-            image: AssetImage("assets/img_hamburger.jpg"),
-          ),
-        ),
-      ],
-    ),
-  );
-}
