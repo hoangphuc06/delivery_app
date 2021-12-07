@@ -1,24 +1,24 @@
 
-const List desserts_data = [
+const List drinks_data = [
   {
-    "name": "Mochi trà xanh",
-    "image": "assets/dessert/mochitraxanh.png",
+    "name": "Aquafina",
+    "image": "assets/drinks/aquafina.jpg",
     "price": "36.000",
     "discount": "35.000",
     "descr": "chicken 1",
     "like": "like",
   },
   {
-    "name": "Mochi socola",
-    "image": "assets/dessert/mochisocola.png",
+    "name": "7 up",
+    "image": "assets/drinks/sevenup.png",
     "price": "36.000",
     "discount": "35.000",
     "descr": "chicken 1",
     "like": "like",
   },
   {
-    "name": "Bánh trứng",
-    "image": "assets/dessert/banhtrung.jpg",
+    "name": "Pepsi",
+    "image": "assets/drinks/pepsi.png",
     "price": "36.000",
     "discount": "35.000",
     "descr": "chicken 1",
