@@ -20,17 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc6df31a-f299-4646-a5e5-ade13da3b411" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/category/coffee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/category/diet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/category/drink.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/category/hamburger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/category/pizza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/recent/bgking.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/recent/mc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/recent/pizzahut.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/assets/recent/startbuck.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/recent_data.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/company.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/domino.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/gongcha.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/koi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/popayes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/logo/tocotoco.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/jollibee.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/kfcs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delivery_app/assets/shops/lotteria.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/logo/logo_app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/recent/bgking.png" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/assets/logo/bgking.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/recent/mc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/assets/logo/mc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/recent/pizzahut.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/assets/logo/pizzahut.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/recent/startbuck.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/assets/logo/startbuck.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/kfc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/pho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/assets/shops/phobo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/data/recent_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/recent_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/data/shop_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/data/shop_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/explore_tab.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/pubspec.yaml" afterDir="false" />
     </list>
@@ -61,7 +74,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/delivery_app/lib/src/features/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/delivery_app/assets/shops" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -74,11 +87,11 @@
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\burger" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\shops" />
+      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\logo" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\lib\src\features\data" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\recent" />
       <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\category" />
-      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\bg" />
-      <recent name="C:\Users\Hoang Phuc\Documents\GitHub\delivery_app\delivery_app\assets\populars" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,22 +139,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1638171098722" />
-    <state width="1491" height="47" key="GridCell.Tab.0.bottom" timestamp="1638866900352">
+    <state width="1491" height="279" key="GridCell.Tab.0.bottom" timestamp="1638880402146">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="47" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1638866900352" />
-    <state width="1491" height="47" key="GridCell.Tab.0.center" timestamp="1638866900352">
+    <state width="1491" height="279" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1638880402146" />
+    <state width="1491" height="279" key="GridCell.Tab.0.center" timestamp="1638880402146">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="47" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1638866900352" />
-    <state width="1491" height="47" key="GridCell.Tab.0.left" timestamp="1638866900352">
+    <state width="1491" height="279" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1638880402146" />
+    <state width="1491" height="279" key="GridCell.Tab.0.left" timestamp="1638880402145">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="47" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1638866900352" />
-    <state width="1491" height="47" key="GridCell.Tab.0.right" timestamp="1638866900352">
+    <state width="1491" height="279" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1638880402145" />
+    <state width="1491" height="279" key="GridCell.Tab.0.right" timestamp="1638880402146">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1491" height="47" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1638866900352" />
+    <state width="1491" height="279" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1638880402146" />
     <state x="277" y="62" key="SettingsEditor" timestamp="1637322994645">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

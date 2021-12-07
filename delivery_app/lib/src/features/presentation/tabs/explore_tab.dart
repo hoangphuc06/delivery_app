@@ -104,24 +104,101 @@ class ExploreTab extends StatelessWidget {
                       _shopItem_t2(context, recents_data[1]),
                       _shopItem_t2(context, recents_data[2]),
                       _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[4]),
+                      _shopItem_t2(context, recents_data[5]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[8]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
                     ],
                   ),
                 ),
 
-                Container(
-                  color: Colors.pink,
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
+                    ],
+                  ),
                 ),
-                Container(
-                  color: Colors.blue,
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[1]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[4]),
+                      _shopItem_t2(context, recents_data[5]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[8]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
+                    ],
+                  ),
                 ),
-                Container(
-                  color: Colors.pink,
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[1]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[4]),
+                      _shopItem_t2(context, recents_data[5]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[8]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
+                    ],
+                  ),
                 ),
-                Container(
-                  color: Colors.blue,
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[1]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[4]),
+                      _shopItem_t2(context, recents_data[5]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[8]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
+                    ],
+                  ),
                 ),
-                Container(
-                  color: Colors.blue,
+
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _shopItem_t2(context, recents_data[0]),
+                      _shopItem_t2(context, recents_data[1]),
+                      _shopItem_t2(context, recents_data[2]),
+                      _shopItem_t2(context, recents_data[3]),
+                      _shopItem_t2(context, recents_data[4]),
+                      _shopItem_t2(context, recents_data[5]),
+                      _shopItem_t2(context, recents_data[6]),
+                      _shopItem_t2(context, recents_data[7]),
+                      _shopItem_t2(context, recents_data[8]),
+                      _shopItem_t2(context, recents_data[9]),
+                      SizedBox(height: 50,)
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -273,12 +350,19 @@ Widget _shopItem(BuildContext context, shops_data, ) {
           ),
           Container(
             margin: EdgeInsets.only(top: 10.0),
-            child: Text(
-              shops_data["name"],
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 17),
+            width: 290,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  shops_data["name"],
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17),
+                ),
+                Icon(Icons.bookmark, size: 20, color: shops_data["like"]=="like"? orange: Colors.grey[400],)
+              ],
             ),
           ),
           Container(
@@ -322,7 +406,7 @@ Widget _shopItem(BuildContext context, shops_data, ) {
                   children: [
                     Icon(
                       Icons.location_on,
-                      color: orange,
+                      color: rosa,
                       size: 15,
                     ),
                     SizedBox(width: 2,),
@@ -395,17 +479,18 @@ Widget _shopItem_t2(BuildContext context, data) {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                  margin: EdgeInsets.only(bottom: 5.0),
-                  child: Row(
-                    children: [
-                      headerText(
-                          text: data["name"],
-                          color: Colors.black,
-                          fontSize: 17),
-                      
-                      Icon(Icons.bookmark, size: 20,)
-                    ],
-                  )),
+                margin: EdgeInsets.only(bottom: 5.0),
+                width: 250,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    headerText(
+                        text: data["name"],
+                        color: Colors.black,
+                        fontSize: 17),
+                    Icon(Icons.bookmark, size: 20, color: data["like"]=="like"? orange: Colors.grey[400],)
+                  ],
+                )),
               Container(
                 //alignment: Alignment.centerLeft,
                 margin: EdgeInsets.only(bottom: 7.0),
@@ -431,15 +516,11 @@ Widget _shopItem_t2(BuildContext context, data) {
                         SizedBox(width: 2,),
                         Text(
                           data["star"],
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500),
+                          style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
                         ),
                         Text(
                           "(" + data["rating"] + ")",
-                          style: TextStyle(
-                              color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
+                          style: TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.w500),
                         ),
                       ],
                     ),
@@ -448,7 +529,7 @@ Widget _shopItem_t2(BuildContext context, data) {
                       children: [
                         Icon(
                           Icons.location_on,
-                          color: orange,
+                          color: rosa,
                           size: 15,
                         ),
                         SizedBox(width: 2,),

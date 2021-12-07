@@ -34,7 +34,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                     width: double.infinity,
                     height: 350,
                     fit: BoxFit.cover,
-                    image: AssetImage('assets/bg/lotte.png'),
+                    image: AssetImage('assets/shops/kfcs.jpg'),
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -81,23 +81,23 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               ),
             ],
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              _headers(text: "Populars"),
-              _sliderPopularCards(),
-              Divider(thickness: 2,),
-              _headers(text: "Full Menu"),
-              _menuList(context),
-              Divider(thickness: 2,),
-              _headers(text: "Reviews"),
-              _reviews(),
-              Divider(thickness: 2,),
-              _headers(text: "Your Rating"),
-              _yourRating(),
-              SizedBox(
-                height: 150,
-              )
-          ])),
+          // SliverList(
+          //   delegate: SliverChildListDelegate([
+          //     _headers(text: "Populars"),
+          //     _sliderPopularCards(),
+          //     Divider(thickness: 2,),
+          //     _headers(text: "Full Menu"),
+          //     _menuList(context),
+          //     Divider(thickness: 2,),
+          //     _headers(text: "Reviews"),
+          //     _reviews(),
+          //     Divider(thickness: 2,),
+          //     _headers(text: "Your Rating"),
+          //     _yourRating(),
+          //     SizedBox(
+          //       height: 150,
+          //     )
+          // ])),
         ],
       ),
     );
@@ -334,11 +334,11 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
             children: [
               Icon(
                 Icons.location_on,
-                color: gris,
+                color: Colors.white,
               ),
               headerText(
                   text: "10, District 1, HCM City",
-                  color: gris,
+                  color: Colors.white,
                   fontWeight: FontWeight.w500,
                   fontSize: 15.0),
             ],
@@ -381,7 +381,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               ),
               headerText(
                   text: "1.9k Ratings",
-                  color: gris,
+                  color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.w500),
             ],
@@ -411,7 +411,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               ),
               headerText(
                   text: "Favorites",
-                  color: gris,
+                  color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.w500),
             ],
@@ -441,7 +441,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               ),
               headerText(
                   text: "Photos",
-                  color: gris,
+                  color: Colors.white,
                   fontSize: 15,
                   fontWeight: FontWeight.w500),
             ],
