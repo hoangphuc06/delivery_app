@@ -275,87 +275,92 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
   }
 
   Widget _foodItem(BuildContext context, data) {
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Color.fromRGBO(210, 211, 215, 1.0),
-              //offset: Offset(0, 0),
-              blurRadius: 5.0,
-            )
-          ]
-      ),
-      padding: EdgeInsets.all(8),
-      margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10.0),
-            child: Image(
-              width: 80,
-              height: 80,
-              fit: BoxFit.cover,
-              image: AssetImage(data["image"]),
+    return GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context, "food-detail");
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Color.fromRGBO(210, 211, 215, 1.0),
+                //offset: Offset(0, 0),
+                blurRadius: 5.0,
+              )
+            ]
+        ),
+        padding: EdgeInsets.all(8),
+        margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 4),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10.0),
+              child: Image(
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+                image: AssetImage(data["image"]),
+              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                    margin: EdgeInsets.only(bottom: 5.0),
-                    width: 250,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        headerText(
-                            text: data["name"],
-                            color: Colors.black,
-                            fontSize: 17),
-                        Icon(Icons.bookmark, size: 20, color: data["like"]=="like"? orange: Colors.grey[400],)
-                      ],
-                    )),
-                Container(
-                  //alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(bottom: 7.0),
-                  child: Text(
-                    data["descr"],
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Container(
-                      //alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(bottom: 7.0),
-                      child: Text(
-                        data["price"] + " VNĐ",
-                        style: data["discount"]== "0" ? TextStyle(color: orange, fontWeight: FontWeight.bold, fontSize: 15):
-                        TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
-
-                      ),
+            Container(
+              padding: EdgeInsets.only(left: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                      margin: EdgeInsets.only(bottom: 5.0),
+                      width: 250,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          headerText(
+                              text: data["name"],
+                              color: Colors.black,
+                              fontSize: 17),
+                          Icon(Icons.bookmark, size: 20, color: data["like"]=="like"? orange: Colors.grey[400],)
+                        ],
+                      )),
+                  Container(
+                    //alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(bottom: 7.0),
+                    child: Text(
+                      data["descr"],
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13),
                     ),
-                    data["discount"]!= "0" ?
-                    Container(
-                      margin: EdgeInsets.only(bottom: 7.0, left: 7.0),
-                      child: Text(
-                        data["discount"] + " VNĐ",
-                        style: TextStyle(color: orange, fontWeight: FontWeight.bold, fontSize: 15)
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        //alignment: Alignment.centerLeft,
+                        margin: EdgeInsets.only(bottom: 7.0),
+                        child: Text(
+                          data["price"] + " VNĐ",
+                          style: data["discount"]== "0" ? TextStyle(color: orange, fontWeight: FontWeight.bold, fontSize: 15):
+                          TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
+
+                        ),
                       ),
-                    ): Container(),
-                  ],
-                ),
-              ],
+                      data["discount"]!= "0" ?
+                      Container(
+                        margin: EdgeInsets.only(bottom: 7.0, left: 7.0),
+                        child: Text(
+                          data["discount"] + " VNĐ",
+                          style: TextStyle(color: orange, fontWeight: FontWeight.bold, fontSize: 15)
+                        ),
+                      ): Container(),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -849,163 +854,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
     );
   }
 
-  Widget _yourRating() {
-    return Container(
-      margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.only(left: 20, right: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "1",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "2",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "3",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orange,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "4",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "5",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            child: headerText(
-                text: "We would love to hear more about your experience!",
-                color: gris,
-                fontSize: 12,
-                fontWeight: FontWeight.w400),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            child: headerText(
-                text: "+ Edit your review",
-                color: orange,
-                fontSize: 15,
-                fontWeight: FontWeight.w500),
-          ),
-        ],
-      ),
-    );
-  }
+
 }
 
 class MyDelegate extends SliverPersistentHeaderDelegate {

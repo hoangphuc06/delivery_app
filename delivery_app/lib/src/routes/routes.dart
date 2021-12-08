@@ -1,4 +1,5 @@
 import 'package:delivery_app/src/features/presentation/filter_page/View/filter_page.dart';
+import 'package:delivery_app/src/features/presentation/food_detail_page/view/food_detail_page.dart';
 import 'package:delivery_app/src/features/presentation/forgot_password_page/View/forgot_password_page.dart';
 import 'package:delivery_app/src/features/presentation/invite_friends_page/View/invite_friends_page.dart';
 import 'package:delivery_app/src/features/presentation/location_page/view/location_page.dart';
@@ -40,4 +41,5 @@ final routes = <String, WidgetBuilder>{
   "promo-code": (BuildContext context) => PromoCodePage(),
   "otp": (BuildContext context) => OTPPage(),
   "location": (BuildContext context) => LocationPage(),
+  "food-detail": (BuildContext context) => FoodDetailPage(),
 };

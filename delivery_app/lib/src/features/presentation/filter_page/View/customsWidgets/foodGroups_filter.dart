@@ -102,8 +102,8 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
       onPressed: func,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: primary)),
-      color: isActive ? primary : white,
+          side: BorderSide(color: orange)),
+      color: isActive ? orange : white,
       elevation: 0.5,
       child: headerText(
           text: labelText,

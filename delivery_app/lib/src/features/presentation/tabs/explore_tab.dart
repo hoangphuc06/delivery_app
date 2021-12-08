@@ -261,10 +261,10 @@ Widget _topBar(BuildContext context) {
             Navigator.pushNamed(context, 'search');
           },
           child: Container(
-            padding: EdgeInsets.only(left: 8),
+            padding: EdgeInsets.only(left: 15),
             decoration: BoxDecoration(
               color: Color.fromRGBO(142, 142, 147, 1.2),
-              borderRadius: BorderRadius.all(Radius.circular(10))
+              borderRadius: BorderRadius.circular(20.0),
             ),
             width: size.width - 85,
             height: 40,
