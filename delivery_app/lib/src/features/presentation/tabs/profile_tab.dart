@@ -1,5 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/features/presentation/location_page/view/location_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfileTab extends StatelessWidget {
@@ -8,14 +9,16 @@ class ProfileTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
+        body: SingleChildScrollView(
+          child: Column(
       children: [
-        GestureDetector(
-            onTap: () => Navigator.pushNamed(context, 'profile-detail'),
-            child: _header()),
-        _firstBlock(context)
+          GestureDetector(
+              onTap: () => Navigator.pushNamed(context, 'profile-detail'),
+              child: _header()),
+          _firstBlock(context)
       ],
-    ));
+    ),
+        ));
   }
 }
 
@@ -81,12 +84,15 @@ Widget _header() {
 }
 
 Widget _firstBlock(BuildContext context) {
-  return Container(
+  return SingleChildScrollView(
+    physics: ScrollPhysics(),
     padding: EdgeInsets.all(10),
     child: Column(
       children: [
         ListTile(
-          onTap: (){Navigator.pushNamed(context, 'notification');},
+          onTap: () {
+            Navigator.pushNamed(context, 'notification');
+          },
           leading: Image(
             image: AssetImage('assets/noti.png'),
             width: 29,
@@ -96,7 +102,9 @@ Widget _firstBlock(BuildContext context) {
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
         ListTile(
-          onTap: (){Navigator.pushNamed(context, 'payment-method');},
+          onTap: () {
+            Navigator.pushNamed(context, 'payment-method');
+          },
           leading: Image(
             image: AssetImage('assets/payment.png'),
             width: 29,
@@ -173,6 +181,18 @@ Widget _firstBlock(BuildContext context) {
             height: 29,
           ),
           title: headerText(text: 'About Us', fontWeight: FontWeight.w400),
+          trailing: Icon(Icons.chevron_right_outlined, color: gris),
+        ),
+        ListTile(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>LocationPage()));
+          },
+          leading: Image(
+            image: AssetImage('assets/location.jpg'),
+            width: 29,
+            height: 29,
+          ),
+          title: headerText(text: 'Location', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
       ],

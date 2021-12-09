@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
+import 'package:delivery_app/src/features/presentation/orderTracking/orderTracking.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/order_tab.dart';
@@ -28,7 +29,7 @@ class _TabsPageState extends State<TabsPage> {
   List<Widget> _widgetOptions = [
     ExploreTab(),
     OrderTab(),
-    FavouriteTab(),
+    OrderTracking(),
     ProfileTab()
   ];
 
