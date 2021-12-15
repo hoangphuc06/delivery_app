@@ -1,4 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/data/burger_data.dart';
+import 'package:delivery_app/src/features/data/chicken_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class ConfirmOrderPage extends StatefulWidget {
 }
 
 class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
-  bool isActive1 = false;
+  bool isActive1 = true;
   bool isActive2 = false;
   @override
   Widget build(BuildContext context) {
@@ -66,10 +68,10 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
               SizedBox(
                 height: 20,
               ),
-              _listItem(context, populars_data[0], '\$15.00', '1'),
-              _listItem(context, populars_data[1], '\$28.00', '1'),
-              _listItem(context, populars_data[2], '\$20.00', '2'),
-              _listItem(context, populars_data[3], '\$30.00', '3'),
+              _listItem(context, burgers_data[0], '1'),
+              _listItem(context, burgers_data[1], '1'),
+              _listItem(context, chickens_data[2], '1'),
+              _listItem(context, chickens_data[3], '1'),
               SizedBox(
                 height: 20,
               ),
@@ -85,11 +87,11 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                     fontWeight: FontWeight.bold,
                     color: primary1),
               ]),
-               SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              _payment('assets/cash.png', 'Cash', 'Pay with Cash',
-                  isActive1, () {
+              _payment('assets/cash.png', 'Cash', 'Pay with Cash', isActive1,
+                  () {
                 setState(() {
                   isActive1 = !isActive1;
                   isActive2 = false;
@@ -131,11 +133,11 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
               SizedBox(
                 height: 20,
               ),
-              _itemInRow('Item Total', '\$93.00', Colors.black, 17),
+              _itemInRow('Item Total', '398.000đ', Colors.black, 17),
               SizedBox(
                 height: 10,
               ),
-              _itemInRow('Item Total', '\$13.00', Colors.black, 17),
+              _itemInRow('Discount', '48.000đ', Colors.black, 17),
               SizedBox(
                 height: 10,
               ),
@@ -151,11 +153,11 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                       bottom: BorderSide(width: 0.8, color: placeholder),
                     ),
                   ),
-                  child: _itemInRow('Total', '\$90.00', Colors.black, 28)),
+                  child: _itemInRow('Total', '350.000đ', Colors.black, 28)),
               SizedBox(
                 height: 20,
               ),
-              _buttonConfirmOrder(context, '\$90.00'),
+              _buttonConfirmOrder(context, '350.000đ'),
               SizedBox(
                 height: 30,
               ),
@@ -328,8 +330,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
         ));
   }
 
-  Widget _listItem(
-      BuildContext context, populars_data, String charge, String count) {
+  Widget _listItem(BuildContext context, populars_data, String count) {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(
@@ -372,7 +373,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                             //alignment: Alignment.centerLeft,
                             margin: EdgeInsets.only(bottom: 5.0),
                             child: Text(
-                              charge,
+                              populars_data['price'] + 'đ',
                               style: TextStyle(
                                   color: primary1,
                                   fontWeight: FontWeight.w500,

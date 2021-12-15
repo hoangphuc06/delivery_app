@@ -4,6 +4,7 @@ import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/r
 import 'package:delivery_app/src/features/presentation/orderTracking/orderTracking.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
+import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/onComing_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/order_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/profile_tab.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,8 @@ class _TabsPageState extends State<TabsPage> {
 
   final List<Widget> _widgetOptions = [
     ExploreTab(),
+    OnComingPage(),
     OrderTab(),
-    OrderTracking(),
     ProfileTab()
   ];
 
@@ -60,8 +61,8 @@ class _TabsPageState extends State<TabsPage> {
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.compass, size: 20,), label: "Explore"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.shoppingCart, size: 20,), label: "My Order"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.bookmark, size: 20,), label: "Favourite"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.opencart, size: 20,), label: "My Cart"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.list, size: 20,), label: "My Order"),
           BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.user, size: 20,), label: "Profile")
         ]);
   }

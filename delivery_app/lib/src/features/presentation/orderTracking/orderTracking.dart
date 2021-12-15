@@ -1,4 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/data/burger_data.dart';
+import 'package:delivery_app/src/features/data/chicken_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/orderTracking/orderTrackingModel.dart';
@@ -17,22 +19,9 @@ class OrderTracking extends StatefulWidget {
 }
 
 class _OrderTrackingState extends State<OrderTracking> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          "Order Tracking",
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        centerTitle: true,
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(children: [
@@ -44,14 +33,14 @@ class _OrderTrackingState extends State<OrderTracking> {
             height: 20,
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackOrder()));
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TrackOrder()));
             },
             child: Container(
               padding: EdgeInsets.only(bottom: 10),
               decoration: BoxDecoration(
-                border: Border(bottom: BorderSide(width: 0.5,color: gris))
-              ),
+                  border: Border(bottom: BorderSide(width: 0.5, color: gris))),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -190,7 +179,8 @@ class _OrderTrackingState extends State<OrderTracking> {
                           SizedBox(
                             height: 10,
                           ),
-                          _itemInRow('Status: ', 'Deliverred', gris, orange, 14),
+                          _itemInRow(
+                              'Status: ', 'Deliverred', gris, orange, 14),
                           SizedBox(
                             height: 32,
                           ),
@@ -217,7 +207,8 @@ class _OrderTrackingState extends State<OrderTracking> {
                           Container(
                             padding: EdgeInsets.only(top: 8),
                             child: Container(
-                                padding: EdgeInsets.only(top:10,bottom: 10,left: 14,right: 14),
+                                padding: EdgeInsets.only(
+                                    top: 10, bottom: 10, left: 14, right: 14),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8),
                                     color: bkred),
@@ -229,7 +220,8 @@ class _OrderTrackingState extends State<OrderTracking> {
                           SizedBox(
                             height: 10,
                           ),
-                          _itemInRow('Status: ', 'Order Processing', gris, red, 14),
+                          _itemInRow(
+                              'Status: ', 'Order Processing', gris, red, 14),
                           SizedBox(
                             height: 30,
                           ),
@@ -267,7 +259,8 @@ class _OrderTrackingState extends State<OrderTracking> {
                           SizedBox(
                             height: 10,
                           ),
-                          _itemInRow('Status: ', 'Order Placed', gris, orange, 14),
+                          _itemInRow(
+                              'Status: ', 'Order Placed', gris, orange, 14),
                         ],
                       )
                     ],
@@ -294,28 +287,30 @@ class _OrderTrackingState extends State<OrderTracking> {
           SizedBox(
             height: 10,
           ),
-          _listItem(context, populars_data[0], '\$15.00', '1'),
+          _listItem(context, burgers_data[0], '1'),
+          _listItem(context, burgers_data[1], '1'),
+          _listItem(context, chickens_data[2], '1'),
+          _listItem(context, chickens_data[3], '1'),
           SizedBox(
             height: 20,
           ),
-          _itemInRow1('Item Total', '\$15.00', Colors.black, 17),
+          _itemInRow1('Item Total', '398.000đ', Colors.black, 17),
           SizedBox(
             height: 20,
           ),
-          _itemInRow1('Discount', '\$0.00', greytwo, 17),
+          _itemInRow1('Discount', '48.000đ', greytwo, 17),
           SizedBox(
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.only(bottom:10),
-            decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(width: 0.5,color: gris))
-            ),
-            child: _itemInRow1('Delivery Fee', 'Free', greytwo, 17)),
+              padding: EdgeInsets.only(bottom: 10),
+              decoration: BoxDecoration(
+                  border: Border(bottom: BorderSide(width: 0.5, color: gris))),
+              child: _itemInRow1('Delivery Fee', 'Free', greytwo, 17)),
           SizedBox(
             height: 15,
           ),
-          _itemInRow1('Total', '\$15.00', greytwo, 17),
+          _itemInRow1('Total', '450.000đ', greytwo, 17),
           SizedBox(
             height: 20,
           ),
@@ -344,8 +339,7 @@ class _OrderTrackingState extends State<OrderTracking> {
     ]);
   }
 
-  Widget _listItem(
-      BuildContext context, populars_data, String charge, String count) {
+  Widget _listItem(BuildContext context, populars_data, String count) {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(
@@ -388,7 +382,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             //alignment: Alignment.centerLeft,
                             margin: EdgeInsets.only(bottom: 5.0),
                             child: Text(
-                              charge,
+                              populars_data['price'] + 'đ',
                               style: TextStyle(
                                   color: primary1,
                                   fontWeight: FontWeight.w500,

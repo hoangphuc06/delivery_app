@@ -1,4 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/data/burger_data.dart';
+import 'package:delivery_app/src/features/data/chicken_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/confirmOrder.dart';
@@ -16,16 +18,43 @@ class _OnComingPageState extends State<OnComingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          "My Cart",
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+         actions: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(right: 15),
+                  child: FaIcon(
+                    FontAwesomeIcons.bell,
+                  ),
+                ),
+              ],
+            )
+          ],
+        centerTitle: true,
+      ),
+     
       backgroundColor: white,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              _listItem(context, populars_data[0], '\$15.00', '1'),
-              _listItem(context, populars_data[1], '\$28.00', '1'),
-              _listItem(context, populars_data[2], '\$20.00', '2'),
-              _listItem(context, populars_data[3], '\$30.00', '3'),
+              _listItem(context, burgers_data[0], '1'),
+              _listItem(context, burgers_data[1], '1'),
+              _listItem(context, chickens_data[2], '1'),
+              _listItem(context, chickens_data[3], '1'),
               SizedBox(
                 height: 20,
               ),
@@ -52,11 +81,11 @@ class _OnComingPageState extends State<OnComingPage> {
               SizedBox(
                 height: 20,
               ),
-              _itemInRow('Item Total', '\$93.00', Colors.black, 17),
+              _itemInRow('Item Total', '398.000đ', Colors.black, 17),
               SizedBox(
                 height: 10,
               ),
-              _itemInRow('Item Total', '\$13.00', Colors.black, 17),
+              _itemInRow('Discount', '48.000đ', Colors.black, 17),
               SizedBox(
                 height: 10,
               ),
@@ -72,7 +101,7 @@ class _OnComingPageState extends State<OnComingPage> {
                       bottom: BorderSide(width: 0.8, color: placeholder),
                     ),
                   ),
-                  child: _itemInRow('Total', '\$90.00', Colors.black, 28)),
+                  child: _itemInRow('Total', '350.000đ', Colors.black, 28)),
               SizedBox(
                 height: 20,
               ),
@@ -82,7 +111,7 @@ class _OnComingPageState extends State<OnComingPage> {
               SizedBox(
                 height: 20,
               ),
-              _buttonCheckOut(context, '\$90.00'),
+              _buttonCheckOut(context, '350.000đ'),
               SizedBox(
                 height: 30,
               ),
@@ -235,8 +264,7 @@ class _OnComingPageState extends State<OnComingPage> {
         ));
   }
 
-  Widget _listItem(
-      BuildContext context, populars_data, String charge, String count) {
+  Widget _listItem(BuildContext context, populars_data, String count) {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(
@@ -279,7 +307,7 @@ class _OnComingPageState extends State<OnComingPage> {
                             //alignment: Alignment.centerLeft,
                             margin: EdgeInsets.only(bottom: 5.0),
                             child: Text(
-                              charge,
+                              populars_data['price']+'đ',
                               style: TextStyle(
                                   color: primary1,
                                   fontWeight: FontWeight.w500,

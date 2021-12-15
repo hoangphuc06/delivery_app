@@ -1,4 +1,8 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/data/chicken_data.dart';
+import 'package:delivery_app/src/features/data/drinks_data.dart';
+import 'package:delivery_app/src/features/data/fast_data.dart';
+import 'package:delivery_app/src/features/data/kfc_popular_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
@@ -24,33 +28,48 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
               padding:
                   EdgeInsets.only(top: 12, bottom: 12, left: 20, right: 20),
               child: Text(
-                '25 May 2020',
+                '15/12/2021',
                 style: TextStyle(
                     color: gris, fontWeight: FontWeight.w500, fontSize: 15),
               ),
             ),
-            _listItem(context, populars_data[0], '25 May 2021 . 11:30'),
-            _listItem(context, populars_data[1], '25 May 2021 . 11:30'),
-            _listItem(context, populars_data[2], '25 May 2021 . 11:30'),
+            _listItem(
+                context,
+                chickens_data[0]['name'],
+                chickens_data[0]['price'],
+                chickens_data[0]['image'],
+                '15/12/2021 . 11:30'),
+            _listItem(context, fast_data[2]['name'], fast_data[2]['price'],
+                fast_data[2]['image'], '15/12/2021 . 11:30'),
+            _listItem(context, drinks_data[1]['name'], drinks_data[1]['price'],
+                drinks_data[1]['image'], '15/12/2021 . 11:30'),
             Container(
               padding:
                   EdgeInsets.only(top: 16, bottom: 12, left: 20, right: 20),
               child: Text(
-                '24 May 2020',
+                '14/12/2021',
                 style: TextStyle(
                     color: gris, fontWeight: FontWeight.w500, fontSize: 15),
               ),
             ),
-            _listItem(context, populars_data[3], '24 May 2021 . 11:00'),
-            _listItem(context, populars_data[3], '24 May 2021 . 11:00'),
-            _listItem(context, populars_data[3], '24 May 2021 . 11:00'),
+            _listItem(
+                context,
+                chickens_data[3]['name'],
+                chickens_data[3]['price'],
+                chickens_data[3]['image'],
+                '15/12/2021 . 11:30'),
+            _listItem(context, fast_data[3]['name'], fast_data[3]['price'],
+                fast_data[3]['image'], '15/12/2021 . 11:30'),
+            _listItem(context, drinks_data[1]['name'], drinks_data[1]['price'],
+                drinks_data[1]['image'], '15/12/2021 . 11:30'),
           ],
         ),
       ),
     );
   }
 
-  Widget _listItem(BuildContext context, populars_data, String time) {
+  Widget _listItem(BuildContext context, String name, String charge,
+      String image, String time) {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(top: 8, bottom: 8, left: 20, right: 20),
@@ -68,7 +87,7 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                         width: 65,
                         height: 65,
                         fit: BoxFit.cover,
-                        image: AssetImage(populars_data["image"]),
+                        image: AssetImage(image),
                       ),
                     ),
                     Container(
@@ -80,7 +99,7 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                           Container(
                               margin: EdgeInsets.symmetric(vertical: 7),
                               child: headerText(
-                                  text: populars_data["name"],
+                                  text: name,
                                   color: Colors.black,
                                   fontSize: 17)),
                           SizedBox(
@@ -105,7 +124,7 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                 Container(
                   padding: EdgeInsets.only(top: 7),
                   child: Text(
-                    '\$ 15.00',
+                    charge + 'đ',
                     style: TextStyle(
                         color: primary1,
                         fontWeight: FontWeight.w500,
