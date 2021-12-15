@@ -13,7 +13,7 @@ Widget headerDoubleText(
         GestureDetector(
             child: headerText(
                 text: textAction,
-                color: orange,
+                color: green,
                 fontSize: 15,
                 fontWeight: FontWeight.w500))
       ],

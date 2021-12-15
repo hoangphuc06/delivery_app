@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
                   },
                   icon: AssetImage('assets/ic_change_password.png'),
                   labelButton: 'Log in',
-                  buttonColor: orange
+                  buttonColor: green
               ),
               Container(
                 margin: EdgeInsets.only(top: 30.0),
@@ -85,7 +85,7 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'Sign up',
                             style: TextStyle(
-                                color: orange,
+                                color: green,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 15.0),
                           ),

@@ -71,7 +71,7 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
           borderRadius: BorderRadius.circular(8),
           //side: BorderSide(color: orange)
       ),
-      color: isActive ? orange : placeholderBg,
+      color: isActive ? green : placeholderBg,
       elevation: 0.5,
       child: headerText(
           text: labelText,

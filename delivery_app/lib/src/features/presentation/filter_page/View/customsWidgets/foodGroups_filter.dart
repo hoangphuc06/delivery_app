@@ -18,6 +18,8 @@ class _FoodGroupFilterState extends State<FoodGroupFilter> {
   bool btnDesserts = false;
   bool btnFastFood = false;
   bool btnVietNamese = false;
+  bool btn1 = false;
+  bool btn2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,35 +66,18 @@ class _FoodGroupFilterState extends State<FoodGroupFilter> {
         }, btnDesserts, 'Burger'),
         _roundedButtonFilter(() {
           setState(() {
-            btnDesserts = !btnDesserts;
+            btn1 = !btn1;
           });
-        }, btnDesserts, 'Chicken'),
+        }, btn1, 'Chicken'),
         _roundedButtonFilter(() {
           setState(() {
-            btnDesserts = !btnDesserts;
+            btn2 = !btn2;
           });
-        }, btnDesserts, 'Meat'),
+        }, btn2, 'Meat'),
       ],
     );
   }
 }
-
-// Widget _roundedButtonFilter(func, bool isActive, String labelText) {
-//   return Container(
-//     width: 120,
-//     height: 50,
-//     margin: EdgeInsets.only(left: 5),
-//     child: createButton(
-//         labelButton: labelText,
-//         labelButtonColor: isActive ? orange : gris,
-//         func: func,
-//         buttonColor: white,
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(30.0),
-//           side: BorderSide(color: isActive ? orange : gris),
-//         )),
-//   );
-// }
 
 Widget _roundedButtonFilter(func, bool isActive, String labelText) {
   return ButtonTheme(
@@ -102,8 +87,9 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
       onPressed: func,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: orange)),
-      color: isActive ? orange : white,
+          //side: BorderSide(color: orange)
+      ),
+      color: isActive ? green : placeholderBg,
       elevation: 0.5,
       child: headerText(
           text: labelText,

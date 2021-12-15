@@ -47,53 +47,22 @@ class _TabsPageState extends State<TabsPage> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedItemIndex),
       bottomNavigationBar: _bottomNavigationBar(context),
-      // bottomNavigationBar: BottomNavyBar(
-      //   selectedIndex: _selectedItemIndex,
-      //   items: [
-      //     BottomNavyBarItem(
-      //       icon: FaIcon(FontAwesomeIcons.compass, size: 25,),
-      //       title: Text('Explore'),
-      //       activeColor: orange,
-      //     ),
-      //     BottomNavyBarItem(
-      //       textAlign: TextAlign.center,
-      //       icon: FaIcon(FontAwesomeIcons.shoppingCart, size: 25,),
-      //       title: Text('Cart'),
-      //       activeColor: orange,
-      //     ),
-      //     BottomNavyBarItem(
-      //       icon: FaIcon(FontAwesomeIcons.bookmark, size: 25,),
-      //       title: Text('Favorite'),
-      //       activeColor: orange,
-      //     ),
-      //     BottomNavyBarItem(
-      //       icon: FaIcon(FontAwesomeIcons.user, size: 25,),
-      //       title: Text('User'),
-      //       activeColor: orange,
-      //     ),
-      //   ],
-      //   onItemSelected: (int value) {
-      //     setState(() {
-      //       _selectedItemIndex = value;
-      //     });
-      //   },
-      // ),
     );
   }
 
   Widget _bottomNavigationBar(BuildContext context) {
     return BottomNavigationBar(
         iconSize: 25,
-        selectedItemColor: orange,
+        selectedItemColor: green,
         unselectedItemColor: Colors.grey,
         currentIndex: _selectedItemIndex,
         onTap: _cambiarWidget,
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.compass), label: "Explore"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.shoppingCart), label: "My Order"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.bookmark), label: "Favourite"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.user), label: "Profile")
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.compass, size: 20,), label: "Explore"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.shoppingCart, size: 20,), label: "My Order"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.bookmark, size: 20,), label: "Favourite"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.user, size: 20,), label: "Profile")
         ]);
   }
 
@@ -108,7 +77,9 @@ class _TabsPageState extends State<TabsPage> {
             context: context,
             icon: const AssetImage('assets/ic_welcome.png'),
             labelButton: 'Enable Location',
-            buttonColor: orange,
-            func: () {}));
+            buttonColor: green,
+            func: () {
+              Navigator.pop(context);
+            }));
   }
 }

@@ -1,8 +1,8 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/cuisines_filters.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/foodGroups_filter.dart';
-import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/list_tile_checked.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/price_filters.dart';
 import 'package:delivery_app/src/features/presentation/filter_page/View/customsWidgets/rating_filter.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +38,11 @@ class _FilterPageState extends State<FilterPage> {
             color: Colors.black,
             fontWeight: FontWeight.w600,
             fontSize: 20),
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(Icons.arrow_back_ios)),
+        // leading: GestureDetector(
+        //     onTap: () {
+        //       Navigator.pop(context);
+        //     },
+        //     child: Icon(Icons.arrow_back_ios)),
         actions: [
           GestureDetector(
             onTap: () {},
@@ -50,7 +50,7 @@ class _FilterPageState extends State<FilterPage> {
               padding: EdgeInsets.only(top: 20, right: 10.0),
               child: headerText(
                   text: 'Reset',
-                  color: primary1,
+                  color: green,
                   fontWeight: FontWeight.w500,
                   fontSize: 17.0),
             ),
@@ -135,9 +135,18 @@ class _FilterPageState extends State<FilterPage> {
                 child: PriceFilter()),
             SizedBox(
               height: 50,
-            ), Container(
-                padding: EdgeInsets.symmetric(horizontal: 15.0),
-                child: _buttonApplyFilter(context)),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              // child: _buttonApplyFilter(context)
+              child: createButton(
+                context: context,
+                buttonColor: green,
+                labelButton: "Apply",
+                func: (){}
+                //labelButtonColor: green
+              ),
+            ),
            
             SizedBox(
               height: 20,

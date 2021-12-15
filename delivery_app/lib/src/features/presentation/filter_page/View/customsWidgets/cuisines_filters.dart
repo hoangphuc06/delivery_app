@@ -37,26 +37,6 @@ class _CuisinesFiltersState extends State<CuisinesFilters> {
             btnAsia = !btnAsia;
           });
         }, btnAsia, 'Drinks'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnPizza = !btnPizza;
-        //   });
-        // }, btnPizza, 'Pizza'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnSushi = !btnSushi;
-        //   });
-        // }, btnSushi, 'DE'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnVietNamese = !btnVietNamese;
-        //   });
-        // }, btnVietNamese, 'VietNam'),
-        // _roundedButtonFilter(() {
-        //   setState(() {
-        //     btnFastFood = !btnFastFood;
-        //   });
-        // }, btnFastFood, 'FastFood'),
         _roundedButtonFilter(() {
           setState(() {
             btnDesserts = !btnDesserts;
@@ -98,7 +78,7 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
             text: labelText,
             color: isActive ? white : Colors.black,
             fontWeight: FontWeight.w400,
-            fontSize: 17),
+            fontSize: 15),
       ),
     ),
   );

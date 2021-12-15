@@ -1,7 +1,10 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/features/presentation/food_detail_page/view/custom/rating_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FoodDetailPage extends StatefulWidget {
   const FoodDetailPage({Key? key}) : super(key: key);
@@ -18,16 +21,24 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
       body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
+              actions: [
+                IconButton(icon: Icon(Icons.bookmark, color: Colors.white,),
+                  onPressed: () {},
+                ),
+              ],
+              iconTheme: IconThemeData(
+                color: Colors.white
+              ),
               elevation: 0,
               floating: false,
               pinned: true,
               snap: false,
-              backgroundColor: Colors.white,
-              expandedHeight: 217,
+              backgroundColor: green,
+              expandedHeight: 216.5,
               flexibleSpace: FlexibleSpaceBar(
                 background: Column(
                   children: [
-                    Image.asset("assets/chicken/mieng1.jpg", fit: BoxFit.cover, height: 250, width: size.width,)
+                    Image.asset("assets/chicken/mieng2.jpg", fit: BoxFit.cover, height: 250, width: size.width,)
                   ],
                 ),
               ),
@@ -43,8 +54,8 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            headerText(text: "Gà rán (1 miếng)", color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
-                            headerText(text: "68.000 VNĐ", color: orange, fontSize: 20, fontWeight: FontWeight.bold),
+                            headerText(text: "Gà rán (2 miếng)", color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                            headerText(text: "68.000 VNĐ", color: green, fontSize: 20, fontWeight: FontWeight.bold),
                           ],
                         ),
                         SizedBox(height: 20,),
@@ -74,7 +85,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               children: [
                                 Icon(
                                   Icons.location_on,
-                                  color: rosa,
+                                  color: orange,
                                   size: 17,
                                 ),
                                 SizedBox(width: 2,),
@@ -233,14 +244,17 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 50,)
+                  SizedBox(height: 100,)
                 ]
               ),
             )
           ]
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){},
+        backgroundColor: green,
+        onPressed: (){
+          _showBottomSheet();
+        },
         label: Text("Add to cart"),
         foregroundColor: Colors.white,
         icon: Container(
@@ -257,135 +271,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "1",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "2",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "3",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orange,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "4",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Container(
-                    width: 60,
-                    height: 30,
-                    color: orangeWithHalfOpacity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        headerText(
-                            text: "5",
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
-                        Icon(
-                          Icons.star,
-                          color: Colors.white,
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
+          Container(
+            width: double.infinity,
+            child: RatingFoodWidget()
           ),
           Container(
             margin: EdgeInsets.only(top: 10),
@@ -399,7 +287,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             margin: EdgeInsets.only(top: 10),
             child: headerText(
                 text: "+ Edit your review",
-                color: orange,
+                color: green,
                 fontSize: 15,
                 fontWeight: FontWeight.w500),
           ),
@@ -407,6 +295,194 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
       ),
     );
   }
+
+  _showBottomSheet() => showModalBottomSheet(
+    isScrollControlled: true,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(24),
+        topRight: Radius.circular(24),
+      ),
+    ),
+    context: context,
+    builder: (context) => Container(
+      padding: EdgeInsets.all(24),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10.0),
+                child: Image(
+                  width: 150,
+                  height: 100,
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/chicken/mieng2.jpg"),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                        margin: EdgeInsets.symmetric(vertical: 7),
+                        child: headerText(
+                            text: "Gà rán (2 miếng)",
+                            color: Colors.black,
+                            fontSize: 20)),
+                    Container(
+                      //alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(bottom: 10.0),
+                      child: Text(
+                        "KFC Shop",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17),
+                      ),
+                    ),
+                    Container(
+                      //alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(bottom: 5.0),
+                      child: Text(
+                        "68.000 VNĐ",
+                        style: TextStyle(
+                            color: green,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20,),
+          Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: amarillo,
+                    size: 17,
+                  ),
+                  SizedBox(width: 2,),
+                  Text(
+                    "5",
+                    style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    "(4k)",
+                    style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              SizedBox(width: 40,),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_on,
+                    color: orange,
+                    size: 17,
+                  ),
+                  SizedBox(width: 2,),
+                  Text(
+                    "500m",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+              SizedBox(width: 40,),
+              Row(
+                children: [
+                  Icon(
+                    Icons.access_time,
+                    color: fbButtonColor,
+                    size: 17,
+                  ),
+                  SizedBox(width: 2,),
+                  Text(
+                    "30 min",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          SizedBox(height: 20,),
+          Row(
+            children: [
+              Text(
+                "Quantity",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500
+                ),
+              ),
+              Spacer(),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: placeholderBg,
+                ),
+                padding:
+                EdgeInsets.only(top: 6, bottom: 6, right: 16, left: 16),
+                child: Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.minus,
+                      color: greyone,
+                      size: 12,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    headerText(
+                        text: "1",
+                        color: greyone,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    FaIcon(
+                      FontAwesomeIcons.plus,
+                      color: green,
+                      size: 13,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: createButton(
+                context: context,
+                func: () {
+                  Navigator.pop(context);
+                },
+                labelButton: 'Add to cart',
+                buttonColor: green
+            ),
+          ),
+        ],
+      ),
+    )
+  );
 
   Widget _cardReviews() {
     var cmt =
@@ -440,7 +516,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         fontWeight: FontWeight.bold),
                     SizedBox(height: 5,),
                     headerText(
-                        text: "06/120/2021",
+                        text: "06/12/2021",
                         color: gris,
                         fontSize: 13,
                         fontWeight: FontWeight.w500),
@@ -478,7 +554,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             margin: EdgeInsets.only(top: 5, left: 60),
             child: Text(
               "Show more",
-              style: TextStyle(fontSize: 15, color: orange, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 15, color: green, fontWeight: FontWeight.w500),
             ),
           ),
           Container(

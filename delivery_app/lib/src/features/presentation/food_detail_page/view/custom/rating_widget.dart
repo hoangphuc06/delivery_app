@@ -1,56 +1,71 @@
 import 'package:delivery_app/src/colors/colors.dart';
-import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 
-class RatingFilter extends StatefulWidget {
-  const RatingFilter({Key? key}) : super(key: key);
+class RatingFoodWidget extends StatefulWidget {
+  const RatingFoodWidget({Key? key}) : super(key: key);
 
   @override
-  _RatingFilterState createState() => _RatingFilterState();
+  _RatingFoodWidgetState createState() => _RatingFoodWidgetState();
 }
 
-class _RatingFilterState extends State<RatingFilter> {
-  bool btnAmerican = false;
-  bool btnSushi = false;
-  bool btnAsia = false;
-  bool btnPizza = false;
-  bool btnDesserts = false;
-  bool btnFastFood = false;
-  bool btnVietNamese = false;
-
+class _RatingFoodWidgetState extends State<RatingFoodWidget> {
+  bool btn1 = false;
+  bool btn2 = false;
+  bool btn3 = false;
+  bool btn4 = false;
+  bool btn5 = true;
   @override
   Widget build(BuildContext context) {
     return Wrap(
       direction: Axis.horizontal,
-     
       alignment: WrapAlignment.spaceBetween,
       children: [
         _roundedButtonFilter(() {
           setState(() {
-            btnAmerican = !btnAmerican;
+            btn1 = true;
+            btn2 = false;
+            btn3 = false;
+            btn4 = false;
+            btn5 = false;
           });
-        }, btnAmerican, '1'),
+        }, btn1, '1'),
         _roundedButtonFilter(() {
           setState(() {
-            btnAsia = !btnAsia;
+            btn1 = false;
+            btn2 = true;
+            btn3 = false;
+            btn4 = false;
+            btn5 = false;
           });
-        }, btnAsia, '2'),
+        }, btn2, '2'),
         _roundedButtonFilter(() {
           setState(() {
-            btnPizza = !btnPizza;
+            btn1 = false;
+            btn2 = false;
+            btn3 = true;
+            btn4 = false;
+            btn5 = false;
           });
-        }, btnPizza, '3'),
+        }, btn3, '3'),
         _roundedButtonFilter(() {
           setState(() {
-            btnSushi = !btnSushi;
+            btn1 = false;
+            btn2 = false;
+            btn3 = false;
+            btn4 = true;
+            btn5 = false;
           });
-        }, btnSushi, '4'),
+        }, btn4, '4'),
         _roundedButtonFilter(() {
           setState(() {
-            btnVietNamese = !btnVietNamese;
+            btn1 = false;
+            btn2 = false;
+            btn3 = false;
+            btn4 = false;
+            btn5 = true;
           });
-        }, btnVietNamese, '5'),
+        }, btn5, '5'),
       ],
     );
   }
@@ -65,7 +80,7 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
         color: isActive ? primary : placeholderBg,
         elevation: 0.5,
         child: Container(
-        width: 30,
+          width: 30,
           child: Row(
             children: [
               Expanded(

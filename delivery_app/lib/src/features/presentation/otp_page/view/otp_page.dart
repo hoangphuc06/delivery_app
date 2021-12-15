@@ -39,7 +39,7 @@ class _OTPPageState extends State<OTPPage> {
               SizedBox(height: 50,),
               VerificationCode(
                 length: 4,
-                underlineColor: orange,
+                underlineColor: green,
                 onCompleted: (String value) {  },
                 onEditing: (bool value) {  },
               ),
@@ -50,7 +50,7 @@ class _OTPPageState extends State<OTPPage> {
                     Navigator.pop(context);
                   },
                   labelButton: 'Verification',
-                  buttonColor: orange
+                  buttonColor: green
               ),
             ],
           ),

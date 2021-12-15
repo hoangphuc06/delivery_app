@@ -38,7 +38,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   shape: StadiumBorder(),
                   icon: AssetImage('assets/ic_change_password.png'),
                   labelButton: 'Send',
-                  buttonColor: orange),
+                  buttonColor: green),
             ],
           ),
         ),
@@ -74,10 +74,11 @@ void _showAlerta(BuildContext context) {
     createButton(
         context: context,
         func: () {
-          Navigator.pushNamed(context, 'login');
+          Navigator.pop(context);
+          Navigator.pop(context);
         },
         icon: AssetImage('assets/ic_change_password.png'),
         labelButton: 'Done',
-        buttonColor: orange),
+        buttonColor: green),
   );
 }

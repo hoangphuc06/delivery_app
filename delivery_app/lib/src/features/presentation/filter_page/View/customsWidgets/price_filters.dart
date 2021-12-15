@@ -96,7 +96,7 @@ Widget _roundedButtonFilter(func, bool isActive, String labelText) {
           text: labelText,
           color: isActive ? white : Colors.black,
           fontWeight: FontWeight.w400,
-          fontSize: 17),
+          fontSize: 15),
     ),
   );
 }

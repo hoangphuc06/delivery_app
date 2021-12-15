@@ -7,14 +7,22 @@ import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/r
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class ExploreTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: DefaultTabController(
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: green,
+        ),
+        backgroundColor: green,
+        elevation: 0,
+      ),
+      body: DefaultTabController(
           length: 6,
           child: NestedScrollView(
             physics: NeverScrollableScrollPhysics(),
@@ -23,13 +31,24 @@ class ExploreTab extends StatelessWidget {
                 SliverAppBar(
                   automaticallyImplyLeading: false,
                   backgroundColor: Colors.white,
-                  collapsedHeight: 440,
-                  expandedHeight: 440,
+                  collapsedHeight: 450,
+                  expandedHeight: 450,
                   flexibleSpace: Container(
                     child: Column(
                       children: [
-                        _buildHeader(),
-                        _topBar(context),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: green,
+                            //borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),)
+                          ),
+                          child: Column(
+                            children: [
+                              _buildHeader(),
+                              _topBar(context),
+                              SizedBox(height: 25,),
+                            ],
+                          ),
+                        ),
                         //_categoryBar(context),
                         Container(
                           padding: EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 16),
@@ -40,36 +59,6 @@ class ExploreTab extends StatelessWidget {
                               fontSize: 20),
                         ),
                         _shopsSlider(context),
-                        // Container(
-                        //   alignment: Alignment.centerLeft,
-                        //   padding: const EdgeInsets.only(left: 16, right: 16, top: 8),
-                        //   child: headerText(
-                        //       text: "Popular this week",
-                        //       color: Colors.black,
-                        //       fontSize: 20),
-                        // ),
-                        // _populares(context, populars_data[0]),
-                        // _populares(context, populars_data[1]),
-                        // _populares(context, populars_data[2]),
-                        // _populares(context, populars_data[3]),
-                        // Container(
-                        //   alignment: Alignment.centerLeft,
-                        //   padding: const EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
-                        //   child: headerText(
-                        //       text: "Recommend for you",
-                        //       color: Colors.black,
-                        //       fontSize: 20),
-                        // ),
-                        // //_shopsSlider(context),
-                        // SizedBox(
-                        //   height: 50,
-                        // ),
-                        // GestureDetector(
-                        //     onTap: () {
-                        //       Navigator.pushNamed(context, 'collections');
-                        //     },
-                        //     child: _headers(context, "Collections", "Show all")),
-                        // _sliderCollections(),
                       ],
                     ),
                   ),
@@ -85,9 +74,9 @@ class ExploreTab extends StatelessWidget {
                           Tab(text: 'Trending'),
                           Tab(text: 'Discount'),
                         ],
-                        indicatorColor: orange,
+                        indicatorColor: green,
                         unselectedLabelColor: primaryColor,
-                        labelColor: orange,
+                        labelColor: green,
                         isScrollable: true,
                       ),
                     ),
@@ -232,17 +221,17 @@ class MyDelegate extends SliverPersistentHeaderDelegate {
 Widget _buildHeader() {
   return Container(
     width: double.infinity,
-    padding: EdgeInsets.all(16),
+    padding: EdgeInsets.only(left: 16, right: 16, bottom: 16,),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 8),
-        Text("Hello", style: TextStyle(fontSize: 16)),
+        Text("Hello", style: TextStyle(fontSize: 16, color: Colors.white)),
         Text(
           "Cameron Cook,",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
+              color: Colors.white
           ),
         ),
       ],
@@ -263,7 +252,8 @@ Widget _topBar(BuildContext context) {
           child: Container(
             padding: EdgeInsets.only(left: 15),
             decoration: BoxDecoration(
-              color: Color.fromRGBO(142, 142, 147, 1.2),
+              //color: Color.fromRGBO(142, 142, 147, 1.2),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20.0),
             ),
             width: size.width - 85,
@@ -285,13 +275,13 @@ Widget _topBar(BuildContext context) {
           width: 40,
           height: 40,
           decoration: BoxDecoration(
-              color: orange,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(30.0)),
           child: IconButton(
             icon: Icon(
               Icons.filter_list,
               size: 25,
-              color: Colors.white,
+              color: green,
             ),
             onPressed: () {
               Navigator.pushNamed(context, 'filter');
@@ -361,7 +351,7 @@ Widget _shopItem(BuildContext context, shops_data, ) {
                       fontWeight: FontWeight.bold,
                       fontSize: 17),
                 ),
-                Icon(Icons.bookmark, size: 20, color: shops_data["like"]=="like"? orange: Colors.grey[400],)
+                Icon(Icons.bookmark, size: 20, color: shops_data["like"]=="like"? rosa: Colors.grey[400],)
               ],
             ),
           ),
@@ -406,7 +396,7 @@ Widget _shopItem(BuildContext context, shops_data, ) {
                   children: [
                     Icon(
                       Icons.location_on,
-                      color: rosa,
+                      color: orange,
                       size: 15,
                     ),
                     SizedBox(width: 2,),
@@ -488,7 +478,7 @@ Widget _shopItem_t2(BuildContext context, data) {
                         text: data["name"],
                         color: Colors.black,
                         fontSize: 17),
-                    Icon(Icons.bookmark, size: 20, color: data["like"]=="like"? orange: Colors.grey[400],)
+                    Icon(Icons.bookmark, size: 20, color: data["like"]=="like"? rosa: Colors.grey[400],)
                   ],
                 )),
               Container(
@@ -529,7 +519,7 @@ Widget _shopItem_t2(BuildContext context, data) {
                       children: [
                         Icon(
                           Icons.location_on,
-                          color: rosa,
+                          color: orange,
                           size: 15,
                         ),
                         SizedBox(width: 2,),

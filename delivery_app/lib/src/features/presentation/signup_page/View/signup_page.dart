@@ -29,7 +29,7 @@ class SignUpPage extends StatelessWidget {
                 context: context,
                 icon: AssetImage('assets/ic_change_password.png'),
                 labelButton: 'Sign up',
-                buttonColor: orange,
+                buttonColor: green,
                 func: () {
                   Navigator.pushReplacementNamed(context, 'otp');
                 },

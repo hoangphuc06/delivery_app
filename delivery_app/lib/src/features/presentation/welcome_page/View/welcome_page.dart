@@ -50,7 +50,7 @@ class WelcomePage extends StatelessWidget {
                     Navigator.pushNamed(context, 'login');
                   },
                   labelButton: 'Log in',
-                  buttonColor: orange,
+                  buttonColor: green,
                   icon: AssetImage('assets/ic_fb.png')),
               createButton(
                   context: context,
