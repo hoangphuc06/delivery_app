@@ -1,6 +1,7 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/data/burger_data.dart';
 import 'package:delivery_app/src/features/data/chicken_data.dart';
+import 'package:delivery_app/src/features/data/drinks_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/orderTracking/orderTrackingModel.dart';
@@ -28,7 +29,7 @@ class _OrderTrackingState extends State<OrderTracking> {
           SizedBox(
             height: 20,
           ),
-          _itemInRow('Order ID: ', '1638337707663845', gris, Colors.black, 14),
+          _itemInRow('Order ID: ', '1638337707663845', greyone, Colors.black, 14),
           SizedBox(
             height: 20,
           ),
@@ -38,7 +39,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                   MaterialPageRoute(builder: (context) => TrackOrder()));
             },
             child: Container(
-              padding: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.only(bottom: 15),
               decoration: BoxDecoration(
                   border: Border(bottom: BorderSide(width: 0.5, color: gris))),
               child: Row(
@@ -55,7 +56,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10 Dec, 2021',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 5,
                         ),
@@ -63,7 +64,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10:30 Am',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 72,
                         ),
@@ -71,7 +72,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10 Dec, 2021',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 5,
                         ),
@@ -79,7 +80,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10:35 Am',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 72,
                         ),
@@ -87,7 +88,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10 Dec, 2021',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 5,
                         ),
@@ -95,7 +96,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10:40 Am',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 72,
                         ),
@@ -103,7 +104,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10 Dec, 2021',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 5,
                         ),
@@ -111,7 +112,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10:45 Am',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 72,
                         ),
@@ -119,7 +120,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10 Dec, 2021',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                         SizedBox(
                           height: 5,
                         ),
@@ -127,13 +128,13 @@ class _OrderTrackingState extends State<OrderTracking> {
                             text: '10:45 Am',
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
-                            color: gris),
+                            color: greyone),
                       ]),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height - 278,
+                        height: MediaQuery.of(context).size.height - 400,
                         width: MediaQuery.of(context).size.width / 6,
                         child: IconStepper(
                           alignment: Alignment.topCenter,
@@ -180,7 +181,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             height: 10,
                           ),
                           _itemInRow(
-                              'Status: ', 'Deliverred', gris, orange, 14),
+                              'Status: ', 'Deliverred', greyone, orange, 14),
                           SizedBox(
                             height: 32,
                           ),
@@ -200,7 +201,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                           SizedBox(
                             height: 10,
                           ),
-                          _itemInRow('Status: ', 'On Thy Way', gris, blue, 14),
+                          _itemInRow('Status: ', 'On Thy Way', greyone, blue, 14),
                           SizedBox(
                             height: 26,
                           ),
@@ -221,7 +222,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             height: 10,
                           ),
                           _itemInRow(
-                              'Status: ', 'Order Processing', gris, red, 14),
+                              'Status: ', 'Order Processing', greyone, red, 14),
                           SizedBox(
                             height: 30,
                           ),
@@ -240,7 +241,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                           SizedBox(
                             height: 10,
                           ),
-                          _itemInRow('Status: ', 'Confirmed', gris, green, 14),
+                          _itemInRow('Status: ', 'Confirmed', greyone, green, 14),
                           SizedBox(
                             height: 28,
                           ),
@@ -260,7 +261,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                             height: 10,
                           ),
                           _itemInRow(
-                              'Status: ', 'Order Placed', gris, orange, 14),
+                              'Status: ', 'Order Placed', greyone, orange, 14),
                         ],
                       )
                     ],
@@ -270,7 +271,7 @@ class _OrderTrackingState extends State<OrderTracking> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             headerText(
@@ -279,44 +280,54 @@ class _OrderTrackingState extends State<OrderTracking> {
                 fontWeight: FontWeight.w500,
                 color: greytwo),
             headerText(
-                text: 'Sa Bi Chuong',
+                text: 'KFC Shop',
                 fontSize: 17,
-                fontWeight: FontWeight.w500,
-                color: orange),
+                fontWeight: FontWeight.bold,
+                color: green),
           ]),
           SizedBox(
             height: 10,
           ),
-          _listItem(context, burgers_data[0], '1'),
-          _listItem(context, burgers_data[1], '1'),
-          _listItem(context, chickens_data[2], '1'),
-          _listItem(context, chickens_data[3], '1'),
+          Container(
+            padding: EdgeInsets.only(bottom: 10),
+            decoration: BoxDecoration(
+                border: Border(bottom: BorderSide(width: 0.5, color: gris))),
+            child: Column(
+              children: [
+                _listItem(context, burgers_data[0], '1'),
+                _listItem(context, burgers_data[1], '1'),
+                _listItem(context, chickens_data[0], '1'),
+                _listItem(context, drinks_data[1], '1'),
+              ],
+            ),
+          ),
+
           SizedBox(
             height: 20,
           ),
-          _itemInRow1('Item Total', '398.000đ', Colors.black, 17),
+          _itemInRow1('Item Total', '151.000 VNĐ', Colors.black, 17),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
-          _itemInRow1('Discount', '48.000đ', greytwo, 17),
+          _itemInRow1('Discount', '1.000 VNĐ', Colors.black, 17),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
               padding: EdgeInsets.only(bottom: 10),
               decoration: BoxDecoration(
                   border: Border(bottom: BorderSide(width: 0.5, color: gris))),
-              child: _itemInRow1('Delivery Fee', 'Free', greytwo, 17)),
+              child: _itemInRow1('Delivery Fee', 'Free', green, 17)),
           SizedBox(
             height: 15,
           ),
-          _itemInRow1('Total', '450.000đ', greytwo, 17),
-          SizedBox(
-            height: 20,
-          ),
-          _itemInRow1('Payment Method ', 'Cash', greytwo, 17),
+          _itemInRow1('Total', '150.000 VNĐ', Colors.black, 17),
           SizedBox(
             height: 10,
+          ),
+          _itemInRow1('Payment Method ', 'Cash', Colors.black, 17),
+          SizedBox(
+            height: 30,
           ),
         ]),
       ),
@@ -370,24 +381,43 @@ class _OrderTrackingState extends State<OrderTracking> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              margin: EdgeInsets.symmetric(vertical: 7),
+                              margin: EdgeInsets.symmetric(vertical: 5),
                               child: headerText(
                                   text: populars_data["name"],
                                   color: Colors.black,
                                   fontSize: 17)),
-                          SizedBox(
-                            height: 8,
-                          ),
                           Container(
                             //alignment: Alignment.centerLeft,
                             margin: EdgeInsets.only(bottom: 5.0),
                             child: Text(
-                              populars_data['price'] + 'đ',
+                              populars_data["descr"],
                               style: TextStyle(
-                                  color: primary1,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 20),
+                                  fontSize: 13),
                             ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                //alignment: Alignment.centerLeft,
+                                //margin: EdgeInsets.only(bottom: 7.0),
+                                child: Text(
+                                  populars_data["price"] + " VNĐ",
+                                  style: populars_data["discount"]== "0" ? TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15):
+                                  TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
+
+                                ),
+                              ),
+                              populars_data["discount"]!= "0" ?
+                              Container(
+                                margin: EdgeInsets.only(left: 7.0),
+                                child: Text(
+                                    populars_data["discount"] + " VNĐ",
+                                    style: TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15)
+                                ),
+                              ): Container(),
+                            ],
                           ),
                         ],
                       ),
@@ -404,7 +434,7 @@ class _OrderTrackingState extends State<OrderTracking> {
                     children: [
                       headerText(
                           text: count.toString(),
-                          color: blue,
+                          color: green,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ],

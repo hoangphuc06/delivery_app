@@ -34,7 +34,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 iconTheme: IconThemeData(
                   color: Colors.white
                 ),
-                elevation: 0,
+                elevation: 0.5,
                 floating: false,
                 pinned: true,
                 snap: false,
@@ -108,7 +108,6 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    _foodItem(context, chickens_data[0]),
                     _foodItem(context, chickens_data[1]),
                     _foodItem(context, rices_data[2]),
                     _foodItem(context, rices_data[3]),
@@ -118,6 +117,7 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                     _foodItem(context, fast_data[4]),
                     _foodItem(context, desserts_data[0]),
                     _foodItem(context, drinks_data[1]),
+                    _foodItem(context, drinks_data[2]),
                     SizedBox(height: 50,)
                   ],
                 ),

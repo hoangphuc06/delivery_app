@@ -8,13 +8,13 @@ import 'package:delivery_app/src/features/presentation/notification_page/View/no
 import 'package:delivery_app/src/features/presentation/otp_page/view/otp_page.dart';
 import 'package:delivery_app/src/features/presentation/payment_method_page/View/payment_method_page.dart';
 import 'package:delivery_app/src/features/presentation/place_detail_page/View/place_detail_page.dart';
-import 'package:delivery_app/src/features/presentation/profile_detail_page/View/order_history.dart';
 import 'package:delivery_app/src/features/presentation/profile_detail_page/View/profile_detail_page.dart';
 import 'package:delivery_app/src/features/presentation/profile_detail_page/View/promo_code.dart';
 import 'package:delivery_app/src/features/presentation/search_page/View/searchView.dart';
 import 'package:delivery_app/src/features/presentation/settings_page/View/settings_page.dart';
 import 'package:delivery_app/src/features/presentation/signup_page/View/signup_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/tabs_page.dart';
+import 'package:delivery_app/src/features/presentation/walkthrough/view/walkthrough_page.dart';
 import 'package:delivery_app/src/features/presentation/welcome_page/View/welcome_page.dart';
 import 'package:delivery_app/src/features/presentation/collections_page/View/collections_page.dart';
 import 'package:delivery_app/src/features/presentation/collection_detail_page/View/collection_detail_page.dart';
@@ -37,9 +37,9 @@ final routes = <String, WidgetBuilder>{
   "invite-friends": (BuildContext context) => InviteFriendsPage(),
   "payment-method": (BuildContext context) => PaymentMethodPage(),
   "notification": (BuildContext context) => NotificationPage(),
-  "order-history": (BuildContext context) => OrderHistoryPage(),
   "promo-code": (BuildContext context) => PromoCodePage(),
   "otp": (BuildContext context) => OTPPage(),
   "location": (BuildContext context) => LocationPage(),
   "food-detail": (BuildContext context) => FoodDetailPage(),
+  "walkthrough": (BuildContext context) => WalkthroughPage(),
 };

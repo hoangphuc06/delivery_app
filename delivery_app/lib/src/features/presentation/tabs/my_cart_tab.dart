@@ -2,34 +2,46 @@ import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/data/burger_data.dart';
 import 'package:delivery_app/src/features/data/chicken_data.dart';
 import 'package:delivery_app/src/features/data/drinks_data.dart';
-import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/data/rice_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/confirmOrder.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ConfirmOrderPage extends StatefulWidget {
-  const ConfirmOrderPage({Key? key}) : super(key: key);
+class MyCartTab extends StatefulWidget {
+  const MyCartTab({Key? key}) : super(key: key);
 
   @override
-  _ConfirmOrderPageState createState() => _ConfirmOrderPageState();
+  _MyCartTabState createState() => _MyCartTabState();
 }
 
-class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
-  bool isActive1 = true;
-  bool isActive2 = false;
+class _MyCartTabState extends State<MyCartTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          "Check out",
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
+        elevation: 0.5,
+        title: headerText(
+            text: 'My cart',
+            color: primaryColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600),
+        // actions: [
+        //    Column(
+        //      mainAxisAlignment: MainAxisAlignment.center,
+        //      crossAxisAlignment: CrossAxisAlignment.center,
+        //      children: [
+        //        Container(
+        //          padding: EdgeInsets.only(right: 15),
+        //          child: FaIcon(
+        //            FontAwesomeIcons.bell,
+        //          ),
+        //        ),
+        //      ],
+        //    )
+        //  ],
         centerTitle: true,
       ),
       backgroundColor: white,
@@ -38,61 +50,10 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              _map(
-                context,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: EdgeInsets.only(bottom: 15),
-                decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(width: 0.5, color: gris))),
-                child: Column(
-                  children: [
-                    _listItem(context, burgers_data[0], '1'),
-                    _listItem(context, rices_data[5], '1'),
-                    _listItem(context, chickens_data[0], '1'),
-                    _listItem(context, drinks_data[2], '1'),
-                  ],
-                ),
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                headerText(
-                    text: 'Payment Method',
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black),
-                headerText(
-                    text: 'Add New',
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: green),
-              ]),
-              SizedBox(
-                height: 20,
-              ),
-              _payment('assets/cash.png', 'Cash', 'Pay with Cash', isActive1,
-                  () {
-                setState(() {
-                  isActive1 = !isActive1;
-                  isActive2 = false;
-                });
-              }),
-              SizedBox(
-                height: 20,
-              ),
-              _payment('assets/creditcard.png', 'Credit Card',
-                  'Pay with Visa or MasterCard', isActive2, () {
-                setState(() {
-                  isActive2 = !isActive2;
-                  isActive1 = false;
-                });
-              }),
+              _listItem(context, burgers_data[0], '1'),
+              _listItem(context, rices_data[5], '1'),
+              _listItem(context, chickens_data[0], '1'),
+              _listItem(context, drinks_data[2], '1'),
               SizedBox(
                 height: 20,
               ),
@@ -143,7 +104,13 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
               SizedBox(
                 height: 20,
               ),
-              _buttonConfirmOrder(context, '350.000đ'),
+              _map(
+                context,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              _buttonCheckOut(context, '140.000 VNĐ'),
               SizedBox(
                 height: 30,
               ),
@@ -156,9 +123,6 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
 
   Widget _map(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(bottom: 15),
-        decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(width: 0.5, color: gris))),
         width: double.infinity,
         child: Column(
           children: [
@@ -251,46 +215,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
     ]);
   }
 
-  Widget _payment(
-      String image, String title, String descript, bool isActive, func) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: smoke,
-      ),
-      child: ListTile(
-          onTap: func,
-          leading: Image(
-            width: 65,
-            height: 65,
-            fit: BoxFit.cover,
-            image: AssetImage(image),
-          ),
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              headerText(
-                  text: title,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 17),
-              headerText(
-                  text: descript,
-                  color: greytwo,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 15),
-            ],
-          ),
-          trailing: isActive
-              ? FaIcon(
-                  FontAwesomeIcons.checkCircle,
-                  color: isActive ? green : gris,
-                )
-              : Text('')),
-    );
-  }
-
-  Widget _buttonConfirmOrder(context, String charge) {
+  Widget _buttonCheckOut(context, String charge) {
     return Container(
         width: double.infinity,
         height: 50,
@@ -298,17 +223,45 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
           elevation: 0.5,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           color: primary,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ConfirmOrderPage()),
+            );
+          },
           child: Container(
             padding: EdgeInsets.only(right: 16, left: 16),
-            child: headerText(
-                text: "Confirm Order",
-                fontSize: 17,
-                fontWeight: FontWeight.w400,
-                color: white),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    FaIcon(
+                      FontAwesomeIcons.shoppingCart,
+                      size: 20,
+                      color: white,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    headerText(
+                        text: "Check out",
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        color: white),
+                  ],
+                ),
+                headerText(
+                    text: charge,
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    color: white)
+              ],
+            ),
           ),
         ));
   }
+
 
   Widget _listItem(BuildContext context, populars_data, String count) {
     return Container(
@@ -385,18 +338,35 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                   ],
                 ),
                 Container(
-                  decoration: ShapeDecoration(
-                    shape: CircleBorder(),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
                     color: placeholderBg,
                   ),
-                  padding: EdgeInsets.all(12),
+                  padding:
+                  EdgeInsets.only(top: 6, bottom: 6, right: 16, left: 16),
                   child: Row(
                     children: [
+                      FaIcon(
+                        FontAwesomeIcons.minus,
+                        color: greyone,
+                        size: 12,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
                       headerText(
                           text: count.toString(),
-                          color: green,
-                          fontWeight: FontWeight.bold,
+                          color: greyone,
+                          fontWeight: FontWeight.w400,
                           fontSize: 17),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      FaIcon(
+                        FontAwesomeIcons.plus,
+                        color: green,
+                        size: 13,
+                      ),
                     ],
                   ),
                 ),

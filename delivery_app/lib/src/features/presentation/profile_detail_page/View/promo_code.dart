@@ -1,5 +1,3 @@
-
-
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/BackButtons/back_button.dart';
@@ -14,33 +12,26 @@ class PromoCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgGreyPage,
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            leading: Builder(builder: (BuildContext context) {
-              return backButton(context, Colors.black);
-            }),
-            backgroundColor: Colors.white,
-            title: headerText(
-                text: 'Promo Code',
-                color: primaryColor,
-                fontSize: 17,
-                fontWeight: FontWeight.w600),
-          ),
-          SliverList(
-              delegate: SliverChildListDelegate([
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Column(children: [
-                CodeCard(context, "All Payments", "50%", "20-10-2021 00:00",
-                    orange, 'assets/shipping.png', "ab12736"),
-                CodeCard(context, "All Payments", "70%", "10-11-2021 00:00",
-                    orange, 'assets/free_shipping.png', '12baysd'),
-              ]),
-            )
-          ]))
-        ],
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0.5,
+        backgroundColor: Colors.white,
+        title: headerText(
+            text: 'Promo Code',
+            color: primaryColor,
+            fontSize: 17,
+            fontWeight: FontWeight.w600),
+      ),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(children: [
+          SizedBox(height: 10,),
+          CodeCard(context, "All Payments", "50%", "20-10-2021 00:00",
+              orange, 'assets/shipping.png', "ab12736"),
+          CodeCard(context, "All Payments", "70%", "10-11-2021 00:00",
+              orange, 'assets/free_shipping.png', '12baysd'),
+        ]),
       ),
     );
   }
@@ -55,7 +46,7 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
       bottom: 10,
       left: 10,
     ),
-    padding: EdgeInsets.only(left: 20, top: 10, bottom: 10, right: 20),
+    padding: EdgeInsets.all(16),
     width: double.infinity,
     decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
@@ -63,10 +54,11 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
         boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(210, 211, 215, 1.0),
-            offset: Offset(0, 5),
-            blurRadius: 10.0,
+            //offset: Offset(0, 0),
+            blurRadius: 5.0,
           )
-        ]),
+        ]
+    ),
     child: Row(
       children: [
         ClipRRect(
@@ -78,7 +70,7 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
               image: AssetImage(image),
             )),
         Container(
-          padding: EdgeInsets.only(left: 15.0),
+          padding: EdgeInsets.only(left: 20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,19 +82,19 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
                       child: headerText(
                           text: name,
                           color: Colors.black,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                           fontSize: 17.0)),
                   SizedBox(
-                    width: 60.0,
+                    width: 30.0,
                   ),
                   Container(
                       alignment: Alignment.centerLeft,
                       margin: EdgeInsets.only(bottom: 5.0),
                       child: headerText(
                           text: perDiscount,
-                          color: orange,
+                          color: green,
                           fontWeight: FontWeight.w500,
-                          fontSize: 13.0)),
+                          fontSize: 17.0)),
                 ],
               ),
               Row(
@@ -110,18 +102,18 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
                   Container(
                     margin: EdgeInsets.only(top: 5, bottom: 5),
                     child: headerText(
-                        text: "Expiry:",
-                        color: gris,
+                        text: "Expiry: ",
+                        color: greyone,
                         fontWeight: FontWeight.w500,
-                        fontSize: 13),
+                        fontSize: 14),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 5, bottom: 5),
                     child: headerText(
                         text: date,
-                        color: gris,
+                        color: greyone,
                         fontWeight: FontWeight.w500,
-                        fontSize: 13),
+                        fontSize: 14),
                   ),
                 ],
               ),
@@ -129,13 +121,13 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
                 children: [
                   Container(
                       alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(bottom: 5.0),
+                      margin: EdgeInsets.only(bottom: 5.0, top: 5.0),
                       child: headerText(
                           text: code,
-                          color: gris,
+                          color: greyone,
                           fontWeight: FontWeight.w500,
                           fontSize: 14.0)),
-                  SizedBox(width: 20),
+                  SizedBox(width: 10),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 15.0),
                     width: 90,
@@ -144,7 +136,7 @@ Widget CodeCard(BuildContext context, String name, String perDiscount,
                       onPressed: () {},
                       elevation: 0.5,
                       shape: StadiumBorder(),
-                      color: color,
+                      color: green,
                       textColor: Colors.white,
                       child: headerText(
                           text: "Copy",

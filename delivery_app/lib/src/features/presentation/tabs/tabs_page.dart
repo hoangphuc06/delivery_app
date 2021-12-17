@@ -3,7 +3,7 @@ import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/al
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/orderTracking/orderTracking.dart';
 import 'package:delivery_app/src/features/presentation/tabs/explore_tab.dart';
-import 'package:delivery_app/src/features/presentation/tabs/favourite_tab.dart';
+import 'package:delivery_app/src/features/presentation/tabs/my_cart_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/onComing_page.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/order_tab.dart';
 import 'package:delivery_app/src/features/presentation/tabs/profile_tab.dart';
@@ -30,7 +30,7 @@ class _TabsPageState extends State<TabsPage> {
 
   final List<Widget> _widgetOptions = [
     ExploreTab(),
-    OnComingPage(),
+    MyCartTab(),
     OrderTab(),
     ProfileTab()
   ];
@@ -61,7 +61,7 @@ class _TabsPageState extends State<TabsPage> {
         showUnselectedLabels: true,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.compass, size: 20,), label: "Explore"),
-          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.opencart, size: 20,), label: "My Cart"),
+          BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.shoppingCart, size: 20,), label: "My Cart"),
           BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.list, size: 20,), label: "My Order"),
           BottomNavigationBarItem(icon:  FaIcon(FontAwesomeIcons.user, size: 20,), label: "Profile")
         ]);
@@ -70,7 +70,7 @@ class _TabsPageState extends State<TabsPage> {
   Future _pedirLocation(BuildContext context) async {
     await showAlertDialog(
         context,
-        'assets/ic_welcome.png',
+        'assets/icon/map.png',
         "Enable Your Location",
         "Please allow to use your location to show nearby restaurant on the map.",
         //_doneButton(context,'Enable Location')

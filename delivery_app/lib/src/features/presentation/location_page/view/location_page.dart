@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/features/presentation/orderTracking/trackOrder.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -12,17 +15,40 @@ class LocationPage extends StatefulWidget {
   _LocationPageState createState() => _LocationPageState();
 }
 
+// Starting point latitude
+double _originLatitude = 10.878358916628754;
+// Starting point longitude
+double _originLongitude = 106.80697984875968;
+
 class _LocationPageState extends State<LocationPage> {
-  GoogleMapController? myController;
 
-  final LatLng _center = const LatLng(10.762622, 106.660172);
+  Completer<GoogleMapController> _controller = Completer();
+  // Configure map position and zoom
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(_originLatitude, _originLongitude),
+    zoom: 12,
+  );
 
-  void _onMapCreated(GoogleMapController controller) {
-    myController = controller;
+  _addMarker(LatLng position, String id, BitmapDescriptor descriptor) {
+    MarkerId markerId = MarkerId(id);
+    Marker marker =
+    Marker(markerId: markerId, icon: descriptor, position: position);
+    markers[markerId] = marker;
   }
 
-  bool btnHome = false;
-  bool btnWork = true;
+  @override
+  void initState() {
+    /// add origin marker origin marker
+    _addMarker(
+      LatLng(_originLatitude, _originLongitude),
+      "origin",
+      BitmapDescriptor.defaultMarker,
+    );
+    super.initState();
+  }
+
+  bool btnHome = true;
+  bool btnWork = false;
   bool btnOther = false;
 
   @override
@@ -43,72 +69,24 @@ class _LocationPageState extends State<LocationPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Container(
-          //   padding: EdgeInsets.only(left: 8),
-          //   decoration: BoxDecoration(
-          //       color: Color.fromRGBO(142, 142, 147, 1.2),
-          //       borderRadius: BorderRadius.all(Radius.circular(10))),
-          //   width: size.width - 50,
-          //   height: 50,
-          //   child: Container(
-          //     child: Row(
-          //       children: [
-          //         Icon(
-          //           Icons.search,
-          //           color: Colors.black,
-          //           size: 20,
-          //         ),
-          //         SizedBox(
-          //           width: 5,
-          //         ),
-          //         Text(
-          //           "Search",
-          //           style: TextStyle(color: Colors.black, fontSize: 17),
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 10,
-          // ),
-          // Container(
-          //   width: size.width - 50,
-          //   child: Row(
-          //     crossAxisAlignment: CrossAxisAlignment.center,
-          //     children: [
-          //       FaIcon(FontAwesomeIcons.mapMarkedAlt,color: greyone,size: 20,),
-          //       SizedBox(
-          //         width: 10,
-          //       ),
-          //       Expanded(
-          //           child: headerText(
-          //               text:
-          //                   'Hồ Chí Minh, Phường 7, Quận 11, Thành phố Hồ Chí Minh',
-          //               fontWeight: FontWeight.w500,
-          //               fontSize: 14,
-          //               color:greyone)),
-          //     ],
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: 10,
-          // ),
           Expanded(
             flex: 6,
             child: Stack(
               children: [
                 GoogleMap(
                   mapType: MapType.normal,
-                  myLocationEnabled:true,
-                  myLocationButtonEnabled: true,
-                  onMapCreated: _onMapCreated,
-                  initialCameraPosition: CameraPosition(
-                    target: _center,
-                    zoom: 20.0,
-                  ),
+                  initialCameraPosition: _kGooglePlex,
+                  myLocationEnabled: true,
+                  tiltGesturesEnabled: true,
+                  compassEnabled: true,
+                  scrollGesturesEnabled: true,
+                  zoomGesturesEnabled: true,
+                  zoomControlsEnabled: false,
+                  markers: Set<Marker>.of(markers.values),
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                  },
                 ),
-
               ],
             ),
           ),
@@ -138,7 +116,7 @@ class _LocationPageState extends State<LocationPage> {
                       Expanded(
                           child: headerText(
                               text:
-                                  'Hồ Chí Minh, Phường 7, Quận 11, Thành phố Hồ Chí Minh',
+                                  '6, Thu Duc, HCM City',
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
                               color:greyone)),
@@ -211,7 +189,9 @@ class _LocationPageState extends State<LocationPage> {
                     width: double.infinity,
                     child: createButton(
                       labelButton: "Save",
-                      func: (){},
+                      func: (){
+                        Navigator.pop(context);
+                      },
                       buttonColor: green,
                     ),
                   )

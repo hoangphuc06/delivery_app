@@ -12,7 +12,7 @@ class TextFieldsProfileDetailView extends StatelessWidget {
         createTextFieldsEmail(context),
         createTextFieldsPhone(context),
         createTextFieldsDateofBirth(context),
-        createTextFieldsDeliveryAddress(context),
+        //createTextFieldsDeliveryAddress(context),
       ],
     );
   }

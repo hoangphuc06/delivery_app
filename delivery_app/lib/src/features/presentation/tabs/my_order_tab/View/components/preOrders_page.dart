@@ -30,64 +30,58 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
               child: Text(
                 '15/12/2021',
                 style: TextStyle(
-                    color: gris, fontWeight: FontWeight.w500, fontSize: 15),
+                    color: greyone, fontWeight: FontWeight.w500, fontSize: 15),
               ),
             ),
             _listItem(
                 context,
-                chickens_data[0]['name'],
-                chickens_data[0]['price'],
-                chickens_data[0]['image'],
+                chickens_data[0],
                 '15/12/2021 . 11:30'),
-            _listItem(context, fast_data[2]['name'], fast_data[2]['price'],
-                fast_data[2]['image'], '15/12/2021 . 11:30'),
-            _listItem(context, drinks_data[1]['name'], drinks_data[1]['price'],
-                drinks_data[1]['image'], '15/12/2021 . 11:30'),
+            _listItem(context, fast_data[2], '15/12/2021 . 11:30'),
+            _listItem(context, drinks_data[1], '15/12/2021 . 11:30'),
             Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  border: Border(top: BorderSide(width: 0.5, color: greyone))),
               padding:
                   EdgeInsets.only(top: 16, bottom: 12, left: 20, right: 20),
               child: Text(
                 '14/12/2021',
                 style: TextStyle(
-                    color: gris, fontWeight: FontWeight.w500, fontSize: 15),
+                    color: greyone, fontWeight: FontWeight.w500, fontSize: 15),
               ),
             ),
             _listItem(
                 context,
-                chickens_data[3]['name'],
-                chickens_data[3]['price'],
-                chickens_data[3]['image'],
+                chickens_data[3],
                 '15/12/2021 . 11:30'),
-            _listItem(context, fast_data[3]['name'], fast_data[3]['price'],
-                fast_data[3]['image'], '15/12/2021 . 11:30'),
-            _listItem(context, drinks_data[1]['name'], drinks_data[1]['price'],
-                drinks_data[1]['image'], '15/12/2021 . 11:30'),
+            _listItem(context, fast_data[3], '15/12/2021 . 11:30'),
+            _listItem(context, drinks_data[1], '15/12/2021 . 11:30'),
           ],
         ),
       ),
     );
   }
 
-  Widget _listItem(BuildContext context, String name, String charge,
-      String image, String time) {
+  Widget _listItem(BuildContext context, data, String time) {
     return Container(
         width: double.infinity,
         padding: EdgeInsets.only(top: 8, bottom: 8, left: 20, right: 20),
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
                       child: Image(
-                        width: 65,
-                        height: 65,
+                        width: 70,
+                        height: 70,
                         fit: BoxFit.cover,
-                        image: AssetImage(image),
+                        image: AssetImage(data["image"]),
                       ),
                     ),
                     Container(
@@ -97,24 +91,60 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                              margin: EdgeInsets.symmetric(vertical: 7),
+                              margin: EdgeInsets.symmetric(vertical: 5),
                               child: headerText(
-                                  text: name,
+                                  text: data["name"],
                                   color: Colors.black,
                                   fontSize: 17)),
-                          SizedBox(
-                            height: 8,
-                          ),
+                          // Container(
+                          //   margin: EdgeInsets.only(top: 4),
+                          //   padding: EdgeInsets.all(4),
+                          //   decoration: BoxDecoration(
+                          //       color: rosa,
+                          //       borderRadius: BorderRadius.circular(20)
+                          //   ),
+                          //   child: Text(
+                          //     time,
+                          //     textAlign: TextAlign.center,
+                          //     style: TextStyle(
+                          //         color: Colors.white,
+                          //         fontSize: 10,
+                          //         fontWeight: FontWeight.bold
+                          //     ),
+                          //   ),
+                          // ),
                           Container(
                             //alignment: Alignment.centerLeft,
                             margin: EdgeInsets.only(bottom: 5.0),
                             child: Text(
-                              time,
+                              data["descr"],
                               style: TextStyle(
-                                  color: gris,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 15),
+                                  fontSize: 13),
                             ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                //alignment: Alignment.centerLeft,
+                                //margin: EdgeInsets.only(bottom: 7.0),
+                                child: Text(
+                                  data["price"] + " VNĐ",
+                                  style: data["discount"]== "0" ? TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15):
+                                  TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
+
+                                ),
+                              ),
+                              data["discount"]!= "0" ?
+                              Container(
+                                margin: EdgeInsets.only(left: 7.0),
+                                child: Text(
+                                    data["discount"] + " VNĐ",
+                                    style: TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15)
+                                ),
+                              ): Container(),
+                            ],
                           ),
                         ],
                       ),
@@ -122,13 +152,19 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 7),
-                  child: Text(
-                    charge + 'đ',
-                    style: TextStyle(
-                        color: primary1,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 17),
+                  decoration: ShapeDecoration(
+                    shape: CircleBorder(),
+                    color: placeholderBg,
+                  ),
+                  padding: EdgeInsets.all(12),
+                  child: Row(
+                    children: [
+                      headerText(
+                          text: "1",
+                          color: green,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ],
                   ),
                 ),
               ],
@@ -158,7 +194,7 @@ class _PreOrdersPageState extends State<PreOrdersPage> {
                           width: 10,
                         ),
                         headerText(
-                            text: 'Reorder',
+                            text: 'Re-order',
                             color: white,
                             fontWeight: FontWeight.w400,
                             fontSize: 17),

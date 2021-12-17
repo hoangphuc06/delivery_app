@@ -68,7 +68,7 @@ Widget _phoneInput() {
 void _showAlerta(BuildContext context) {
   showAlertDialog(
     context,
-    'assets/ic_change_password.png',
+    'assets/icon/checked.png',
     "Your password has been reset",
     "You'll shortly receive an email with a code to set up a new password.",
     createButton(

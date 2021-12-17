@@ -13,15 +13,10 @@ class _NotificationPageState extends State<NotificationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgGreyPage,
+      backgroundColor: white,
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.5,
-        leading: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(Icons.arrow_back_ios)),
         backgroundColor: white,
         title: headerText(
             text: 'Notification',
@@ -32,9 +27,6 @@ class _NotificationPageState extends State<NotificationPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 10,
-            ),
             _listNotification(),
             _listNotification(),
             _listNotification(),
@@ -56,10 +48,11 @@ class _NotificationPageState extends State<NotificationPage> {
         border: Border(
           bottom: BorderSide(width: 1, color: Colors.grey),
         ),
+        color: Colors.white
       ),
       child: ListTile(
         leading: Image(
-          image: AssetImage('assets/sale1.png'),
+          image: AssetImage('assets/sale50.png'),
           width: 50,
           height: 50,
         ),
@@ -67,22 +60,28 @@ class _NotificationPageState extends State<NotificationPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 8,
+            ),
             headerText(
-                text: '[HCMC, HN, DN] VOUCHER 70K khao bạn bữa tối😍',
-                fontWeight: FontWeight.w400,
+                text: '[HCMC, HN, DN] VOUCHER 70K 😍',
+                fontWeight: FontWeight.w500,
                 fontSize: 17),
             SizedBox(
               height: 8,
             ),
             headerText(
-                text: '👉Khi áp mã SIEUTIEC70 đơn từ 200K',
+                text: '👉 When applying code SIEUTIEC70 from 200K',
                 fontWeight: FontWeight.w400,
-                color: greytwo,
+                color: greyone,
                 fontSize: 17),
+            SizedBox(
+              height: 8,
+            ),
             headerText(
-                text: '👉Chần chừ chi, lên đơn liền nào!',
+                text: "👉 Don't wait, apply now",
                 fontWeight: FontWeight.w400,
-                color: greytwo,
+                color: greyone,
                 fontSize: 17),
             SizedBox(
               height: 8,
@@ -90,7 +89,7 @@ class _NotificationPageState extends State<NotificationPage> {
             headerText(
                 text: '15/11/2021 17:00',
                 fontWeight: FontWeight.w400,
-                color: greytwo,
+                color: greyone,
                 fontSize: 14),
             SizedBox(
               height: 8,

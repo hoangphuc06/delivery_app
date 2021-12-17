@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: routes,
-      initialRoute: 'welcome',
+      initialRoute: 'walkthrough',
       theme: ThemeData(
           primarySwatch: Colors.teal,
           accentColor: Color.fromRGBO(255, 140, 0, 1.0),

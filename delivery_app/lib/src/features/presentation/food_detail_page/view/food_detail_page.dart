@@ -29,7 +29,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
               iconTheme: IconThemeData(
                 color: Colors.white
               ),
-              elevation: 0,
+              elevation: 0.5,
               floating: false,
               pinned: true,
               snap: false,
@@ -54,7 +54,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            headerText(text: "Gà rán (2 miếng)", color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                            headerText(text: "Fried Chicken (2 Pc)", color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
                             headerText(text: "68.000 VNĐ", color: green, fontSize: 20, fontWeight: FontWeight.bold),
                           ],
                         ),
@@ -306,7 +306,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
     ),
     context: context,
     builder: (context) => Container(
-      padding: EdgeInsets.all(24),
+      padding: EdgeInsets.all(16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -331,7 +331,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                     Container(
                         margin: EdgeInsets.symmetric(vertical: 7),
                         child: headerText(
-                            text: "Gà rán (2 miếng)",
+                            text: "Fried Chicken (2 Pc)",
                             color: Colors.black,
                             fontSize: 20)),
                     Container(

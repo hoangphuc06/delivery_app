@@ -89,18 +89,18 @@ Widget _firstBlock(BuildContext context) {
     padding: EdgeInsets.all(10),
     child: Column(
       children: [
-        ListTile(
-          onTap: () {
-            Navigator.pushNamed(context, 'notification');
-          },
-          leading: Image(
-            image: AssetImage('assets/noti.png'),
-            width: 29,
-            height: 29,
-          ),
-          title: headerText(text: 'Notification', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
-        ),
+        // ListTile(
+        //   onTap: () {
+        //     Navigator.pushNamed(context, 'notification');
+        //   },
+        //   leading: Image(
+        //     image: AssetImage('assets/noti.png'),
+        //     width: 29,
+        //     height: 29,
+        //   ),
+        //   title: headerText(text: 'Notification', fontWeight: FontWeight.w400),
+        //   trailing: Icon(Icons.chevron_right_outlined, color: gris),
+        // ),
         ListTile(
           onTap: () {
             Navigator.pushNamed(context, 'payment-method');
@@ -116,17 +116,6 @@ Widget _firstBlock(BuildContext context) {
         ),
         ListTile(
           leading: Image(
-            image: AssetImage('assets/crown1.png'),
-            width: 29,
-            height: 29,
-          ),
-          onTap: () => Navigator.pushNamed(context, 'order-history'),
-          title:
-              headerText(text: 'Reward credits', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
-        ),
-        ListTile(
-          leading: Image(
             image: AssetImage('assets/promo.png'),
             width: 29,
             height: 29,
@@ -135,35 +124,43 @@ Widget _firstBlock(BuildContext context) {
           title: headerText(text: 'Promo code', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
-        SizedBox(height: 20),
-        GestureDetector(
-          child: ListTile(
-            leading: Image(
-              image: AssetImage('assets/setting.png'),
-              width: 29,
-              height: 29,
-            ),
-            title: headerText(text: 'Settings', fontWeight: FontWeight.w400),
-            trailing: Icon(Icons.chevron_right_outlined, color: gris),
-            onTap: () {
-              Navigator.pushNamed(context, 'settings');
-            },
+        // ListTile(
+        //   onTap: (){
+        //     Navigator.push(context, MaterialPageRoute(builder: (context)=>LocationPage()));
+        //   },
+        //   leading: Image(
+        //     image: AssetImage('assets/location.jpg'),
+        //     width: 29,
+        //     height: 29,
+        //   ),
+        //   title: headerText(text: 'Location', fontWeight: FontWeight.w400),
+        //   trailing: Icon(Icons.chevron_right_outlined, color: gris),
+        // ),
+        //SizedBox(height: 20),
+        ListTile(
+          leading: Image(
+            image: AssetImage('assets/setting.png'),
+            width: 29,
+            height: 29,
           ),
+          title: headerText(text: 'Settings', fontWeight: FontWeight.w400),
+          trailing: Icon(Icons.chevron_right_outlined, color: gris),
+          onTap: () {
+            Navigator.pushNamed(context, 'settings');
+          },
         ),
-        GestureDetector(
-          child: ListTile(
-            leading: Image(
-              image: AssetImage('assets/friend.png'),
-              width: 29,
-              height: 29,
-            ),
-            title:
-                headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
-            trailing: Icon(Icons.chevron_right_outlined, color: gris),
-            onTap: () {
-              Navigator.pushNamed(context, 'invite-friends');
-            },
+        ListTile(
+          leading: Image(
+            image: AssetImage('assets/friend.png'),
+            width: 29,
+            height: 29,
           ),
+          title:
+              headerText(text: 'Invite Friends', fontWeight: FontWeight.w400),
+          trailing: Icon(Icons.chevron_right_outlined, color: gris),
+          onTap: () {
+            Navigator.pushNamed(context, 'invite-friends');
+          },
         ),
         ListTile(
           leading: Image(
@@ -181,18 +178,6 @@ Widget _firstBlock(BuildContext context) {
             height: 29,
           ),
           title: headerText(text: 'About Us', fontWeight: FontWeight.w400),
-          trailing: Icon(Icons.chevron_right_outlined, color: gris),
-        ),
-        ListTile(
-          onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>LocationPage()));
-          },
-          leading: Image(
-            image: AssetImage('assets/location.jpg'),
-            width: 29,
-            height: 29,
-          ),
-          title: headerText(text: 'Location', fontWeight: FontWeight.w400),
           trailing: Icon(Icons.chevron_right_outlined, color: gris),
         ),
       ],

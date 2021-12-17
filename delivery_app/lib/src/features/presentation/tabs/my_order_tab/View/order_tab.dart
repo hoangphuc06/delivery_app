@@ -1,4 +1,5 @@
 import 'package:delivery_app/src/colors/colors.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/orderTracking/orderTracking.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/empty_order_view.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/historyOrder.dart';
@@ -22,42 +23,27 @@ class _OrderTabState extends State<OrderTab> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          actions: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(right: 15),
-                  child: FaIcon(
-                    FontAwesomeIcons.bell,
-                  ),
-                ),
-              ],
-            )
-          ],
           backgroundColor: Colors.white,
-          elevation: 0,
-          title: Text(
-            "Orders",
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
+          elevation: 0.5,
+          title: headerText(
+              text: 'My Orders',
+              color: primaryColor,
+              fontSize: 17,
+              fontWeight: FontWeight.w600),
           centerTitle: true,
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(50),
             child: TabBar(
               labelColor: primary,
-              unselectedLabelColor: primary2,
+              unselectedLabelColor: greyone,
               indicatorColor: primary,
               indicatorWeight: 3,
               tabs: [
                 Tab(
-                  text: "Pre-Orders",
+                  text: "On coming",
                 ),
                 Tab(
-                  text: "Oncoming",
+                  text: "Pre-Orders",
                 ),
                 Tab(
                   text: "History",
@@ -68,8 +54,8 @@ class _OrderTabState extends State<OrderTab> {
         ),
         body: TabBarView(
           children: [
-            PreOrdersPage(),
             OrderTracking(),
+            PreOrdersPage(),
             EmptyOrderView(),
           ],
         ),

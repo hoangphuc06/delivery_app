@@ -38,12 +38,13 @@ class _ProfileDetailPageState extends State<ProfileDetailPage>
     return Scaffold(
       backgroundColor: bgGreyPage,
       appBar: AppBar(
-        title: headerText(text: 'Edit Profile', fontSize: 17),
+        title: headerText(text: 'Edit Profile', fontSize: 17, fontWeight: FontWeight.w600),
+        centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0.4,
-        leading: Builder(builder: (BuildContext context) {
-          return backButton(context, Colors.black);
-        }),
+        // leading: Builder(builder: (BuildContext context) {
+        //   return backButton(context, Colors.black);
+        // }),
         actions: [
           GestureDetector(
             onTap: () {
@@ -53,7 +54,7 @@ class _ProfileDetailPageState extends State<ProfileDetailPage>
               padding: EdgeInsets.only(top: 20, right: 15),
               child: headerText(
                   text: 'Done',
-                  color: orange,
+                  color: green,
                   fontSize: 17,
                   fontWeight: FontWeight.w500),
             ),

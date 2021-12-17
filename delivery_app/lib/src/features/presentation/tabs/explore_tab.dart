@@ -5,6 +5,8 @@ import 'package:delivery_app/src/features/data/recent_data.dart';
 import 'package:delivery_app/src/features/data/shop_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:delivery_app/src/features/presentation/location_page/view/location_page.dart';
+import 'package:delivery_app/src/features/presentation/notification_page/View/notification_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,11 +18,30 @@ class ExploreTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: green,
-        ),
+        automaticallyImplyLeading: false,
         backgroundColor: green,
         elevation: 0,
+        title: Row(
+          children: [
+            Icon(Icons.location_on, color: Colors.white, size: 15,),
+            SizedBox(width: 5,),
+            Text("Delivery to: ", style: TextStyle(fontSize: 13, color: Colors.white),),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LocationPage()));
+              },
+              child: Text("HOME", style: TextStyle(fontSize: 13, color: Colors.orange, fontWeight: FontWeight.bold),)
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.notifications, color: Colors.white,),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationPage()));
+            },
+          ),
+        ],
       ),
       body: DefaultTabController(
           length: 6,
@@ -29,23 +50,22 @@ class ExploreTab extends StatelessWidget {
             headerSliverBuilder: (context, isScolled){
               return [
                 SliverAppBar(
+                  elevation: 0.5,
                   automaticallyImplyLeading: false,
                   backgroundColor: Colors.white,
-                  collapsedHeight: 450,
-                  expandedHeight: 450,
+                  collapsedHeight: 394,
+                  expandedHeight: 394,
                   flexibleSpace: Container(
                     child: Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
                             color: green,
-                            //borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),)
                           ),
                           child: Column(
                             children: [
-                              _buildHeader(),
                               _topBar(context),
-                              SizedBox(height: 25,),
+                              SizedBox(height: 20,),
                             ],
                           ),
                         ),
@@ -59,6 +79,7 @@ class ExploreTab extends StatelessWidget {
                               fontSize: 20),
                         ),
                         _shopsSlider(context),
+                        Divider(thickness: 1,),
                       ],
                     ),
                   ),
@@ -242,7 +263,7 @@ Widget _buildHeader() {
 Widget _topBar(BuildContext context) {
   var size = MediaQuery.of(context).size;
   return Container(
-    padding: EdgeInsets.only(left: 16, right: 16),
+    padding: EdgeInsets.only(left: 16, right: 16, top: 8),
     child: Row(
       children: [
         GestureDetector(

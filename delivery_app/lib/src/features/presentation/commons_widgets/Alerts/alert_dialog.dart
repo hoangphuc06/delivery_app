@@ -13,13 +13,12 @@ Future showAlertDialog(BuildContext context, String imagePath,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(20.0))),
           content: SingleChildScrollView(
-            child: Wrap(
-              alignment: WrapAlignment.center,
+            child: Column(
               children: <Widget>[
                 Image(
                   image: AssetImage(imagePath),
-                  width: 130,
-                  height: 130,
+                  width: 100,
+                  height: 100,
                   alignment: Alignment.center,
                 ),
                 Container(

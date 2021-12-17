@@ -1,7 +1,6 @@
 import 'package:delivery_app/src/colors/colors.dart';
 import 'package:delivery_app/src/features/data/burger_data.dart';
 import 'package:delivery_app/src/features/data/chicken_data.dart';
-import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:delivery_app/src/features/presentation/tabs/my_order_tab/View/components/confirmOrder.dart';
 import 'package:flutter/material.dart';
@@ -28,20 +27,20 @@ class _OnComingPageState extends State<OnComingPage> {
             color: Colors.black,
           ),
         ),
-         actions: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(right: 15),
-                  child: FaIcon(
-                    FontAwesomeIcons.bell,
-                  ),
-                ),
-              ],
-            )
-          ],
+         // actions: [
+         //    Column(
+         //      mainAxisAlignment: MainAxisAlignment.center,
+         //      crossAxisAlignment: CrossAxisAlignment.center,
+         //      children: [
+         //        Container(
+         //          padding: EdgeInsets.only(right: 15),
+         //          child: FaIcon(
+         //            FontAwesomeIcons.bell,
+         //          ),
+         //        ),
+         //      ],
+         //    )
+         //  ],
         centerTitle: true,
       ),
      
@@ -141,7 +140,7 @@ class _OnComingPageState extends State<OnComingPage> {
                         width: 65,
                         height: 65,
                         fit: BoxFit.cover,
-                        image: AssetImage('assets/map.png'),
+                        image: AssetImage('assets/ap.png'),
                       ),
                     ),
                     Container(
