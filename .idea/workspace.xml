@@ -21,9 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dc6df31a-f299-4646-a5e5-ade13da3b411" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/food_detail_page/view/food_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/food_detail_page/view/food_detail_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/payment_method_page/View/payment_method_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/payment_method_page/View/payment_method_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/place_detail_page/View/place_detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/forgot_password_page/View/forgot_password_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/forgot_password_page/View/forgot_password_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/my_order_tab/View/components/confirmOrder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/delivery_app/lib/src/features/presentation/tabs/my_order_tab/View/components/confirmOrder.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
