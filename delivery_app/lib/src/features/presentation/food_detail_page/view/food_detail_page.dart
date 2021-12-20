@@ -486,7 +486,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
 
   Widget _cardReviews() {
     var cmt =
-        "Day la mot loi nhan xet chan thanh tu tan day long cua em, banh rat ngon va thom nhung gia hoi mac.";
+        "I really amazing about this food, so good and rather cheap, i'll back when i have time";
     return Container(
       margin: EdgeInsets.only(top: 10, bottom: 10),
       child: Column(

@@ -72,7 +72,9 @@ class _PlaceDetailPageState extends State<PlaceDetailPage> {
                 actions: [
                   IconButton(
                     icon: Icon(Icons.share, color: Colors.white,),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'invite-friends');
+                    },
                   ),
                   IconButton(icon: Icon(Icons.bookmark, color: Colors.white,),
                     onPressed: () {},
