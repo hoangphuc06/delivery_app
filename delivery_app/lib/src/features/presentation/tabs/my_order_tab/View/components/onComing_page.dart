@@ -318,37 +318,43 @@ class _OnComingPageState extends State<OnComingPage> {
                     ),
                   ],
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: placeholderBg,
-                  ),
-                  padding:
-                      EdgeInsets.only(top: 6, bottom: 6, right: 16, left: 16),
-                  child: Row(
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.minus,
-                        color: greyone,
-                        size: 12,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      headerText(
-                          text: count.toString(),
+                GestureDetector(
+                  onTap: ()=>print('tasda'),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: placeholderBg,
+                    ),
+                    padding:
+                        EdgeInsets.only(top: 6, bottom: 6, right: 16, left: 16),
+                    child: Row(
+                      children: [
+                        FaIcon(
+                          FontAwesomeIcons.minus,
                           color: greyone,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.plus,
-                        color: primary1,
-                        size: 13,
-                      ),
-                    ],
+                          size: 12,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        headerText(
+                            text: count.toString(),
+                            color: greyone,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 17),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: (){print('object');},
+                          child: FaIcon(
+                            FontAwesomeIcons.plus,
+                            color: primary1,
+                            size: 13,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

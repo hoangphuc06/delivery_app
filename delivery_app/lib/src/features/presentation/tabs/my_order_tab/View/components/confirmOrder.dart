@@ -4,6 +4,8 @@ import 'package:delivery_app/src/features/data/chicken_data.dart';
 import 'package:delivery_app/src/features/data/drinks_data.dart';
 import 'package:delivery_app/src/features/data/popular_data.dart';
 import 'package:delivery_app/src/features/data/rice_data.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Alerts/alert_dialog.dart';
+import 'package:delivery_app/src/features/presentation/commons_widgets/Buttons/rounded_button.dart';
 import 'package:delivery_app/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,7 +49,8 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
               Container(
                 padding: EdgeInsets.only(bottom: 15),
                 decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(width: 0.5, color: gris))),
+                    border:
+                        Border(bottom: BorderSide(width: 0.5, color: gris))),
                 child: Column(
                   children: [
                     _listItem(context, burgers_data[0], '1'),
@@ -57,7 +60,6 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                   ],
                 ),
               ),
-
               SizedBox(
                 height: 20,
               ),
@@ -296,9 +298,14 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
         height: 50,
         child: RaisedButton(
           elevation: 0.5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           color: primary,
-          onPressed: () {},
+          onPressed: () {
+            Future.delayed(Duration.zero, () {
+              _confirm(context);
+            });
+          },
           child: Container(
             padding: EdgeInsets.only(right: 16, left: 16),
             child: headerText(
@@ -364,19 +371,31 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                                 //margin: EdgeInsets.only(bottom: 7.0),
                                 child: Text(
                                   populars_data["price"] + " VNĐ",
-                                  style: populars_data["discount"]== "0" ? TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15):
-                                  TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
-
+                                  style: populars_data["discount"] == "0"
+                                      ? TextStyle(
+                                          color: green,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15)
+                                      : TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15,
+                                          fontStyle: FontStyle.italic,
+                                          decoration:
+                                              TextDecoration.lineThrough),
                                 ),
                               ),
-                              populars_data["discount"]!= "0" ?
-                              Container(
-                                margin: EdgeInsets.only(left: 7.0),
-                                child: Text(
-                                    populars_data["discount"] + " VNĐ",
-                                    style: TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15)
-                                ),
-                              ): Container(),
+                              populars_data["discount"] != "0"
+                                  ? Container(
+                                      margin: EdgeInsets.only(left: 7.0),
+                                      child: Text(
+                                          populars_data["discount"] + " VNĐ",
+                                          style: TextStyle(
+                                              color: green,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15)),
+                                    )
+                                  : Container(),
                             ],
                           ),
                         ],
@@ -404,5 +423,22 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
             ),
           ],
         ));
+  }
+
+  Future _confirm(BuildContext context) async {
+    await showAlertDialog(
+        context,
+        'assets/icon/checked.png',
+        "You Place The Order Successfully",
+        "You Placed The Order Successfully. You Will Get Your Order Within 30 Minutes. Thanks For Usings Our Services. Enjoy Your Food.",
+        //_doneButton(context,'Enable Location')
+        createButton(
+            context: context,
+            icon: const AssetImage('assets/ic_welcome.png'),
+            labelButton: 'Done',
+            buttonColor: green,
+            func: () {
+              Navigator.pop(context);
+            }));
   }
 }

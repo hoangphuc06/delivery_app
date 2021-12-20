@@ -16,6 +16,15 @@ class MyCartTab extends StatefulWidget {
 }
 
 class _MyCartTabState extends State<MyCartTab> {
+  int tem1 = 1;
+  int tem2 = 1;
+  int tem3 = 1;
+  int tem4 = 1;
+  int charge1 = 47000;
+  int charge2 = 41000;
+  int charge3 = 36000;
+  int charge4 = 17000;
+  int discount = 1000;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,10 +59,10 @@ class _MyCartTabState extends State<MyCartTab> {
           padding: EdgeInsets.only(left: 20, right: 20),
           child: Column(
             children: [
-              _listItem(context, burgers_data[0], '1'),
-              _listItem(context, rices_data[5], '1'),
-              _listItem(context, chickens_data[0], '1'),
-              _listItem(context, drinks_data[2], '1'),
+              _listItem(context, burgers_data[0], tem1, 1),
+              _listItem(context, rices_data[5], tem2, 2),
+              _listItem(context, chickens_data[0], tem3, 3),
+              _listItem(context, drinks_data[2], tem4, 4),
               SizedBox(
                 height: 20,
               ),
@@ -80,11 +89,15 @@ class _MyCartTabState extends State<MyCartTab> {
               SizedBox(
                 height: 20,
               ),
-              _itemInRow('Item Total', '141.000 VNĐ', Colors.black, 17),
+              _itemInRow(
+                  'Item Total',
+                  ((charge1 + charge2 + charge3 + charge4)/1000).toStringAsFixed(0)+'.000 VNĐ',
+                  Colors.black,
+                  17),
               SizedBox(
                 height: 10,
               ),
-              _itemInRow('Discount', '1.000 VNĐ', Colors.black, 17),
+              _itemInRow('Discount', (discount/1000).toStringAsFixed(0)+'.000 VNĐ', Colors.black, 17),
               SizedBox(
                 height: 10,
               ),
@@ -100,7 +113,12 @@ class _MyCartTabState extends State<MyCartTab> {
                       bottom: BorderSide(width: 0.8, color: placeholder),
                     ),
                   ),
-                  child: _itemInRow('Total', '140.000 VNĐ', Colors.black, 28)),
+                  child: _itemInRow(
+                      'Total',
+                      ((charge1 + charge2 + charge3 + charge4 - discount)/1000)
+                          .toStringAsFixed(0)+'.000 VNĐ',
+                      Colors.black,
+                      28)),
               SizedBox(
                 height: 20,
               ),
@@ -110,7 +128,8 @@ class _MyCartTabState extends State<MyCartTab> {
               SizedBox(
                 height: 20,
               ),
-              _buttonCheckOut(context, '140.000 VNĐ'),
+              _buttonCheckOut(
+                  context, ((charge1 + charge2 + charge3 + charge4-discount)/1000).toStringAsFixed(0)+'.000 VNĐ'),
               SizedBox(
                 height: 30,
               ),
@@ -221,7 +240,8 @@ class _MyCartTabState extends State<MyCartTab> {
         height: 50,
         child: RaisedButton(
           elevation: 0.5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           color: primary,
           onPressed: () {
             Navigator.push(
@@ -262,117 +282,195 @@ class _MyCartTabState extends State<MyCartTab> {
         ));
   }
 
-
-  Widget _listItem(BuildContext context, populars_data, String count) {
-    return Container(
-        width: double.infinity,
-        padding: EdgeInsets.only(
-          top: 8,
-          bottom: 8,
-        ),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.end,
+  Widget _listItem(BuildContext context, populars_data, int count, int flag) {
+    return count == 0
+        ? Container()
+        : Container(
+            width: double.infinity,
+            padding: EdgeInsets.only(
+              top: 8,
+              bottom: 8,
+            ),
+            child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image(
-                        width: 70,
-                        height: 70,
-                        fit: BoxFit.cover,
-                        image: AssetImage(populars_data["image"]),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 20),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                              margin: EdgeInsets.symmetric(vertical: 5),
-                              child: headerText(
-                                  text: populars_data["name"],
-                                  color: Colors.black,
-                                  fontSize: 17)),
-                          Container(
-                            //alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.only(bottom: 5.0),
-                            child: Text(
-                              populars_data["descr"],
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13),
-                            ),
+                    Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image(
+                            width: 70,
+                            height: 70,
+                            fit: BoxFit.cover,
+                            image: AssetImage(populars_data["image"]),
                           ),
-                          Row(
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
+                                  margin: EdgeInsets.symmetric(vertical: 5),
+                                  child: headerText(
+                                      text: populars_data["name"],
+                                      color: Colors.black,
+                                      fontSize: 17)),
+                              Container(
                                 //alignment: Alignment.centerLeft,
-                                //margin: EdgeInsets.only(bottom: 7.0),
+                                margin: EdgeInsets.only(bottom: 5.0),
                                 child: Text(
-                                  populars_data["price"] + " VNĐ",
-                                  style: populars_data["discount"]== "0" ? TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15):
-                                  TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 15, fontStyle: FontStyle.italic, decoration: TextDecoration.lineThrough),
-
+                                  populars_data["descr"],
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13),
                                 ),
                               ),
-                              populars_data["discount"]!= "0" ?
-                              Container(
-                                margin: EdgeInsets.only(left: 7.0),
-                                child: Text(
-                                    populars_data["discount"] + " VNĐ",
-                                    style: TextStyle(color: green, fontWeight: FontWeight.bold, fontSize: 15)
-                                ),
-                              ): Container(),
+                              Row(
+                                children: [
+                                  Container(
+                                    //alignment: Alignment.centerLeft,
+                                    //margin: EdgeInsets.only(bottom: 7.0),
+                                    child: Text(
+                                      populars_data["price"] + " VNĐ",
+                                      style: populars_data["discount"] == "0"
+                                          ? TextStyle(
+                                              color: green,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15)
+                                          : TextStyle(
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 15,
+                                              fontStyle: FontStyle.italic,
+                                              decoration:
+                                                  TextDecoration.lineThrough),
+                                    ),
+                                  ),
+                                  populars_data["discount"] != "0"
+                                      ? Container(
+                                          margin: EdgeInsets.only(left: 7.0),
+                                          child: Text(
+                                              populars_data["discount"] +
+                                                  " VNĐ",
+                                              style: TextStyle(
+                                                  color: green,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 15)),
+                                        )
+                                      : Container(),
+                                ],
+                              ),
                             ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: placeholderBg,
+                      ),
+                      padding: EdgeInsets.only(
+                          top: 6, bottom: 6, right: 16, left: 16),
+                      child: Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                switch (flag) {
+                                  case 1:
+                                    if (tem1 > 0) {
+                                      tem1 = tem1 - 1;
+
+                                      charge1 = tem1 * 47000;
+                                    }
+
+                                    break;
+                                  case 2:
+                                    if (tem2 > 0) {
+                                      tem2--;
+                                      charge2 = tem2 * 41000;
+                                    }
+                                    break;
+                                  case 3:
+                                    if (tem3 > 0) {
+                                      tem3--;
+                                      charge3 = tem3 * 36000;
+                                      discount -= 1000;
+                                    }
+                                    break;
+                                  case 4:
+                                    if (tem4 > 0) {
+                                      tem4--;
+                                      charge4 = tem4 * 17000;
+                                    }
+                                    break;
+                                  default:
+                                }
+                              });
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.minus,
+                              color: greyone,
+                              size: 12,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          headerText(
+                              text: count.toString(),
+                              color: greyone,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 17),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                switch (flag) {
+                                  case 1:
+                                    tem1++;
+                                    print(tem1);
+                                    charge1 = tem1 * 47000;
+
+                                    break;
+                                  case 2:
+                                    tem2++;
+                                    charge2 = tem2 * 41000;
+                                    break;
+                                  case 3:
+                                    tem3++;
+                                    charge3 = tem3 * 36000;
+                                    discount += 1000;
+                                    break;
+                                  case 4:
+                                    tem4++;
+                                    charge4 = tem4 * 17000;
+                                    break;
+                                  default:
+                                }
+                              });
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.plus,
+                              color: green,
+                              size: 13,
+                            ),
                           ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: placeholderBg,
-                  ),
-                  padding:
-                  EdgeInsets.only(top: 6, bottom: 6, right: 16, left: 16),
-                  child: Row(
-                    children: [
-                      FaIcon(
-                        FontAwesomeIcons.minus,
-                        color: greyone,
-                        size: 12,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      headerText(
-                          text: count.toString(),
-                          color: greyone,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      FaIcon(
-                        FontAwesomeIcons.plus,
-                        color: green,
-                        size: 13,
-                      ),
-                    ],
-                  ),
-                ),
               ],
-            ),
-          ],
-        ));
+            ));
   }
 }
