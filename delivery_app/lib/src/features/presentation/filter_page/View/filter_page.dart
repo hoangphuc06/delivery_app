@@ -122,7 +122,7 @@ class _FilterPageState extends State<FilterPage> {
               alignment: Alignment.centerLeft,
               margin: EdgeInsets.only(top: 15.0, bottom: 5.0, left: 15.0),
               child: headerText(
-                  text: 'Price range',
+                  text: 'Price range (VNĐ)',
                   color: Colors.black,
                   fontWeight: FontWeight.w600,
                   fontSize: 17.0),
