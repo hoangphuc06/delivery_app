@@ -17,24 +17,33 @@ Future showAlertDialog(BuildContext context, String imagePath,
               children: <Widget>[
                 Image(
                   image: AssetImage(imagePath),
-                  width: 100,
-                  height: 100,
+                  width: 80,
+                  height: 80,
                   alignment: Alignment.center,
                 ),
                 Container(
                   margin: EdgeInsets.all(15.0),
-                  child: headerText(
-                      text: headerTitle, color: primaryColor, fontSize: 20.0),
+                  child: Text(
+                    headerTitle,
+                    style: TextStyle(
+                      color: primary,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.center,
+                  )
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 15.0),
+                  margin: EdgeInsets.only(top: 5.0),
                   child: Text(
                     headerSubTitle,
                     style: TextStyle(
                         color: primaryColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15.0),
-                  ),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400
+                    ),
+                    textAlign: TextAlign.justify,
+                  )
                 ),
                 doneButton,
               ],

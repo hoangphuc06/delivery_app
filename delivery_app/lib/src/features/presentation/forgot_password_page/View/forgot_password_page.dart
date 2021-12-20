@@ -69,7 +69,7 @@ void _showAlerta(BuildContext context) {
   showAlertDialog(
     context,
     'assets/icon/checked.png',
-    "Your password has been reset",
+    "Your password has \nbeen reset",
     "You'll shortly receive an email with a code to set up a new password.",
     createButton(
         context: context,

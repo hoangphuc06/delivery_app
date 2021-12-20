@@ -430,7 +430,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
         context,
         'assets/icon/checked.png',
         "You Place The Order Successfully",
-        "You Placed The Order Successfully. You Will Get Your Order Within 30 Minutes. Thanks For Usings Our Services. Enjoy Your Food.",
+        "You Will Get Your Order Within 30 Minutes. Thanks For Using Our Services. Enjoy Your Food.",
         //_doneButton(context,'Enable Location')
         createButton(
             context: context,
